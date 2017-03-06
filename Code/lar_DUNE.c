@@ -64,7 +64,13 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
       for(int j = 0; j < in_tree->GetEntries(); j++){
 //        cout<<j<<endl;
 
-
+        float Px_protons = 0;
+        float Py_protons = 0;
+        float Pz_protons = 0;
+        float Px_pions = 0;
+        float Py_pions = 0;
+        float Pz_pions = 0;
+ 
         Ereco = 0;
         q0_reco = -999.99;
         q3_reco = -999.99;
@@ -159,8 +165,10 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            else{
              if (P < proton_thresh_lar)continue;
            }
- 
-           P_protons_reco += P;         
+           
+           Px_protons += Px;
+           Py_protons += Py;
+           Pz_protons += Pz; 
   
            Px_total_reco += Px;
            Py_total_reco += Py;
@@ -186,7 +194,11 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            else{     
              if (P < pion_thresh_lar)continue;
            }
-           P_pions_reco += P;         
+           
+           Px_pions += Px;
+           Py_pions += Py;
+           Pz_pions += Pz; 
+
            Px_total_reco += Px;
            Py_total_reco += Py;
            Pz_total_reco += Pz;       
@@ -210,7 +222,11 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            else{     
              if (P < pion_thresh_lar)continue;
            }
-           P_pions_reco += P;         
+           
+           Px_pions += Px;
+           Py_pions += Py;
+           Pz_pions += Pz; 
+        
            Px_total_reco += Px;
            Py_total_reco += Py;
            Pz_total_reco += Pz;       
@@ -234,7 +250,6 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            else{     
              if (P < pion_thresh_lar)continue;
            }*/
-           P_pions_reco += P;         
            Px_total_reco += Px;
            Py_total_reco += Py;
            Pz_total_reco += Pz;       
@@ -244,6 +259,10 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            
         }
         //fout->cd();
+
+        P_protons_reco = sqrt(Px_protons*Px_protons + Py_protons*Py_protons + Pz_protons*Pz_protons);  
+        P_pions_reco = sqrt(Px_pions*Px_pions + Py_pions*Py_pions + Pz_pions*Pz_pions);  
+
         q0_reco = ELep_reco - Ereco;
          
         delta_Px = Px_total_reco - Px_Lep_reco;                
