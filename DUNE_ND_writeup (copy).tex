@@ -1,0 +1,250 @@
+\setlength{\headheight}{15pt}
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+\lhead{}
+\chead{}
+\rhead{}
+\renewcommand{\headrulewidth}{0pt}
+\pagestyle{fancy}
+\usepackage{graphicx}
+\usepackage[top=2cm,bottom=3cm]{geometry}
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=DarkBlue,citecolor=DarkBlue]{hyperref}
+\usepackage{xspace}
+\usepackage{rotating}
+\usepackage{units}
+%\usepackage{subfig}
+%\usepackage{amssymb, amsmath}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{lineno}
+\usepackage{listings} 
+\usepackage[normalem]{ulem}
+%\usepackage{placeins}
+\usepackage[section]{placeins}
+
+\usepackage{SIunits}
+\usepackage{hepunits}
+\usepackage{hepparticles}
+\usepackage{cancel}
+\usepackage{hepnames}
+\usepackage{epstopdf}
+\usepackage{mathtools}
+\usepackage{caption}
+\usepackage[aboveskip=-10pt]{subcaption}
+\usepackage[capitalise]{cleveref}
+\usepackage{braket}
+\usepackage{slashed}
+
+\newcommand{\todo}[1]{{\color{red} TODO: #1}}
+\newcommand\red[1]{{\color{red}#1}}
+\newcommand{\ccpi}{CC1$\pi^0$\xspace}
+\newcommand{\ccpis}{CC$\pi^0$\xspace}
+\newcommand{\ccpip}{CC1$\pi^+$\xspace}
+\newcommand{\ncpi}{NC1$\pi^0$\xspace}
+\newcommand{\ccqe}{CCQE\xspace}
+\newcommand{\mares}{\ensuremath{M_A^\mathrm{res}}\xspace}
+\newcommand{\ppi}{\ensuremath{|\mathbf{p}_{\pi^0}|}\xspace}
+\newcommand{\mb}{MiniBooNE\xspace}
+\newcommand{\minerva}{MINER\ensuremath{\nu}A\xspace}
+\newcommand{\neut}{\textsc{neut}\xspace}
+\newcommand{\nuance}{\textsc{nuance}\xspace}
+\newcommand{\tmu}{\ensuremath{T_{\mu}}\xspace}
+\newcommand{\pmu}{\ensuremath{|\textbf{p}_{\mu}|}\xspace}
+\newcommand{\cost}{\ensuremath{\cos{\theta_{\mu}}}\xspace}
+\newcommand{\enu}{\ensuremath{E_{\nu}}\xspace}
+\newcommand{\qq}{\ensuremath{Q^{2}}\xspace}
+\newcommand{\qqqe}{\ensuremath{Q^{2}_{\textrm{QE}}}\xspace}
+\newcommand{\pf}{\ensuremath{p_{F}}\xspace}
+\newcommand{\eb}{\ensuremath{E_{b}}\xspace}
+\newcommand{\carb}{C\ensuremath{^{12}}\xspace}
+\newcommand{\oxy}{O\ensuremath{^{16}}\xspace}
+\newcommand{\ie}{i.e.\xspace}
+\newcommand{\eg}{e.g.\xspace}
+\newcommand{\ma}{\ensuremath{M_{\textrm{A}}}\xspace}
+\newcommand{\maqe}{\ensuremath{M_{\textrm{A}}^{\textrm{QE}}}\xspace}
+\newcommand{\numu}{\Pnum}
+\newcommand{\nue}{\Pnue}
+\newcommand{\numubar}{\APnum}
+\newcommand{\nuebar}{\APnue}
+\newcommand{\enuqerfg}{\ensuremath{E^{\nu}_{\textrm{QE,RFG}}}\xspace}
+\newcommand{\enuqe}{\ensuremath{E^{\nu}_{\textrm{QE}}}\xspace}
+\newcommand{\chisq}{\ensuremath{\chi^{2}}\xspace}
+\newcommand{\chisqmin}{\ensuremath{\chi^{2}_{\textrm{min}}}\xspace}
+\newcommand{\chtwo}{CH\ensuremath{_{2}}\xspace}
+\newcommand{\wroclaw}{Wroc{\l}aw\xspace}
+\newcommand{\km}{\kilo\meter\xspace}
+\newcommand{\m}{\meter\xspace}
+\newcommand{\evsq}{\eV\ensuremath{^{2}}\xspace}
+\newcommand{\POD}{P{\O}D\xspace}
+\newcommand{\ecal}{ECal\xspace}
+\newcommand{\ecals}{ECals\xspace}
+\newcommand{\dsecal}{Ds-ECal\xspace}
+\newcommand{\vol}[4]{\ensuremath{#1\times#2\times\unit{#3}{#4}}\xspace}
+\newcommand{\area}[3]{\ensuremath{#1\times\unit{#2}{#3}}\xspace}
+\newcommand{\pizero}{\pi^{0}\xspace}
+\newcommand{\kg}{\kilo\gram\xspace}
+\newcommand{\lep}{\ell}
+\newcommand{\mnn}{multi-nucleon--neutrino\xspace}
+\newcommand{\elt}{\ensuremath{E_{<}}\xspace}
+\newcommand{\egt}{\ensuremath{E_{>}}\xspace}
+
+\renewcommand\Im{\operatorname{Im}}
+
+\graphicspath{{figures/}}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+   \pdffalse
+\else
+   \pdfoutput=1
+   \pdftrue
+\fi
+\ifpdf
+   \usepackage{graphicx}
+   \usepackage{epstopdf}
+   %\DeclareGraphicsRule{.eps}{pdf}{.pdf}{`epstopdf #1}
+   \pdfcompresslevel=9
+\else
+   \usepackage{graphicx}
+\fi
+
+\graphicspath{{figs/}}
+
+\title{Current Status and Future Progess of DUNE ND studies}
+
+\date{}
+\begin{document}
+
+
+\author[1]{Jake Calcutt, Joshua Hignight, Kendall Mahn}
+%\author[2]{Joshua Hignight}
+%\author[3]{Kendall Mahn}
+
+
+\maketitle
+\thispagestyle{fancy}
+%\linenumbers
+%\begin{abstract}
+%This report is a review of the current implementation of cross section related sources of systematic uncertainty for the DUNE Near Detector Taskforce (ND TF), charged with evaluating three possible near detector configurations. It identifies critical sources of systematic uncertainty, some of which are already covered, suggests studies to further improve the current uncertainty implementation, and summarizes future improvements to the systematic uncertainty outside the scope of the ND TF. 
+%\end{abstract}
+%A clear statement of what the committee deems to be an ideal (practical) scenario would be an excellent start. We can bring that to VALOR to determine what they can implement, and then ask the committee for some feedback on the limitations of the final VALOR parameterization to put in the report along with their full recommendations. The full simulation and analysis chain should not die with the task force, and the final report should include recommendations for what should be studied beyond the TF timeline.
+
+\section{Overview}\label{sec:view}
+
+%This document serves as a writeup detailing the current status of the DUNE ND studies and the progress that has been made so far, as well as a plan on how to further the studies in the near future. 
+
+(Put in some general info about the DUNE experiment here) While the design of the Liquid Argon Far Detector has been finalized, there is still ongoing effort in deciding the configuration of the Near Detector. The main near detector design includes a Fine-Grained Tracker (FGT) with possible inclusion of an upstream detector - being either a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC) .  The focus of the work described in this document is to quantify the ability of the standalone FGT detector to achieve the goals of DUNE, and whether the addition of a TPC would help achieve this goal. Additionally, the sufficiency of current kinematic parameterization to handle model variations is considered.
+
+%\begin{enumerate}
+%\item Review the available material describing the handling of cross-section uncertainties within the DUNE Near Detector Task Force in the (\url{http://docs.dunescience.org:8080/cgi-bin/ShowDocument?docid=1291}{VALOR TN} sections 3 and 4 and the material presented at the 10am CT Thu July 14 ND Physics Working Group Meeting).
+%\item Recommend changes within the existing framework that would better describe the current level of uncertainty in neutrino-nucleus interaction physics. These recommendations should be prioritized w.r.t. how crucial they are to the extraction of oscillation parameters (especially CP violation) and should take into account the limited timescale and manpower of the the NDTF (initial report Sept 2016, final report March 2017 ? about 0.5 FTE of cross-section resources).
+%\item Make suggestions for studies that would help confirm the assumptions and/or results of the NDTF, should the time and manpower for these studies become available.
+%\item  Make recommendations for a long term strategy for DUNE to study ND capabilities to i) measure neutrino-nucleus interactions and ii) constrain oscillation physics systematic uncertainties,  beyond the scope of the task force (task force charge can be found at this \url{https://docs.google.com/presentation/d16yY5CzRwo_243jpBzhVVeunvxYjIb7FzoS745RwURgw/edit#slide=id.p7}{link}.
+%\end{enumerate}
+
+\section{Motivation, Methods, and Results}
+
+%\section{Current Status - Reconstructed Energy}\label{sec:Current}
+\section{Reconstructed Energy}\label{sec:Reco}
+
+%\subsection{Final State, Reconstructed Energy}
+
+A framework for investigating the differences in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
+
+The current development of this work includes a calculation of the final state energy by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons (all neutrons are assumed undetectable). This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
+
+%More sophisticated calculations of reconstructed energy, based on the type of detector design being considered, will be developed, and particle tracking and PID efficiencies for each detector will be included as this information becomes available.
+Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the information for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
+% * <calcuttj@msu.edu> 2017-02-27T16:22:43.284Z:
+%
+% ^.
+
+%As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
+
+
+
+\subsection{Neutron Multiplicities \& Energy}
+
+Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models. This will be highlighted in conjunction with the variations in the difference between Ereco and Enu. Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
+
+\subsection{Particle Multiplicity and Momentum}
+
+Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and pions along with detector thresholds can enlighten the ability of the detectors reconstruction capabilities. 
+
+\section{Parameterization}
+\subsection{$Q^2$ studies}
+
+The first study to be considered is the sufficiency of a purely $Q^2$ parameterization (a la VALOR) in treating the uncertainties for CCQE. To be considered is the relative change between the models (displayed as a single ratio of Other/GENIE separately at the near and far detectors) and this change as it is extrapolated between the near and far detector (as a double ratio of Other/GENIE,Near/Far).
+\newline
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2_ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2_ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\caption{$Q^2$ distributed events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Of note is the relative flatness in the low-$Q^2$ region in the double ratio, becoming less flat toward the higher end.}
+\end{figure}
+\newline
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2_ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2_ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\caption{$Q^2$ distributed events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND (high $Q^2$ region out of bounds of plot), Right: Double ratio of NEUT to GENIE, Near to Far. Flatness is generally lost throughout double ratio, particularly made worse in higher end.}
+\end{figure}
+\FloatBarrier
+
+\subsection{$q_0 vs. q_3$ studies}
+
+In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ parameterization was also considered. One concern is the possibility of inconsistency between the two parameterizations in variations between models. 
+\newline
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3_ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3_ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far}
+\end{figure}
+\newline
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3_ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3_ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Much of the FD has a tighter phase space due to being generator-level truth information, so a good deal of the ND-with-efficiency phase space is lost. Within the FD-covered phase space in the double ratio, flatness seems to be lost in the lower region, and much more bin-to-bin variation is present in the upper region (possibly need more statistics?).}
+\end{figure}
+\FloatBarrier
+
+\subsection{Ereco, yreco}
+An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
+\subsection{Nucleon multiplicty vs. W}
+
+Differences in mapping from Ereco to true variables can arise from shape differences in Nucleon multiplicites vs. W distributions. The first foray into these studies have been started, and need to be fleshed out for meaningful results. 
+
+\section{Future Work}\label{sec:Future}
+
+The above studies need to be furthered and expanded upon to successfully arive at useful conclusions on ND configuration choice. 
+
+\begin{itemize}
+
+
+\item Extend studies to include LAr and GAr efficiency information when available
+%\item Current uncertainties are invariant of target choice. Need to extend studies to include Calcium-40 target for FGT studies
+\item Map from Ereco, yreco into true variables and investigate differences between configurations
+\end{itemize}
+
+
+
+\end{document}
+
+
+
+
