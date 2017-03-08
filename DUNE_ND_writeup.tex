@@ -117,7 +117,10 @@
 \begin{document}
 
 
-\author[1]{Jake Calcutt, Joshua Hignight, Kendall Mahn}
+\author[1]{Jake Calcutt}
+\author[1]{Joshua Hignight}
+\author[1]{Kendall Mahn}
+\affil[1]{Michigan State University}
 %\author[2]{Joshua Hignight}
 %\author[3]{Kendall Mahn}
 
@@ -144,7 +147,7 @@
 %\end{enumerate}
 
 \section{Motivation, Methods, and Results}
-As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}(REFERENCE), NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}(REFERENCE), and NuWro\footnote[3]{NuWro version (FIND THE VERSION) LFG + RPA + Nieves et. al}(REFERENCE) according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE(REFERENCE TO NUISANCE PAPER) software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds are applied for the GAr\footnote[4]{~100 MeV/c proton momentum, FIND OTHER EFFICIENCIES} and LAr ND and FD\footnote[5]{~200 MeV/c proton momentum, FIND OTHER EFFICIENCIES}. 
+As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}\cite{GENIE}, NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}\cite{NEUT}, and NuWro\footnote[3]{NuWro version (FIND THE VERSION) LFG + RPA + Nieves et. al}\cite{NUWRO} according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr\footnote[4]{~100 MeV/c} and LAr ND and FD\footnote[5]{~200 MeV/c}. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
 \begin{figure}[h]
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{numu_ND_flux.png}
@@ -162,10 +165,14 @@ As the analysis techniques for DUNE are developed, checks on the cross section m
 
 A framework for investigating the differences in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
 
-The current development of this work includes a calculation of the final state energy by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons (all neutrons are assumed undetectable). This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
+The current development of this work includes a calculation of the final state energy by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons after passing efficiencies through the data sets. All neutrons are assumed undetectable. 
+\begin{equation}
+E_{reco} = \Sigma {E_{lep}} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
+\end{equation}
+This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
 
 %More sophisticated calculations of reconstructed energy, based on the type of detector design being considered, will be developed, and particle tracking and PID efficiencies for each detector will be included as this information becomes available.
-Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the information for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
+Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
 % * <calcuttj@msu.edu> 2017-02-27T16:22:43.284Z:
 %
 % ^.
@@ -180,7 +187,11 @@ Differences between models in the number of final state neutrons and the total e
 
 \subsection{Particle Multiplicity and Momentum}
 
-Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and pions along with detector thresholds can enlighten the ability of the detectors reconstruction capabilities. 
+Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and charged pions along with detector thresholds can enlighten the ability of the detectors' reconstruction capabilities. For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. 
+
+%\begin{equation}
+%|\vec{P_{total,i}}| = |\Sigma \vec{P_i}|
+%\end{equation}
 
 \section{Parameterization}
 \subsection{$Q^2$ studies}
@@ -233,8 +244,6 @@ In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ param
 \end{figure}
 \FloatBarrier
 
-\subsection{Ereco, yreco}
-An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
 \subsection{Nucleon multiplicty vs. W}
 
 Differences in mapping from Ereco to true variables can arise from shape differences in Nucleon multiplicites vs. W distributions. The first foray into these studies have been started, and need to be fleshed out for meaningful results. 
@@ -251,6 +260,34 @@ The above studies need to be furthered and expanded upon to successfully arive a
 \item Map from Ereco, yreco into true variables and investigate differences between configurations
 \end{itemize}
 
+
+%\subsection{Ereco, yreco}
+%An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
+
+
+\begin{thebibliography}{1}
+
+\bibitem{GENIE}
+Andreopoulos, C. \textit{et al}.
+\textit{The GENIE Neutrino Monte Carlo Generator}.
+Nucl.Instrum.Meth. A614 (2010) 87-104 arXiv:0905.2517 [hep-ph] FERMILAB-PUB-09-418-CD
+
+\bibitem{NEUT}
+Hayato, Yoshinari 
+\textit{A neutrino interaction simulation program library NEUT}.
+Acta Phys.Polon. B40 (2009) 2477-2489
+
+\bibitem{NUWRO}
+T. Golan, J.T. Sobczyk, J. Zmuda
+\textit{NuWro: the Wrocław Monte Carlo Generator of Neutrino Interactions}.
+Nuclear Physics B - Proceedings Supplements 229 (2012) 499
+
+\bibitem{NUISANCE}
+P. Stowell, C. Wret, C. Wilkinson, L. Pickering, S. Cartwright, Y. Hayato, K. Mahn, K.S. McFarland, J. Sobczyk, R. Terri, L. Thompson, M.O. Wascko, Y. Uchida
+\textit{NUISANCE: a neutrino cross-section generator tuning and comparison framework}
+arXiv:1612:07393v2
+
+\end{thebibliography}
 
 
 \end{document}
