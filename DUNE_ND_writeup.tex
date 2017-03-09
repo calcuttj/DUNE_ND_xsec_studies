@@ -183,7 +183,50 @@ Work has begun to include tracking/PID efficiencies to accept or reject final st
 
 \subsection{Neutron Multiplicities \& Energy}
 
-Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models. This will be highlighted in conjunction with the variations in the difference between Ereco and Enu. Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
+Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
+
+To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
+This was done for CCQE-like, CC1$\pi$, 2P2H, and everything else (``Other'') interactions.  
+In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
+These differences only account for a small fraction of the events.
+Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2P2H, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
+  
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_GENIE_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NEUT_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NUWRO_ND_numu.pdf}
+\end{subfigure}
+\caption{The neutron multiplicity vs total neutron energy for 2P2H interactions for GENIE, NEUT, and NUWRO, respectively.  Even though they do show a different phase-space for the nuetron multiplicity, they all agree where most of the energy lost ot neutrons should be.  This is similuar for other interaction types as well.}
+\label{fig:Neutron_multi_2p2h_ND}
+\end{figure}
+
+Further more, the difference in the multiplicities between the generators becomes irrelavant after a ND to FD extraction, as can be seen in Figure~\ref{fig:Neutron_multi_2p2h_ND_FD}.
+Here, the region where the most energy is lost agrees very well between the ND and FD for all generators and interaction types.
+The areas with low statistics do show a disagreement, but very few events fall into this area.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_GENIE_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NEUT_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NUWRO_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\caption{The ratio of the ND to the FD for neutron multiplicity vs total neutron energy for 2P2H interactions for GENIE, NEUT, and NUWRO, respectively.  In the area where the largest amount of energy is lost to neutrons, low multiplicity and low energy, the agreement between the ND and FD is almost perfect.} 
+\label{fig:Neutron_multi_2p2h_ND_FD}
+\end{figure}
+
+
+ Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
 \subsection{Particle Multiplicity and Momentum}
 
