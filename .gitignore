@@ -2,4 +2,5 @@
 *.log
 *.out
 *.synctex.gz
-
+DUNE_ND_writeup.pdf
+plots_appendix.pdf
