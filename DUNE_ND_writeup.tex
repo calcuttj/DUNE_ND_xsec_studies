@@ -149,10 +149,10 @@ The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseli
 As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}\cite{GENIE}, NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}\cite{NEUT}, and NuWro\footnote[3]{NuWro version (FIND THE VERSION) LFG + RPA + Nieves et. al}\cite{NUWRO} according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr\footnote[4]{~100 MeV/c} and LAr ND and FD\footnote[5]{~200 MeV/c}. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
 \begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{numu_ND_flux.png}
+\includegraphics[width=\linewidth]{Dune_Flux/numu_ND_flux.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{trkeff_proton.png}
+\includegraphics[width=\linewidth]{eff_plots/fgt_trkeff_proton.png}
 \endminipage
 \caption{Left: $\nu_\mu$ flux at DUNE ND used to generate events, Right: Tracking efficiency for protons in FGT.}
 \end{figure}
@@ -262,20 +262,20 @@ The first study to be considered is the sufficiency of a purely $Q^2$ parameteri
 %\newline
 \begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2_ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2_ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
 \endminipage
 \caption{$Q^2$ distributed events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Of note is the relative flatness in the low-$Q^2$ region in the double ratio, becoming less flat toward the higher end.}
 \end{figure}
 %\newline
 \begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2_ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2_ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
 \endminipage
 \caption{$Q^2$ distributed events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND (high $Q^2$ region out of bounds of plot), Right: Double ratio of NEUT to GENIE, Near to Far. Flatness is generally lost throughout double ratio, particularly made worse in higher end.}
 \end{figure}
@@ -287,20 +287,20 @@ In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ param
 %\newline
 \begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3_ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3_ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
 \endminipage
 \caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far}
 \end{figure}
 %\newline
 \begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3_ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3_ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
 \endminipage
 \caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Much of the FD has a tighter phase space due to being generator-level truth information, so a good deal of the ND-with-efficiency phase space is lost. Within the FD-covered phase space in the double ratio, flatness seems to be lost in the lower region, and much more bin-to-bin variation is present in the upper region (possibly need more statistics?).}
 \end{figure}
