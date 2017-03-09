@@ -146,7 +146,7 @@ The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseli
 %\end{enumerate}
 
 \section{Methods}
-As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}\cite{GENIE}, NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}\cite{NEUT}, and NuWro\footnote[3]{NuWro version (FIND THE VERSION) LFG + RPA + Nieves et. al}\cite{NUWRO} according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr\footnote[4]{~100 MeV/c} and LAr ND and FD\footnote[5]{~200 MeV/c}. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
+As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}\cite{GENIE}, NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}\cite{NEUT}, and NuWro\footnote[3]{NuWro version 11, LFG + RPA + Nieves et. al}\cite{NUWRO} according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr\footnote[4]{~100 MeV/c} and LAr ND and FD\footnote[5]{~200 MeV/c}. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
 \begin{figure}[h]
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Dune_Flux/numu_ND_flux.png}
@@ -162,7 +162,7 @@ As the analysis techniques for DUNE are developed, checks on the cross section m
 
 %\subsection{Final State, Reconstructed Energy}
 
-A framework for investigating the differences in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
+A framework for investigating variations in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
 
 The current development of this work includes a calculation of the final state energy by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons after passing efficiencies through the data sets. All neutrons are assumed undetectable. 
 This can be summed up in Equation~\ref{eq:ereco}:
@@ -171,16 +171,10 @@ E_{reco} = \Sigma {E_{lep}} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
 \label{eq:ereco}
 \end{equation}
 where $E_{lep}$ is the energy of the outgoing lepton, $E_{pi}$ is the energy of the charged pion, and $E_{prot}$ $(M_{prot})$ is the energy (momentum) of the proton.
-This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators, including GENIE, NEUT, and NUWRO, into a common format that can easily be analyzed. 
+This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
+Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
 
-%More sophisticated calculations of reconstructed energy, based on the type of detector design being considered, will be developed, and particle tracking and PID efficiencies for each detector will be included as this information becomes available.
-Work has begun to include tracking/PID efficiencies to accept or reject final state particles. 
-So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available.
-Future studies intend to include both the efficiencies and acceptance of the LAr or GAr TPCs once this information become avaliable.
-% * <calcuttj@msu.edu> 2017-02-27T16:22:43.284Z:
-%
-% ^.
-
+To investigate these variations, the difference between true and reconstructed neutrino energy from each generator are plotted for each near detector configuration as well as the far detector, and for different reaction types (true-CCQE, true-2p2h, CC0Pi, CC1Pi, CCOther). 
 %As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
 
 
@@ -255,7 +249,19 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \subsection{Particle Multiplicity and Momentum}
 
 Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and charged pions along with detector thresholds can enlighten the ability of the detectors' reconstruction capabilities. For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. 
-
+\begin{figure}[h]
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_near_N_P.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_far_N_P.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_NF_N_P.png}
+\endminipage
+\caption{Nprotons vs. P protons distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND with FGT efficiencies, Mid: Ratio of NEUT to GENIE output at FD with LAr efficiencies, Right: Double ratio of NEUT to GENIE, Near to Far}
+\end{figure}
+\FloatBarrier
 %\begin{equation}
 %|\vec{P_{total,i}}| = |\Sigma \vec{P_i}|
 %\end{equation}
@@ -263,7 +269,7 @@ Nucleon multiplicity and momentum distributions offer similar information as do 
 \section{Parameterization}
 \subsection{$Q^2$ studies}
 
-The first study to be considered is the sufficiency of a purely $Q^2$ parameterization (a la VALOR) in treating the uncertainties for CCQE. To be considered is the relative change between the models (displayed as a single ratio of Other/GENIE separately at the near and far detectors) and this change as it is extrapolated between the near and far detector (as a double ratio of Other/GENIE,Near/Far).
+Currently, a 3-bin $Q^2$ parameterization (edges: {0, 0.20, 0.55, 1000} $\textrm{GeV}^2$) has been suggested by VALOR(DO I NEED A REF FOR THIS?) for CCQE analysis. The first study to be considered is the sufficiency of this purely $Q^2$ parameterization in treating the uncertainties for CCQE. To be considered is the relative change between the models (displayed as a single ratio of Other/GENIE separately at the near and far detectors) and this change as it is extrapolated between the near and far detector (as a double ratio of Other/GENIE,Near/Far).
 %\newline
 \begin{figure}[h]
 \minipage{.5\textwidth}
@@ -282,7 +288,7 @@ The first study to be considered is the sufficiency of a purely $Q^2$ parameteri
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
 \endminipage
-\caption{$Q^2$ distributed events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND (high $Q^2$ region out of bounds of plot), Right: Double ratio of NEUT to GENIE, Near to Far. Flatness is generally lost throughout double ratio, particularly made worse in higher end.}
+\caption{$Q^2$ distributed events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Ratio of NEUT to GENIE output at ND (high $Q^2$ region out of bounds of plot), Right: Double ratio of NEUT to GENIE, Near to Far. Flatness is generally lost throughout double ratio, particularly made worse in higher end.}
 \end{figure}
 \FloatBarrier
 
@@ -307,7 +313,7 @@ In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ param
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
 \endminipage
-\caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Much of the FD has a tighter phase space due to being generator-level truth information, so a good deal of the ND-with-efficiency phase space is lost. Within the FD-covered phase space in the double ratio, flatness seems to be lost in the lower region, and much more bin-to-bin variation is present in the upper region (possibly need more statistics?).}
+\caption{q3 vs. q0 distributed events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far.}
 \end{figure}
 \FloatBarrier
 
@@ -355,8 +361,17 @@ P. Stowell, C. Wret, C. Wilkinson, L. Pickering, S. Cartwright, Y. Hayato, K. Ma
 \textit{NUISANCE: a neutrino cross-section generator tuning and comparison framework}
 arXiv:1612:07393v2
 
-\end{thebibliography}
+\bibitem{DUNE_CDR1}
+The DUNE Collaboration
+\textit{Long-Baseline Neutrino Facility (LBNF) and Deep Underground Neutrino Experiment (DUNE) Conceptual Design Report Volume 1: The LBNF and DUNE Projects}
+arXiv:1601.05471v1
 
+\bibitem{DUNE_review}
+Maury Goodman
+\textit{The Deep Underground Neutrino Experiment}
+Advances in High Energy Physics, vol. 2015, Article ID 256351, 9 pages, 2015. doi:10.1155/2015/256351
+
+\end{thebibliography}
 
 \end{document}
 
