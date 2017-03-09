@@ -145,7 +145,7 @@ The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseli
 %\item  Make recommendations for a long term strategy for DUNE to study ND capabilities to i) measure neutrino-nucleus interactions and ii) constrain oscillation physics systematic uncertainties,  beyond the scope of the task force (task force charge can be found at this \url{https://docs.google.com/presentation/d16yY5CzRwo_243jpBzhVVeunvxYjIb7FzoS745RwURgw/edit#slide=id.p7}{link}.
 %\end{enumerate}
 
-\section{Motivation, Methods, and Results}
+\section{Methods}
 As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with the GENIE\footnote[1]{GENIE version 2.10, RFG}\cite{GENIE}, NEUT\footnote[2]{NEUT version 5.3.6, Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01}\cite{NEUT}, and NuWro\footnote[3]{NuWro version (FIND THE VERSION) LFG + RPA + Nieves et. al}\cite{NUWRO} according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected according to efficiencies for each detector. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr\footnote[4]{~100 MeV/c} and LAr ND and FD\footnote[5]{~200 MeV/c}. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
 \begin{figure}[h]
 \minipage{.5\textwidth}
@@ -165,13 +165,18 @@ As the analysis techniques for DUNE are developed, checks on the cross section m
 A framework for investigating the differences in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
 
 The current development of this work includes a calculation of the final state energy by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons after passing efficiencies through the data sets. All neutrons are assumed undetectable. 
+This can be summed up in Equation~\ref{eq:ereco}:
 \begin{equation}
 E_{reco} = \Sigma {E_{lep}} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
+\label{eq:ereco}
 \end{equation}
-This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
+where $E_{lep}$ is the energy of the outgoing lepton, $E_{pi}$ is the energy of the charged pion, and $E_{prot}$ $(M_{prot})$ is the energy (momentum) of the proton.
+This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators, including GENIE, NEUT, and NUWRO, into a common format that can easily be analyzed. 
 
 %More sophisticated calculations of reconstructed energy, based on the type of detector design being considered, will be developed, and particle tracking and PID efficiencies for each detector will be included as this information becomes available.
-Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
+Work has begun to include tracking/PID efficiencies to accept or reject final state particles. 
+So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available.
+Future studies intend to include both the efficiencies and acceptance of the LAr or GAr TPCs once this information become avaliable.
 % * <calcuttj@msu.edu> 2017-02-27T16:22:43.284Z:
 %
 % ^.
@@ -317,9 +322,10 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 \begin{itemize}
 
 
-\item Extend studies to include LAr and GAr efficiency information when available
+\item Extend studies to include LAr and GAr efficiency and acceptance information when available.
 %\item Current uncertainties are invariant of target choice. Need to extend studies to include Calcium-40 target for FGT studies
-\item Map from Ereco, yreco into true variables and investigate differences between configurations
+\item Include a mapping of $E_{true}$ to $E_{reco}$ along with $y_{true}$ to $y_{reco}$ and investigate differences between configurations.
+
 \end{itemize}
 
 
