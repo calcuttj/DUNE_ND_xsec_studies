@@ -186,10 +186,10 @@ Work has begun to include tracking/PID efficiencies to accept or reject final st
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
-This was done for CCQE-like, CC1$\pi$, 2P2H, and everything else (``Other'') interactions.  
+This was done for CCQE-like, CC1$\pi$, 2P2H, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
 These differences only account for a small fraction of the events.
-Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2P2H, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
+Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2P2H neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
   
 \begin{figure}
 \centering
@@ -225,6 +225,10 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \label{fig:Neutron_multi_2p2h_ND_FD}
 \end{figure}
 
+Care should still be taken when calculating the total neutrino of the event if only a calorimetric approach is used, as is the case in this document.
+This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
+Even for 2P2H events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
+The other interaction modes and anti-neutrino 
 
  Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
