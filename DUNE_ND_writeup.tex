@@ -146,16 +146,31 @@ The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseli
 %\end{enumerate}
 
 \section{Methods}
-As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with Monte Carlo Generators - GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al - according to the 2015 DUNE CDR fluxes. The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. Each particle is than randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle and its momentum. Currently, only a robust description of the FGT efficiency is available, and simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
+As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with Monte Carlo Generators - GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al - according to the 2015 DUNE CDR fluxes. The $\nu_\mu$ Near Detector flux used in this work is showin in figure  The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. 
 \begin{figure}[h]
+%\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Dune_Flux/numu_ND_flux.png}
 \endminipage
 \minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Dune_Flux/numu_FD_flux.png}
+\endminipage
+\caption{$\nu_\mu$ flux at DUNE ND (Left) and FD (Right)}
+\end{figure}
+\FloatBarrier
+
+Each particle is then randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle and its momentum. Currently, only a robust description of the FGT efficiency is available. An example of the efficiency for protons in the FGT is given in Figure 2. Simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
+\begin{figure}[h]
+%\centering
+\minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{eff_plots/fgt_trkeff_proton.png}
 \endminipage
-\caption{Left: $\nu_\mu$ flux at DUNE ND used to generate events, Right: Tracking efficiency for protons in FGT.}
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_plots/fgt_pideff_proton.png}
+\endminipage
+\caption{Left: Tracking efficiency for protons in FGT. Right: PID efficiency for protons in FGT. Total efficiency for a given proton momentum is given by the product of the two efficiencies.}
 \end{figure}
+
 %\newline
 
 \section{Reconstructed Energy}\label{sec:Reco}
