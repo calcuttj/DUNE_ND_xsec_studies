@@ -258,6 +258,7 @@ Meanwhile, for $\bar{\nu_\mu}$ CCQE, 2p2h, and CC1$\pi$ events NuWro consistentl
 
 
 \subsection{Neutron Multiplicities \& Energy}
+\label{sec:N_multiplicities_Energy}
 
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
@@ -323,6 +324,7 @@ The other interaction modes and anti-neutrino events can also be found in Append
  Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
 \subsection{Particle Multiplicity and Momentum}
+\label{sec:Particle_multiplicities_Energy}
 
 Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and charged pions along with detector thresholds can enlighten the ability of the detectors' reconstruction capabilities. For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. 
 \begin{figure}[h]
@@ -458,7 +460,124 @@ In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ param
 
 \subsection{Nucleon multiplicity vs. W}
 
-Differences in mapping from Ereco to true variables can arise from shape differences in Nucleon multiplicities vs. W distributions. The first foray into these studies have been started, and need to be fleshed out for meaningful results. 
+Differences in mapping from $E_{reco}$ to true variables can arise from shape differences in nucleon multiplicities vs. W distributions. 
+These distributions can also show where in the phase space most of the events shown in Section~\ref{sec:N_multiplicities_Energy} and Section~\ref{sec:Particle_multiplicities_Energy} exist.  A first look of this is shown in this section.
+
+\subsubsection{Neutrons vs W}
+
+Apart from the difference in neutron multiplicity discussed in Section~\ref{sec:N_multiplicities_Energy}, the exact phase space of these event in the neutron/W plane is slightly different.  
+This is most pronounced for 2P2H events, as can be seen in Figure~\ref{Neutron_w_2p2h_ND}. 
+The width of NEUT's peak is broader then GENIE's or NUWRO's while NUWRO allows for much higher W's.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_GENIE_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NEUT_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NUWRO_ND_numu.pdf}
+\end{subfigure}
+\caption{The neutron multiplicity vs W for 2P2H interactions from GENIE, NEUT, and NUWRO, respectively.  It can be seen that all three event generators have the peak of the distribution at the same place, but NEUT's peak is much broader while NUWRO allows for much higher W's.}
+\label{fig:Neutron_w_2p2h_ND}
+\end{figure}
+
+However, Figure~\ref{fig:Neutron_w_2p2h_ND_FD} shows that the differences are not so important if a near to far extrapolation is used, as both the ND and FD have simular responses.
+To see if the different models could have a larger affect on the physics results, we have taken a double ratio of the ND/FD and the different generators to GENIE.  
+Interestingly, Figure~\ref{fig:Neutron_w_2p2h_ND_FD_GENIE} indicates that there would not be large affect if a few perecent difference between the models is acceptable.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_GENIE_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NEUT_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NUWRO_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\caption{The ND/FD ratio of neutron multiplicity vs W for 2P2H interactions from GENIE, NEUT, and NUWRO, respectively.  The effects of the different phase space seen in Figure~\ref{fig:Neutron_w_2p2h_ND} is not great if a ND ro FD extropolation is used.  This can be seen by the ratio being very close to one at the peak of Figure~\ref{fig:Neutron_w_2p2h_ND} distribution.}
+\label{fig:Neutron_w_2p2h_ND_FD}
+\end{figure}
+
+These results are also true for protons and pions, though pions have a much lower multiplicity.  
+Those results, along with other interactions can be found in Appendix~\ref{ap:Nucleon_W}.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_GENIE_NEUT_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_GENIE_NUWRO_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\caption{The double ratio of ND/FD and the event generators to GENIE of the neutron multiplicity vs W for 2P2H interactions.  Despite the differences seen in the W distributions, the double ratio shows suprisingly good agreement between the generators, indicating that the different models should not have a large impact on the final results.}
+\label{fig:Neutron_w_2p2h_ND_FD_GENIE}
+\end{figure}
+
+\subsubsection{Protons vs W}
+
+In the last section we saw a differnce in the phase space between the different generators.  
+Now we will show an instance where the phase space is almost the same but there is a large difference between the ND and FD.  
+Though here we are only showing the results for CC1$\pi$ via protons, the results are the same for CC-Other (anything not CCQE, CC1$\pi$, or 2P2H), and neutrons along with pions.
+Figure~\ref{fig:Proton_w_res_ND} shows that GENIE, NEUT, and NUWRO have very similar distributions.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_GENIE_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_NEUT_ND_numu.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_NUWRO_ND_numu.pdf}
+\end{subfigure}
+\caption{The proton multiplicity vs W for CC1$\pi$ interactions from GENIE, NEUT, and NUWRO, respectively.  It can be seen that all three event generators have the peak of their distribution at the same place and are almost identical}
+\label{fig:Proton_w_res_ND}
+\end{figure}
+
+If a near to far detector extrapolation is used, however, there are much larger differences in region of most interest. 
+Figure~\ref{fig:Proton_w_res_ND_FD} shows that there is a difference between the two detectors between 20\% and 40\% at the peak of the distribution.  
+There is also a clear difference in lower W values compared to higher W values. 
+
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_GENIE_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_NEUT_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_NUWRO_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\caption{The ND/FD ratio of the proton multiplicity vs W for CC1$\pi$ interactions from GENIE, NEUT, and NUWRO, respectively.  Unlike with 2P2H events shown for neutrons, there are clear differences between the ND and FD.  At the peak of the distribution this is between 20\% and 40\%.  Furthermore, there is a clear difference between W values below 2000 and ones above it.}
+\label{fig:Proton_w_res_ND_FD}
+\end{figure}
+
+We can again see if the different models could have a larger affect on the physics results, by taking the double ratio as we did before.
+Simular to before, Figure~\ref{fig:Proton_w_res_ND_FD_GENIE} indicates that there would not be large affect if a few perecent difference between the models is acceptable.
+In the region of interest, the difference between GENIE and NEUT is negligable while it is small compared to NUWRO.
+
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_GENIE_NEUT_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+  \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_GENIE_NUWRO_ND_FD_numu_norm.pdf}
+\end{subfigure}
+\caption{The double ratio of ND/FD and the event generators to GENIE of the proton multiplicity vs W for CC1$\pi$ interactions.  Despite the differences seen in the single ratio, the double ratio shows suprisingly good agreement between the generators}
+\label{fig:Proton_w_res_ND_FD_GENIE}
+\end{figure}
+
+
 
 \section{Future Work}\label{sec:Future}
 
