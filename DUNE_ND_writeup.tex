@@ -89,6 +89,7 @@
 \newcommand{\elt}{\ensuremath{E_{<}}\xspace}
 \newcommand{\egt}{\ensuremath{E_{>}}\xspace}
 
+
 \renewcommand\Im{\operatorname{Im}}
 
 \graphicspath{{figures/}}
@@ -146,9 +147,9 @@ The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseli
 %\end{enumerate}
 
 \section{Methods}
-As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with Monte Carlo Generators - GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al - according to the 2015 DUNE CDR fluxes. The $\nu_\mu$ Near Detector flux used in this work is showin in figure  The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. 
+As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with Monte Carlo Generators - GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al - according to the 2015 DUNE CDR fluxes. The $\nu_\mu$ Near Detector and Far Detector fluxes used in this work are showin in Figure~\ref{fig:dune_flux}.  The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. 
 \begin{figure}[h]
-%\centering
+\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Dune_Flux/numu_ND_flux.png}
 \endminipage
@@ -156,12 +157,13 @@ As the analysis techniques for DUNE are developed, checks on the cross section m
 \includegraphics[width=\linewidth]{Dune_Flux/numu_FD_flux.png}
 \endminipage
 \caption{$\nu_\mu$ flux at DUNE ND (Left) and FD (Right)}
+\label{fig:dune_flux}
 \end{figure}
 \FloatBarrier
 
-Each particle is then randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle and its momentum. Currently, only a robust description of the FGT efficiency is available. An example of the efficiency for protons in the FGT is given in Figure 2. Simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
+Each particle is then randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle and its momentum. Currently, only a robust description of the FGT efficiency is available. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}. Simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so are assumed fully accepted.
 \begin{figure}[h]
-%\centering
+\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{eff_plots/fgt_trkeff_proton.png}
 \endminipage
@@ -169,6 +171,7 @@ Each particle is then randomly accepted or rejected by throwing a random number 
 \includegraphics[width=\linewidth]{eff_plots/fgt_pideff_proton.png}
 \endminipage
 \caption{Left: Tracking efficiency for protons in FGT. Right: PID efficiency for protons in FGT. Total efficiency for a given proton momentum is given by the product of the two efficiencies.}
+\label{fig:FGT_proton_effs}
 \end{figure}
 
 %\newline
@@ -191,7 +194,64 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{pi}$ is the energy of 
 
 %\subsection{$E_\nu - E_{reco}$} 
 \subsection{Difference from True Neutrino Energy}
-To investigate these variations, the difference between true and reconstructed neutrino energy from each generator are plotted for each near detector configuration as well as the far detector, and for different reaction types (true-CCQE, true-2p2h, CC0Pi, CC1Pi, CCOther). 
+To investigate these variations, the difference between true and reconstructed neutrino energy from each generator - where NuWro and NEUT distributions have been normalized to GENIE - are plotted for each near detector configuration as well as the far detector, and for different reaction types. The reaction types considered are true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction with 1 reconstructed lepton. CC0$\pi$ is defined as 0 charged $\pi$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 charged $\pi$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
+
+In $\nu_\mu$ mode: for all reaction types except CCOther, all three generators seem to have similar differences in all detector configurations. This is evident in Figure~\ref{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther} and the figures in appendix (ref appendix). For CCOther, all three generators appear to have a long tail extending to high discrepancy regions - well past that of CCQE for example - though NuWro has a higher amount of events in the $\Delta E$ = .5 GeV to 2 GeV region. 
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCQE.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCOther.png}
+\endminipage
+\caption{Difference between true and reconstructed Neutrino Energy in the FGT ND. CCQE events seem to have similar discrepancies, while CCOther mode has large tails in all three generators with NuWro having more events with higher discrepancy than the other two. }
+\label{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther}
+\end{figure}
+\FloatBarrier
+
+Meanwhile, for $\bar{\nu_\mu}$ CCQE, 2p2h, and CC1$\pi$ events NuWro consistently has $\Delta E$ closer to 0 than the other generators as shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}. In CC1$\pi$ and CCOther NuWro again has more events with higher discrepancies, shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}. Additionally, a large difference in the distribution of events from NEUT and NuWro between the FGT and LAr FD, which is slightly better in the LAr ND, as can be seen in Figure~\ref{fig:numubar_Etrue_ereco_CCOther_diffs}.
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCQE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_2p2h.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC0Pi.png}
+\endminipage
+\caption{NuWro can be seen to have consistently less discrepancy in reconstructed energy than NEUT and GENIE in CCQE, 2p2h, and CCO$\pi$. }
+\label{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC1Pi.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
+\endminipage
+\caption{NuWro has higher discrepancy in reconstructed energy than NEUT and GENIE in both CC1$\pi$ and CCOther.}
+\label{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CCOther.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_LAr_CCOther.png}
+\endminipage
+\caption{NuWro CCOther events have differences in shape between the Far Detector and LAr FD. The LAr ND matches more closely.}
+\label{fig:numubar_Etrue_ereco_CCOther_diffs}
+\end{figure}
+\FloatBarrier
+
 %As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
 
 
