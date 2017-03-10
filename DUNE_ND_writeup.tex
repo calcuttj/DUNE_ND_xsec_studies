@@ -435,29 +435,120 @@ For 2p2h events, large variations in $\bar{\nu_{\mu}}$ ratios are present, simil
 
 \subsection{$q_0 \textrm{vs.} q_3$ studies}
 
-In comparison to the purely $Q^2$ parameterization, a simple $q_0 vs. q_3$ parameterization was also considered. One concern is the possibility of inconsistency between the two parameterizations in variations between models. 
+In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{vs.} q_3$ space were also investigated to explore possibilities that variations are highlighted when mapping from $Q^2$ to $q_0 \textrm{vs.} q_3$ (I'M KIND OF UNSURE OF THE SPECIFICS OF WHY WE DID THIS, OR AT LEAST I CAN'T FIGURE OUT HOW TO ELOQUENTLY STATE IT, IS THIS RIGHT?). This was done in the exact same way as the previous section, only with the elements distributed in $q_0 \textrm{vs.} q_3$ bins. Note: for the following distributions, the scale extends from 0 to 2. This was chosen for aesthetic reasons, and so any bins which appear to be at 2, could possibly be well above that number. This should not affect interpretations of the plots so much, since the point is to look at relative how close - the fainter blue and red or white bins - or far - the more solid blue and red bins - the ratios are from 1. 
+
+For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear pretty flat for both NEUT and NuWro, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}, though there is a bit of bin-to-bin variation in the upper right region. When adding efficiencies, the phase space is smeared out and  more bin-to-bin variation arises as shown in Figure~\ref{fig:q0q3_numu_CCQE_FGT_eff}.
 %\newline
 \begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
-\endminipage
+\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
 \endminipage
-\caption{q3 vs. q0 distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far}
-\end{figure}
-%\newline
-\begin{figure}[h]
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_near_q3_q0.png}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
 \endminipage
+\caption{$q_0 \textrm{vs.} q_3$ $\nu_{\mu}$ events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat distributions, but with bin-to-bin variations}
+\label{fig:q0q3_numu_CCQE_no_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
 \endminipage
-\caption{q3 vs. q0 distributed events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far.}
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{q3 vs. q0 $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Distributions smeared out and variations between bins are higher than without efficiencies}
+\label{fig:q0q3_numu_CCQE_FGT_eff}
 \end{figure}
 \FloatBarrier
 
+For $\bar{\nu_{\mu}}$ CCQE, however, there is a dramatic difference between NuWro and NEUT when looking at the ratios without efficiencies. Shown in Figure~\ref{fig:q0q3_numubar_CCQE_no_eff}, it can be seen that the ratio to GENIE events is consistently higher in the upper-right region of the NuWro distribution as opposed to NEUT, which is more similar to the corresponding $\nu_{\mu}$ ratio. When adding efficiencies, much of the upper right region is cut out in GENIE and NEUT, shown in Figure~\ref{fig:q0q3_numubar_CCQE_events_FGT_eff}, resulting in empty bins in both double ratios. However, NEUT appears to have less events in the bins which it shares with GENIE, while NuWro has more, which is evident in Figure ~\ref{fig:q0q3_numubar_CCQE_FGT_eff}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{vs.} q_3$ $\bar{\nu_{\mu}}$ events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat distributions, but with bin-to-bin variations}
+\label{fig:q0q3_numubar_CCQE_no_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NuWro.png}
+\endminipage
+\caption{$q_0 \textrm{vs.} q_3$ $\bar{\nu_{\mu}}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. Both GENIE and NEUT cut out the upper right region of phase space as opposed to NuWro.}
+\label{fig:q0q3_numubar_CCQE_events_FGT_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{vs.} q_3$ $\bar{\nu_{\mu}}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. NEUT appears to undershoot GENIE while NuWro overshoots GENIE.}
+\label{fig:q0q3_numubar_CCQE_FGT_eff}
+\end{figure}
+\FloatBarrier
+Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and $\bar{\nu_{\mu}}$ events, as can be seen in the upper half of Figure~\ref{}. This causes very restriced phase space in the double ratios. However, adding efficiencies smears out the phase space, causing more space to be shared between generators, though there are still variations in the shapes. See the bottom half of Figure~\ref{fig:q0q3_numu_2p2h_events}. The double ratios seem to be mostly flat for both NEUT and NuWro in the FGT for $\nu_{\mu}$, seen in Figure~\ref{fig:q0q3_numu_2p2h_FGT_eff}. However for $\bar{\nu_{\mu}}$ 2p2h in the FGT, both NEUT and NuWro produce more events in the regions shared with GENIE, seen in Figure~\ref{fig:q0q3_numubar_2p2h_FGT_eff}
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
+\endminipage
+\newline
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
+\endminipage
+\caption{$q_0 \textrm{vs.} q_3$ $\nu_{\mu}$ events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The phase spaces are very different without efficiencies, and restrict the coverage of the doubel ratios. With efficiencies, more phase space is shared.}
+\label{fig:q0q3_numu_2p2h_events}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{q3 vs. q0 $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Ratios appear mostly flat.}
+\label{fig:q0q3_numu_2p2h_FGT_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{q3 vs. q0 $\bar{\nu_{\mu}}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Both double ratios consistently higher than 1.}
+\label{fig:q0q3_numubar_2p2h_FGT_eff}
+\end{figure}
+\FloatBarrier
 \subsection{Nucleon multiplicity vs. W}
 
 Differences in mapping from $E_{reco}$ to true variables can arise from shape differences in nucleon multiplicities vs. W distributions. 
