@@ -323,7 +323,7 @@ The other interaction modes and anti-neutrino events can also be found in Append
 
  Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
-\subsection{Particle Multiplicity and Momentum}
+\subsection{Proton/Pion Multiplicity and Momentum}
 \label{sec:Particle_multiplicities_momentum}
 
 Nucleon multiplicity and momentum distributions offer similar information as do N vs. E distributions, while specifically looking at protons and charged pions along with detector thresholds can enlighten the ability of the detectors' reconstruction capabilities. For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. 
@@ -436,7 +436,7 @@ For 2p2h events, large variations in $\bar{\nu_{\mu}}$ ratios are present, simil
 
 \subsection{$q_0 \textrm{ vs. } q_3$ studies}
 \label{subsec:q0q3}
-In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ vs. } q_3$ space were also investigated to explore possibilities that variations are highlighted when mapping from $Q^2$ to $q_0 \textrm{ vs. } q_3$ (I'M KIND OF UNSURE OF THE SPECIFICS OF WHY WE DID THIS, OR AT LEAST I CAN'T FIGURE OUT HOW TO ELOQUENTLY STATE IT, IS THIS RIGHT?). This was done in the exact same way as the previous section, only with the elements distributed in $q_0 \textrm{ vs. } q_3$ bins. Note: for the following distributions, the scale extends from 0 to 2. This was chosen for aesthetic reasons, and so any bins which appear to be at 2, could possibly be well above that number. This should not affect interpretations of the plots so much, since the point is to look at relative how close - the fainter blue and red or white bins - or far - the more solid blue and red bins - the ratios are from 1. 
+In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ vs. } q_3$ space were also investigated to explore possibilities that variations are highlighted when chaning the parameterization from $Q^2$ to $q_0 \textrm{ vs. } q_3$. It is possible that the $Q^2$ double ratios can appear flat, while $q_0 \textrm{ vs. } q_3$ distributed double ratios do not. If this is the case, a pure-$Q^2$ parameterization cannot sufficiently account for variations in model FSI effects. These studies were done in the exact same way as those in the previous section, only with the elements distributed in $q_0 \textrm{ vs. } q_3$ bins. Note: for the following distributions, the scale extends from 0 to 2. This was chosen for aesthetic reasons, and so any bins which appear to be at 2, could possibly be well above that number. This should not affect interpretations of the plots so much, since the point is to look at relative how close - the fainter blue and red or white bins - or far - the more solid blue and red bins - the ratios are from 1. 
 
 For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear pretty flat for both NEUT and NuWro, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}, though there is a bit of bin-to-bin variation in the upper right region. When adding efficiencies, the phase space is smeared out and  more bin-to-bin variation arises as shown in Figure~\ref{fig:q0q3_numu_CCQE_FGT_eff}.
 %\newline
@@ -464,7 +464,7 @@ For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear pretty flat 
 \end{figure}
 \FloatBarrier
 
-For $\bar{\nu_{\mu}}$ CCQE, however, there is a dramatic difference between NuWro and NEUT when looking at the ratios without efficiencies. Shown in Figure~\ref{fig:q0q3_numubar_CCQE_no_eff}, it can be seen that the double ratio is consistently higher in the upper-right region of the NuWro/GENIE distribution as opposed to NEUT/GENIE, which is more similar to the corresponding $\nu_{\mu}$ ratio. When adding efficiencies, much of the upper right region is cut out in GENIE and NEUT, shown in Figure~\ref{fig:q0q3_numubar_CCQE_events_FGT_eff}, resulting in empty bins in both double ratios. Despite the distorted phase space, the NEUT/GENIE $\bar{\nu_{\mu}}$ CCQE double ratio appears to behave similarly to the corresponding $\nu_{\mu}$ CCQE double ratio, while NuWro consistently has ratios greater than 1, which is evident in Figure ~\ref{fig:q0q3_numubar_CCQE_FGT_eff}
+For $\bar{\nu_{\mu}}$ CCQE, however, there is a dramatic difference between NuWro and NEUT when looking at the ratios without efficiencies. Shown in Figure~\ref{fig:q0q3_numubar_CCQE_no_eff}, it can be seen that the double ratio is consistently higher in the upper-right region of the NuWro/GENIE distribution as opposed to NEUT/GENIE, which is more similar to the corresponding $\nu_{\mu}$ ratio. When adding efficiencies, much of the upper right region is cut out in GENIE and NEUT, shown in Figure~\ref{fig:q0q3_numubar_CCQE_events_FGT_eff}, resulting in empty bins in both double ratios. Despite the distorted phase space, the NEUT/GENIE $\bar{\nu_{\mu}}$ CCQE double ratio appears to behave similarly to the corresponding $\nu_{\mu}$ CCQE double ratio, while NuWro has ratios greater than 1 throughout the shared phaes space, which is evident in Figure ~\ref{fig:q0q3_numubar_CCQE_FGT_eff}
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
@@ -473,7 +473,7 @@ For $\bar{\nu_{\mu}}$ CCQE, however, there is a dramatic difference between NuWr
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
 \endminipage
-\caption{$q_0 \textrm{ vs. } q_3$ $\bar{\nu_{\mu}}$ events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat distributions, but with bin-to-bin variations}
+\caption{$q_0 \textrm{ vs. } q_3$ $\bar{\nu_{\mu}}$ events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat for NEUT/GENIE. NuWro/GENIE double ratio has heavy disagreement in upper-right region.}
 \label{fig:q0q3_numubar_CCQE_no_eff}
 \end{figure}
 \begin{figure}[h]
@@ -721,7 +721,8 @@ In the region of interest, the difference between GENIE and NEUT is negligable w
 \label{fig:Proton_w_res_ND_FD_GENIE}
 \end{figure}
 
-
+It appears as though the pure-$Q^2$ paramterization could cover model variations for $\nu_{\mu}$ events. The near-to-far extrapolation plots - the double ratios - appear relatively flat in all reaction modes. However, the $\bar{\nu_{\mu}}$ events show that model variations are not covered in this extrapolation, at least when looking into the NuWro to GENIE double ratios. 
+There is a degree of statistical limitation of the studies at this point, evident in the presence of bin-to-bin variations. To explore this point further, these studies can quickly and easily be extended to larger data sets to deal with statistics limitations. Additionally, the statistical uncertainties in the single and double ratios will also be investigated. With these, we can move on to quantify the degree to which the near-to-far extrapolation covers variations in the $\nu_{\mu}$ case - or does not cover variations in the $\bar{\nu_{\mu}}$ case. 
 
 \section{Future Work}\label{sec:Future}
 
@@ -741,12 +742,12 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
 \appendix
 
-\subfile{Appendix_Neutron_Multi.tex}
+%\subfile{Appendix_Neutron_Multi.tex}
 
 %\subfile{Appendix_Nucleon_Multi.tex}
 
-\subfile{DUNE_appendix_Ereco_plots.tex}
-\subfile{DUNE_appendix_Q2_plots.tex}
+%\subfile{DUNE_appendix_Ereco_plots.tex}
+%\subfile{DUNE_appendix_Q2_plots.tex}
 \subfile{DUNE_appendix_q0_q3_plots.tex}
 
 
