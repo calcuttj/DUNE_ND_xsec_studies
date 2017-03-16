@@ -562,77 +562,6 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 %Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
 
 %\subsection{$E_\nu - E_{reco}$} 
-\subsection{Difference from True Neutrino Energy}
-\label{subsec:EDiff}
-To investigate these variations, the difference between true and reconstructed neutrino energy from each generator - where NuWro and NEUT distributions have been normalized to GENIE - are plotted for each near detector configuration as well as the far detector, and for different reaction types. The reaction types considered are true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction with 1 reconstructed lepton. CC0$\pi$ is defined as 0 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
-
-In $\nu_\mu$ mode: for all reaction types except CCOther, all three generators seem to have similar differences in all detector configurations. This is evident in Figure~\ref{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther} - which includes CCQE and CCOther interactions in the ND with FGT efficiencies - and the figures in Appendix~\ref{app:Ereco_app}. For CCOther, all three generators appear to have a long tail extending to high discrepancy regions - well past that of CCQE for example - though NuWro has a higher amount of events in the $\Delta E$ = 0.5 GeV to 2 GeV region. 
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCQE.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCOther.png}
-\endminipage
-\caption{Difference between true and reconstructed Neutrino Energy in the FGT ND. CCQE events seem to have similar discrepancies, while CCOther mode has large tails in all three generators with NuWro having more events with higher discrepancy than the other two. }
-\label{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther}
-\end{figure}
-\FloatBarrier
-
-Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consistently has $\Delta E$ closer to 0 than the other generators as shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}. In CC1$\pi$ and CCOther NuWro again has more events where true neutrino energy is underestimated by reconstruction, shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}. Additionally, there exists a large difference in the distribution of events from NEUT and NuWro between the FGT and LAr FD. This is slightly better in the LAr ND - as expected due to our naive LAr efficiencies. This can be seen in Figure~\ref{fig:numubar_Etrue_ereco_CCOther_diffs}.
-\begin{figure}[h]
-\centering
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCQE.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_2p2h.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC0Pi.png}
-\endminipage
-\newline
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CCQE.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_2p2h.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CC0Pi.png}
-\endminipage
-\caption{Difference between true and reconstructed $E_\nu$. Top: At Near Detector with FGT efficiencies. Bottom: Far Detector with LAr efficiencies. Left to Right: CCQE, 2p2h, CC0$\pi$. NuWro can be seen to have consistently less discrepancy in reconstructed energy than NEUT and GENIE in CCQE, 2p2h, and CC0$\pi$. }
-\label{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC1Pi.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
-\endminipage
-\caption{NuWro has higher discrepancy in reconstructed energy than NEUT and GENIE in both CC1$\pi$ and CCOther.}
-\label{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CCOther.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_LAr_CCOther.png}
-\endminipage
-\caption{NuWro CCOther events have differences in shape between the Far Detector and LAr FD. The LAr ND matches more closely, though this is expected because of our current naive efficiency assumptions.}
-\label{fig:numubar_Etrue_ereco_CCOther_diffs}
-\end{figure}
-\FloatBarrier
-
-%As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
 
 
 
@@ -707,7 +636,6 @@ The other interaction modes and anti-neutrino events can also be found in Append
 
 Similar to the neutron multiplicity and energy studies, proton and pion mutliplicities and energies offer insight into the coupling of the detector configurations with variations in FSI models as well as the energy reconstruction capabilities of the different detector configurations. The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. This was done for the FS particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther, and with all 3 ND configuration efficiencies and the LAr FD efficiencies, as well as with no efficiencies applied. As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. Note that the LAr and GAr are still only naive assumptions.
 
-
  
 \begin{figure}[h]
 \minipage{.3\textwidth}
@@ -725,6 +653,79 @@ Similar to the neutron multiplicity and energy studies, proton and pion mutlipli
 %\begin{equation}
 %|\vec{P_{total,i}}| = |\Sigma \vec{P_i}|
 %\end{equation}
+
+\subsection{Difference from True Neutrino Energy}
+\label{subsec:EDiff}
+To investigate these variations, the difference between true and reconstructed neutrino energy from each generator - where NuWro and NEUT distributions have been normalized to GENIE - are plotted for each near detector configuration as well as the far detector, and for different reaction types. The reaction types considered are true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction with 1 reconstructed lepton. CC0$\pi$ is defined as 0 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
+
+In $\nu_\mu$ mode: for all reaction types except CCOther, all three generators seem to have similar differences in all detector configurations. This is evident in Figure~\ref{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther} - which includes CCQE and CCOther interactions in the ND with FGT efficiencies - and the figures in Appendix~\ref{app:Ereco_app}. For CCOther, all three generators appear to have a long tail extending to high discrepancy regions - well past that of CCQE for example - though NuWro has a higher amount of events in the $\Delta E$ = 0.5 GeV to 2 GeV region. 
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCQE.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCOther.png}
+\endminipage
+\caption{Difference between true and reconstructed Neutrino Energy in the FGT ND. CCQE events seem to have similar discrepancies, while CCOther mode has large tails in all three generators with NuWro having more events with higher discrepancy than the other two. }
+\label{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther}
+\end{figure}
+\FloatBarrier
+
+Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consistently has $\Delta E$ closer to 0 than the other generators as shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}. In CC1$\pi$ and CCOther NuWro again has more events where true neutrino energy is underestimated by reconstruction, shown in Figure~\ref{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}. Additionally, there exists a large difference in the distribution of events from NEUT and NuWro between the FGT and LAr FD. This is slightly better in the LAr ND - as expected due to our naive LAr efficiencies. This can be seen in Figure~\ref{fig:numubar_Etrue_ereco_CCOther_diffs}.
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCQE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_2p2h.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC0Pi.png}
+\endminipage
+\newline
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CCQE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_2p2h.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CC0Pi.png}
+\endminipage
+\caption{Difference between true and reconstructed $E_\nu$. Top: At Near Detector with FGT efficiencies. Bottom: Far Detector with LAr efficiencies. Left to Right: CCQE, 2p2h, CC0$\pi$. NuWro can be seen to have consistently less discrepancy in reconstructed energy than NEUT and GENIE in CCQE, 2p2h, and CC0$\pi$. }
+\label{fig:numubar_Etrue_ereco_FGT_CCQE_2p2h_CC0Pi}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CC1Pi.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
+\endminipage
+\caption{NuWro has higher discrepancy in reconstructed energy than NEUT and GENIE in both CC1$\pi$ and CCOther.}
+\label{fig:numubar_Etrue_ereco_FGT_CC1Pi_CCOther}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FD_CCOther.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_FGT_CCOther.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_LAr_CCOther.png}
+\endminipage
+\caption{NuWro CCOther events have differences in shape between the Far Detector and LAr FD. The LAr ND matches more closely, though this is expected because of our current naive efficiency assumptions.}
+\label{fig:numubar_Etrue_ereco_CCOther_diffs}
+\end{figure}
+\FloatBarrier
+
+%As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
+
 
 \subsection{Nucleon multiplicity vs. W}
 \label{sec:Nucleon_multi_w}
