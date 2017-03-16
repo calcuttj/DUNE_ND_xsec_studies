@@ -272,7 +272,7 @@ This portion of the work seeks to determine if variations in CCQE and 2p2h model
 \subsection{$Q^2$ Parameterization}
 \label{subsec:q2}
 %An obvious first step in the investigation of $Q^2$ parameterization sufficiency is to consider the relative change between the models and this change as it is extrapolated between the ND and FD Detector. 
-The single and double ratio procedure described in Section~\ref{subsec:ntf} is conducted using events created by all three models at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$, and for true-CCQE and true-2p2h. Note that for distributions without efficiencies, the MC-level $Q^2$ quantity is used, giving us insight into the interaction model uncertainties. When including efficiencies, $Q^2$ becomes a reconstructed quantity. It is calculated from the final state particles that are accepted after efficiencies are applied. This is highlighted in Equations~\ref{eq:Q2} - ~\ref{eq:q3}. However, though we call it 'reconstructed', it is calculated using the true energies and momentums without smearing applied, so it is not truely reconstructed in the usual sense of the word. Using the final state particles and the acceptances of the different detectors is what allows us to investigate FSI and detector effects.
+The single and double ratio procedure described in Section~\ref{subsec:ntf} is conducted using events created by all three models at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$, and for true-CCQE and true-2p2h. Note that for distributions without efficiencies, the MC-level $Q^2$ quantity is used, giving us insight into the interaction model uncertainties. When including efficiencies, $Q^2$ becomes a reconstructed quantity. It is calculated from the final state particles that are accepted after efficiencies are applied. This is highlighted in Equations~\ref{eq:Q2} - ~\ref{eq:q3}. However, though we call it 'reconstructed', it is calculated using the true energies and momentums without smearing applied, so it is not truely reconstructed in the usual sense of the word. Using the final state particles and the acceptances of the different detectors allows us to investigate FSI and detector effects.
 
 \begin{equation}
 \label{eq:Q2}
@@ -294,7 +294,7 @@ Conclusions are drawn from the double ratios according to the following prescrip
  
 %, true-2p2h, CC0$\pi^{\pm}$, CC1$\pi^{\pm}$, and CCOther as defined in Section~\ref{subsec:EDiff}
 
-For $\nu_{\mu}$ CCQE events, both NEUT's and NuWro's models differ significantly from GENIE' model in $Q^2$ distributions, as seen in the single ratios in Figure~\ref{fig:Q2_ccqe_no_eff}. Despite this, the double ratios for both NEUT and NuWro to GENIE remain relatively flat and close to 1. For double ratios with efficiencies applied, shape variations are greater above , they do appear centered close to or near 1 as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. From this, it appears that the VALOR $Q^2$ binning is suitable to handle variations.
+For $\nu_{\mu}$ CCQE events, both NEUT's and NuWro's models differ significantly from GENIE' model in $Q^2$ distributions, as seen in the single ratios in Figure~\ref{fig:Q2_ccqe_no_eff}. Despite this, the double ratios for both NEUT and NuWro to GENIE remain relatively flat and close to 1. For double ratios with FGT efficiencies applied to the ND and simple LAr efficiencies applied to the FD, shape variations are greater above around 1.25 $\textrm{GeV}^2$ as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. This suggests an additional bin in the region .55 to 1.25 $\textrm{GeV}^2$ should be included. This motivates a focus on determining the origin of this variation as it seems to couple to the inclusion of FSI and detector effects. One possible source is the exclusion of low-momentum muons as efficiencies are included.
 \begin{figure}[h]
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
@@ -338,72 +338,92 @@ For $\nu_{\mu}$ CCQE events, both NEUT's and NuWro's models differ significantly
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
 \endminipage
-\caption{$Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr effiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.5 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.5 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr effiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
 \label{fig:Q2_ccqe_FGT_eff}
 \end{figure}
 \FloatBarrier
 
 
-However, for $\overline{\nu}_{\mu}$ CCQE events, we observe distortions in the $Q^2$ distribution even in the double ratios. This is true without efficiencies as well as all three configurations, and for both NEUT to GENIE and NuWro to GENIE ratios. It is particularly worse in NuWro. This is displayed in Figure~\ref{fig:Q2_ccqe_bar}. Note that the last bin is not visible in the last NuWro plot as it has been cropped out, Appendix~\ref{app:Q2_app} has the full plot. The double ratios are no longer centered close to one, and so the VALOR binning seems insufficient for $\overline{\nu}_{\mu}$ CCQE. %This trend of larger variations in $\overline{\nu}_{\mu}$ as opposed to $\nu_{\mu}$ events continues in all reaction types except for 2p2h and can be seen in Appendix~\ref{app:Q2_app} where all plots are stored.
+However, for $\overline{\nu}_{\mu}$ CCQE events, we observe distortions in the $Q^2$ distribution even in the double ratios. This is true without efficiencies for both NEUT to GENIE and NuWro to GENIE ratios. This is displayed in Figure~\ref{fig:Q2_ccqe_bar}. The variations again arise above 1.5 $\textrm{GeV}^2$ for the double ratios, suggesting an additional bin to be added between .55 and 1.5 $\textrm{GeV}^2$. This arises without efficiencies, and points to variations in the CCQE interaction model being responsible for this effect rather than FSI variations or detector effects.
+
+We run into trouble extending the $\overline{\nu}_{\mu}$ CCQE study with efficiencies applied, as this leaves the high $Q^2$ region with very low statistics, preventing us from drawing any meaningful conclusions. These plots are included in Appendix~\ref{app:Q2_app} for completeness. The studies will be continued once we have higher statistics, and with more complete descriptions of the LAr and GAr as this information becomes available.
+
 \begin{figure}[h]
-\minipage{.5\textwidth}
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numubar_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numubar_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
 \endminipage
-\minipage{.5\textwidth}
+\newline
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2.png}
 \endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
-\endminipage
-\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations throughout all distributions, particularly in NuWro, showing the double ratios are no longer centered close to or around 1. Note: The last bin in the botom right plot has been cropped out. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\caption{MC-level $Q^2$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. Large amounts of variations in the region above 1.5 $\textrm{GeV}^2$ in both double ratios. This differs from $\nu_{\mu}$ CCQE, where this arose in the ratios after efficiencies are added. Here, it exists without any efficiencies, pointing to variations in the CCQE model, rather than FSI or detector effects, not being covered by the parameterization. An additional bin between .55 and 1.5 $\textrm{GeV}^2$ is suggested. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
 \label{fig:Q2_ccqe_bar}
 \end{figure}
 \FloatBarrier
 
-For 2p2h $\nu_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 in the low $Q^2$ region, similar to in CCQE, with and without efficiencies applied. The upper $Q^2$ regions do experience some deviation from 1, as seen in Figure~\ref{fig:Q2_2p2h_numu} However, as these are only in the upper $Q^2$ region, there are much fewer events. So, as opposed to the CCQE $\overline{\nu}_{\mu}$ distributions where the distortions arose throughout, it is conluded that the VALOR binning still holds, similar to CCQE $\nu_{\mu}$.
+For 2p2h $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 below about 1 $\textrm{GeV}^2$ without efficiencies applied, as seen in Figure~\ref{fig:Q2_2p2h_numu_no_eff} and ~\ref{fig:Q2_2p2h_numubar_no_eff}. Above 1 $\textrm{GeV}^2$, the statistics are again low. At this moment, the currently-proposed 1-bin normalization appears sufficient in the region below 1 $\textrm{GeV}^2$. The low statistics prevent us from making conclusions in the high $Q^2$ region as well as drawing conclusions from applying efficiencies. These will be revisted in later iterations of this work.
 \begin{figure}[h]
-\minipage{.5\textwidth}
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
 \endminipage
-\minipage{.5\textwidth}
+\newline
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
 \endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
-\endminipage
-\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations are present resulting from low statistics in the higher end of all distributions, but the lower end holds close to 1. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
-\label{fig:Q2_2p2h_numu}
+\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. Large amounts of variations are present resulting from low statistics in the higher end of all distributions, but the lower end holds close to 1. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\label{fig:Q2_2p2h_numu_no_eff}
 \end{figure}
-\FloatBarrier
 
-For $\overline{\nu}_{\mu}$ 2p2h events, the double ratios are relatively flat and close to 1 again in the low $Q^2$ regio. Adding efficiencies distorts this away from 1 throughout the distributions, even in the lower regions. See Figure~\ref{fig:Q2_2p2h} for this with FGT ND and LAr FD efficiencies applied. Note that bins 6 and 10 have been cropped out of the lower right plot, and the full plots are availabile in Appendix~\ref{app:Q2_app}. Similarly to $\overline{\nu}_{\mu}$ CCQE, this is evident that the VALOR binning is not sufficient for $\overline{\nu}_{\mu}$. 
 \begin{figure}[h]
-\minipage{.5\textwidth}
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numubar_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numubar_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
 \endminipage
-\minipage{.5\textwidth}
+\newline
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2.png}
 \endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
-\endminipage
 \caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of deviations from 1 throughout distributions with efficiencies applied. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
-\label{fig:Q2_2p2h}
+\label{fig:Q2_2p2h_numubar_no_eff}
 \end{figure}
 \FloatBarrier
 
+We currently find an additional bin in the region (.55, ~1.25-1.5) will account for uncertainties in both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE. For $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h, the overall normalization appears sufficient at this moment. Investigations into the origin of the variation in the high $Q^2$ region of CCQE will be conducted as this work is furthered. Additional statistics and more complete effiency descriptions for the LAr and GAr are required, and will be conducted at a later date.
 
 \subsection{$q_0 \textrm{ vs. } q_3$ Variations}
 \label{subsec:q0q3}
@@ -906,7 +926,7 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %\subfile{DUNE_appendix_Ereco_plots.tex}
 %\subfile{DUNE_appendix_Q2_plots.tex}
 %\subfile{DUNE_appendix_q0_q3_plots.tex}
-\subfile{DUNE_appendix_N_P_plots_protons.tex}
+%\subfile{DUNE_appendix_N_P_plots_protons.tex}
 
 \begin{thebibliography}{7}
 
