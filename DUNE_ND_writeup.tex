@@ -113,7 +113,7 @@
 
 \graphicspath{{figs/}}
 
-\title{Current Status and Future Progess of DUNE ND studies}
+\title{Investigations of Cross Section Model and Near Detector Choices}
 
 \date{}
 \begin{document}
@@ -139,22 +139,34 @@
 
 %This document serves as a writeup detailing the current status of the DUNE ND studies and the progress that has been made so far, as well as a plan on how to further the studies in the near future. 
 
-The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the mass hierarchy. It consists of both a Near and Far Detector separated by 1300km and uses a neutrino beam created at Fermilab.\cite{DUNE_CDR1}. While the design of the Liquid Argon Far Detector has been finalized, there is still ongoing effort in deciding the configuration of the Near Detector. The main near detector design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). DUNE's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a near-to-far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect DUNE's physics goals. This work was done concurrent with the DUNE ND Taskforce (TF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also attempt to quantify how the three near detector configurations are individually sensitive to the neutrino interaction model.
+The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the mass hierarchy. It consists of both a Near and Far Detector separated by 1300km and uses a neutrino beam created at Fermilab.\cite{DUNE_CDR1}. While the design of the Liquid Argon Far Detector has been finalized, there is still ongoing effort in deciding the configuration of the Near Detector. The main near detector design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). DUNE's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a near-to-far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect DUNE's goals. This work was done concurrent with the DUNE ND Taskforce (NDTF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also explore how different interaction models - used as proxies for variations in a given model - couple to the different NDs and the FD.
 
 Below is a list of the studies we have conducted for this work.
 \begin{itemize}
-\item The different abilities of the 3 ND configurations to reconstruct the neutrino energy, and how these compare to the Far Detector.
+\item Choice of parameterization.
 	\begin{itemize}
+	\item The sufficiency of a pure-$Q^2$ parameterization in a Near to Far extrapolation.
+		\begin{itemize}
+			\item Are variations in CCQE and 2p2h models covered in this parameterization?
+		\end{itemize} 
+	\item Does the $Q^2$ parameterization ignore additional physics as represented as variations in
+	 $q_0 \textrm{ - } q_3$?
+
+	\end{itemize}
+\item The different abilities of the 3 ND configurations to reconstruct the neutrino energy.
+	\begin{itemize}
+	\item Variations in neutron multiplicities and neutron energy.
+	\begin{itemize}
+			\item Do the detectors need to be sensitive to neutrons?
+	\end{itemize} 
+	\item How do different ND configurations couple to model differences in 
+	\begin{itemize}
+		\item Variations in proton \& pion multiplicity and momentum.
+		\item Variations in nucleon multiplicity \& invariant hadronic mass.
+	\end{itemize} 
 	\item Difference from true neutrino energy.
-	\item Neutron multiplicities and neutron energy - Essentially a baseline of how much energy is not reconstructed.
-	\item Proton \& pion multiplicity and momentum.
-	\item Nucleon multiplicity vs. invariant hadronic mass.
 	\end{itemize}
-\item Choice of parameterization
-	\begin{itemize}
-	\item The sufficiency of a pure-$Q^2$ parameterization - are variations in models canceled out in a near to far extrapolation.
-	\item Does the $Q^2$ parameterization ignore uncertainties present in $q_0 \textrm{ vs. } q_3$ phase space?
-	\end{itemize}
+
 
 \end{itemize}
 
@@ -168,11 +180,38 @@ Below is a list of the studies we have conducted for this work.
 
 \section{Methods}
 %As the analysis techniques for DUNE are developed, checks on the cross section model are necessary. Variations arise in the different handling of Final State Interaction (FSI) effects by Monte Carlo event generators, as well as choice of Near Detector configuration. Sets of neutrino and antineutrino events on Argon-40 are produced with Monte Carlo Generators - GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al - according to the 2015 DUNE CDR fluxes. The $\nu_\mu$ Near Detector and Far Detector fluxes used in this work are showin in Figure~\ref{fig:dune_flux}.  The various data sets are passed through the NUISANCE\cite{NUISANCE} software to reduce the various outputs to a common format, in turn saving all final state particle information for each event. 
-Neutrino interaction modelling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, so called "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different final state interaction models and QE, 2p2h models. These generators are GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al. 
-	
-Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes, shown in Figure~\ref{fig:dune_flux}. (NEED TO FIND THE OSCILLATION PARAMETERS) The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
 
-	All studies shown look at the effect of differences between the near and the far detector fluxes. However, we also include the different estimated efficiencies of each of the three near detector configurations. Efficiency information is included with the following procedure. Each particle is then randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum.  At time of this writing, only a robust description of the FGT efficiency is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}. Simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the LAr and GAr, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the FGT configuration, and so none are rejected. 
+\subsection{Monte Carlo Generators}
+\label{subsec:gen}
+Neutrino interaction modelling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, so called "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different 'vertex-level' interaction models (e.g. CCQE, 2p2h, Resonant) and Final State Interaction (FSI) models. These are given in Table~\ref{tab:gens}
+
+
+
+\begin{table}
+\centering
+ \begin{tabular}{| c | c | c |} 
+ \hline
+ Generator & Version & Model\\ [0.5ex] 
+ \hline
+ GENIE & 2.10 & RFG \\ 
+ \hline
+ NEUT & 5.3.6 & Nieves et. al RPA+2p2h/MEC ($M_A$ = 1.01) \\
+ \hline
+ NuWro & 11 & LFG + RPA + Nieves et. al \\[1ex]
+% \hline
+% 4 & 545 & 18744 \\
+% \hline
+% 5 & 88 & 788 \\ [1ex] 
+ \hline
+\end{tabular}
+\caption{The various Monte Carlo event generators used for this work.}
+\label{tab:gens}
+\end{table}
+
+ %These generators are GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al. 
+\subsection{Generating Events}
+\label{subsec:events}
+Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes, shown in Figure~\ref{fig:dune_flux}. (NEED TO FIND THE OSCILLATION PARAMETERS) Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where the $\overline{\nu}_\mu$ flux is that within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
@@ -185,6 +224,25 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 \label{fig:dune_flux}
 \end{figure}
 \FloatBarrier
+	%All studies shown look at the effect of differences between the near and the far detector fluxes. However, we also include the different estimated efficiencies of each of the three near detector configurations.
+\subsection{How We Study a Near to Far Extrapolation}
+\label{subsec:ntf}
+The various studies regarding near to far extrapolations are explored using the following procedure. Ratios of either NEUT or NuWro to GENIE - referred to as 'single ratios' - separately at the ND and FD are taken. NEUT and NuWro are both normalized to GENIE to highlight shape differences rather than overall normalization effects. These offer insight into model variations in and how the dependence of ND configuration couple to variations.
+The effect of a near to far extrapolation is approximated by taking a 'double ratio' between the near and far single ratios. To be explicit and to avoid confusion, these are defined in Equations ~\ref{eq:single_ratio} and ~\ref{eq:double_ratio}, where 'Other MC' refers to either NEUT or NuWro and 'Near' can be replaced by 'Far' in the single ratio. We note this is a crude approximation to give intuition about the problem for just a single reaction process; a fit to the ND spectrum will have multiple reactions in a given topology which can complicate the determination of physics effects for a single reaction.
+
+\begin{equation}
+\label{eq:single_ratio}
+\textrm{ND Single Ratio} = \frac{\textrm{(Other MC @ Near Detector)}}{\textrm{(GENIE @ Near Detector)}}
+\end{equation}
+
+\begin{equation}
+\label{eq:double_ratio}
+\textrm{Double Ratio} = \frac{\textrm{(ND Single Ratio)}}{\textrm{(FD Single Ratio)}}
+\end{equation}
+
+\subsection{Detector Configurations and Efficiencies}
+\label{subsec:eff}
+The studies highlight the effect of the different efficiencies of the various detectors. We first consider a 'perfect' ND and FD without any efficiencies applied, and then look what changes as we consider the 3 different configurations of the ND and a simple LAr efficiency in the FD. Efficiency information is included with the following procedure. Each particle is randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum. No angular efficiencies have yet been taken into account for this work. At time of this writing, only a full description of the FGT efficiency according to NDTF samples is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}, FGT efficiencies for other particles are included in Appendix~\ref{}. Simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. Currently, we do not have the efficiencies for $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the simple LAr and GAr descriptions, and so the detectors are assumed to be perfectly efficient (no rejections) to these particles. $\pi^0$ efficiency information is also currently missing in the all 3 configuration, and so none are rejected. 
 
 \begin{figure}[h]
 \centering
@@ -198,7 +256,330 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 \label{fig:FGT_proton_effs}
 \end{figure}
 
+
+\section{Parameterization}
+%The VALOR group\cite{VALOR} has led multiple T2K oscillation analyses and has contributed to most published T2K oscillation papers(I TOOK THIS ALMOST WORD FOR WORD FROM THE VALOR DOC BUT IDK WHAT TO WRITE FOR IT. IF CITING IT IS NOT GOOD ENOUGH I NEED TO CHANGE THIS). It also has contributed to to optimisation studies for DUNE, this being a source of motivation for this work. 
+The VALOR software package that has been used on multiple T2K oscillation analyses, and had recently been used to study the DUNE near detector configurations. (((The group uses MC templates to map between reconstructed and true information for various reactions.))) Uncertainties in interaction models are parameterized by model variations as a function of $Q^2$. Currently, $Q^2$ parameterizations are defined for neutrinos and antineutrinos as: 
+\begin{itemize}
+\item CCQE nm with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
+\item CCQE nmb with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
+\item 2p2h nm with 1 $Q^2$ bin 
+\item 2p2h nmb with 1 $Q^2$ bin
+\end{itemize}
+
+This portion of the work seeks to determine if variations in CCQE and 2p2h models are well represented by these parameterizations in $Q^2$. It also serves to highlight the behavior of the models as they couple to FSI and detector effects.
+
+\subsection{$Q^2$ Parameterization}
+\label{subsec:q2}
+%An obvious first step in the investigation of $Q^2$ parameterization sufficiency is to consider the relative change between the models and this change as it is extrapolated between the ND and FD Detector. 
+The single and double ratio procedure described in Section~\ref{subsec:ntf} is conducted using events created by all three models at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$, and for true-CCQE and true-2p2h. Note that for distributions without efficiencies, the MC-level $Q^2$ quantity is used, giving us insight into the interaction model uncertainties. When including efficiencies, $Q^2$ becomes a reconstructed quantity. It is calculated from the final state particles that are accepted after efficiencies are applied. This is highlighted in Equations~\ref{eq:Q2} - ~\ref{eq:q3}. However, though we call it 'reconstructed', it is calculated using the true energies and momentums without smearing applied, so it is not truely reconstructed in the usual sense of the word. Using the final state particles and the acceptances of the different detectors is what allows us to investigate FSI and detector effects.
+
+\begin{equation}
+\label{eq:Q2}
+Q^2 = |q_0^2 - q_3^2|,
+\end{equation}
+\begin{equation}
+\label{eq:q0}
+q_0^2 = (E_{reco} - E_{lep})^2,
+\end{equation}
+\begin{equation}
+\label{eq:q3}
+q_3^2 = (\vec{P}_{reco} - \vec{P}_{lep})^2
+\end{equation}
+\begin{equation}
+E_{reco} =E_{lep} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
+\label{eq:ereco}
+\end{equation}
+Conclusions are drawn from the double ratios according to the following prescription. If the ratio is flat - i.e. if a horizontal line is within the statistical error bars - in a given bin of the parameterization, uncertainties can be considered sufficient.
+ 
+%, true-2p2h, CC0$\pi^{\pm}$, CC1$\pi^{\pm}$, and CCOther as defined in Section~\ref{subsec:EDiff}
+
+For $\nu_{\mu}$ CCQE events, both NEUT's and NuWro's models differ significantly from GENIE' model in $Q^2$ distributions, as seen in the single ratios in Figure~\ref{fig:Q2_ccqe_no_eff}. Despite this, the double ratios for both NEUT and NuWro to GENIE remain relatively flat and close to 1. For double ratios with efficiencies applied, shape variations are greater above , they do appear centered close to or near 1 as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. From this, it appears that the VALOR $Q^2$ binning is suitable to handle variations.
+\begin{figure}[h]
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\newline
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
+\endminipage
+\caption{MC-level $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, no efficiencies applied to ND or FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. Of note is the relative flatness throughout the double ratio compared to the single ratio at the ND. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\label{fig:Q2_ccqe_no_eff}
+\end{figure}
+\begin{figure}[h]
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\newline
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_near_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_far_Q2.png}
+\endminipage
+\minipage{.32\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
+\endminipage
+\caption{$Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr effiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.5 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.5 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\label{fig:Q2_ccqe_FGT_eff}
+\end{figure}
+\FloatBarrier
+
+
+However, for $\overline{\nu}_{\mu}$ CCQE events, we observe distortions in the $Q^2$ distribution even in the double ratios. This is true without efficiencies as well as all three configurations, and for both NEUT to GENIE and NuWro to GENIE ratios. It is particularly worse in NuWro. This is displayed in Figure~\ref{fig:Q2_ccqe_bar}. Note that the last bin is not visible in the last NuWro plot as it has been cropped out, Appendix~\ref{app:Q2_app} has the full plot. The double ratios are no longer centered close to one, and so the VALOR binning seems insufficient for $\overline{\nu}_{\mu}$ CCQE. %This trend of larger variations in $\overline{\nu}_{\mu}$ as opposed to $\nu_{\mu}$ events continues in all reaction types except for 2p2h and can be seen in Appendix~\ref{app:Q2_app} where all plots are stored.
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2.png}
+\endminipage
+\newline
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
+\endminipage
+\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations throughout all distributions, particularly in NuWro, showing the double ratios are no longer centered close to or around 1. Note: The last bin in the botom right plot has been cropped out. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\label{fig:Q2_ccqe_bar}
+\end{figure}
+\FloatBarrier
+
+For 2p2h $\nu_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 in the low $Q^2$ region, similar to in CCQE, with and without efficiencies applied. The upper $Q^2$ regions do experience some deviation from 1, as seen in Figure~\ref{fig:Q2_2p2h_numu} However, as these are only in the upper $Q^2$ region, there are much fewer events. So, as opposed to the CCQE $\overline{\nu}_{\mu}$ distributions where the distortions arose throughout, it is conluded that the VALOR binning still holds, similar to CCQE $\nu_{\mu}$.
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
+\endminipage
+\newline
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
+\endminipage
+\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations are present resulting from low statistics in the higher end of all distributions, but the lower end holds close to 1. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\label{fig:Q2_2p2h_numu}
+\end{figure}
+\FloatBarrier
+
+For $\overline{\nu}_{\mu}$ 2p2h events, the double ratios are relatively flat and close to 1 again in the low $Q^2$ regio. Adding efficiencies distorts this away from 1 throughout the distributions, even in the lower regions. See Figure~\ref{fig:Q2_2p2h} for this with FGT ND and LAr FD efficiencies applied. Note that bins 6 and 10 have been cropped out of the lower right plot, and the full plots are availabile in Appendix~\ref{app:Q2_app}. Similarly to $\overline{\nu}_{\mu}$ CCQE, this is evident that the VALOR binning is not sufficient for $\overline{\nu}_{\mu}$. 
+\begin{figure}[h]
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2.png}
+\endminipage
+\newline
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
+\endminipage
+\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of deviations from 1 throughout distributions with efficiencies applied. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\label{fig:Q2_2p2h}
+\end{figure}
+\FloatBarrier
+
+
+\subsection{$q_0 \textrm{ vs. } q_3$ Variations}
+\label{subsec:q0q3}
+In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ - } q_3$ space were also investigated to explore possibilities that variations are highlighted when changing the parameterization from $Q^2$ to $q_0 \textrm{ - } q_3$. The $Q^2$ parameterization assumes the variations are purely functions of $Q^2$. Under this assumption, the double ratios should be flat in $q_0 \textrm{ - } q_3$. If this is not the case, a pure-$Q^2$ parameterization cannot sufficiently account for CCQE and 2p2h variations. 
+
+These studies were done in the exact same way as those in the previous section, only with the events and ratios distributed in $q_0 \textrm{ - } q_3$ bins. Note: to be symmetric about 1, the scale extends from 0 to 2, but the variations in those bins can actually be greater than 2. Again, the quantities are MC-level truth information in the distributions without efficiencies, but are reconstructed in those with effiencies applied.
+
+For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear pretty flat for both NEUT and NuWro, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}, though there is a bit of bin-to-bin variation in the upper right region, which is expected from the low statistics. When adding efficiencies, the phase space is smeared out and more bin-to-bin variation arises. The case for FGT efficiencies is shown in Figure~\ref{fig:q0q3_numu_CCQE_FGT_eff}. Though the individual bins do deviate from 1, there is no large-scale regional departure from flatness, and so these distributions do not show a need for a $q_0 \textrm{ - } q_0$ parameterization.
 %\newline
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ CCQE events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat distributions, but with bin-to-bin variations arising from low statistics} 
+\label{fig:q0q3_numu_CCQE_no_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Distributions smeared out and variations between bins are higher than without efficiencies. Still appear relatively flat.}
+\label{fig:q0q3_numu_CCQE_FGT_eff}
+\end{figure}
+\FloatBarrier
+
+For $\overline{\nu}_{\mu}$ CCQE, however, there is a difference between NuWro and NEUT when looking at the ratios without efficiencies. Shown in Figure~\ref{fig:q0q3_numubar_CCQE_no_eff}, it can be seen that the double ratio is consistently higher in the upper-right region of the NuWro/GENIE distribution as opposed to NEUT/GENIE, which is more similar to the corresponding $\nu_{\mu}$ ratio. When adding efficiencies, much of the upper right region is cut out in GENIE and NEUT, shown in Figure~\ref{fig:q0q3_numubar_CCQE_events_FGT_eff}, resulting in empty bins in both double ratios. Despite the distorted phase space, the NEUT/GENIE $\overline{\nu}_{\mu}$ CCQE double ratio appears to behave similarly to the corresponding $\nu_{\mu}$ CCQE double ratio, while NuWro has ratios greater than 1 throughout the shared phaes space, which is evident in Figure ~\ref{fig:q0q3_numubar_CCQE_FGT_eff} which contains distributions with FGT ND and LAr FD efficiencies. Despite this deviation from 1 in NuWro, it suggest that an overall normalization rather than a different parameterization would be sufficient for $\overline{\nu}_{\mu}$ CCQE.
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat for NEUT/GENIE. NuWro/GENIE double ratio has heavy disagreement in upper-right region.}
+\label{fig:q0q3_numubar_CCQE_no_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NuWro.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. Both GENIE and NEUT cut out the upper right region of phase space as opposed to NuWro.}
+\label{fig:q0q3_numubar_CCQE_events_FGT_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ $\overline{\nu}_{\mu}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. NEUT to GENIE double ratio appears similar to the $\nu_{\mu}$ double ratio, while NuWro to GENIE appears greater than 1 in shared bins.}
+\label{fig:q0q3_numubar_CCQE_FGT_eff}
+\end{figure}
+\FloatBarrier
+Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and $\overline{\nu}_{\mu}$ events, as can be seen in the upper half of Figure~\ref{fig:q0q3_numu_2p2h_events} which contains 2p2h $\overline{\nu}_{\mu}$ events without efficiencies. This causes very restriced phase space in the double ratios. However, adding efficiencies and using reconstructed variables smears out the phase space, causing more bins to be shared between generators, though there are still variations in the shapes. See the bottom half of Figure~\ref{fig:q0q3_numu_2p2h_events}. The double ratios seem to be mostly flat for both NEUT and NuWro in the FGT for $\nu_{\mu}$, seen in Figure~\ref{fig:q0q3_numu_2p2h_FGT_eff}. However for $\overline{\nu}_{\mu}$ 2p2h in the FGT, both NEUT to GENIE and NuWro to GENIE double ratios are generally greater than 1, seen in Figure~\ref{fig:q0q3_numubar_2p2h_FGT_eff}. Similar to $\overline{\nu}_{\mu}$ CCQE events, an overall normalization correction should be able to sufficiently cover $\overline{\nu}_{\mu}$ 2p2h variations.
+\begin{figure}[h]
+\centering
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
+\endminipage
+\newline
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
+\endminipage
+\minipage{.3\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ 2p2h events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The phase spaces are very different without efficiencies, and restrict the coverage of the double ratios. With efficiencies applied, $q_3$ and $q_0$ are now quantities reconstructed from accepted particle kinematics, so more phase space is shared than in the true variables of the distributions without efficiencies.}
+\label{fig:q0q3_numu_2p2h_events}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ 2p2h events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Ratios appear mostly flat.}
+\label{fig:q0q3_numu_2p2h_FGT_eff}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_q3_q0.png}
+\endminipage
+\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Both double ratios consistently higher than 1.}
+\label{fig:q0q3_numubar_2p2h_FGT_eff}
+\end{figure}
+\FloatBarrier
+
+\subsection{Parameterization - Conclusions}
+It appears as though the pure-$Q^2$ paramterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ CCQE events. The near-to-far extrapolation plots - the double ratios - appear relatively flat in all reaction modes and in both the $Q^2$ and $q_0 \textrm{ - } q_3$ distributions. However, the $\overline{\nu}_{\mu}$ CCQE events show that model variations are not covered in this extrapolation, at least when looking into the NuWro to GENIE double ratios, specifically in $Q^2$. Additionally, though the distribution of ratios is generally flat in $q_0 \textrm{ - } q_3$, a normalization correction appears needed. This is similarly true in 2p2h. With this, it is safe to assume that a pure-$Q^2$ distribution with different binnings and a normalization correction would be sufficient to cover CCQE and 2p2h model variations. 
+
+There is a degree of statistical limitation of the studies at this point, evident in the presence of bin-to-bin variations. To explore this point further, these studies can quickly and easily be extended to larger data sets to deal with statistics limitations. Additionally, the statistical uncertainties in the single and double ratios will also be investigated. With these, we can move on to quantify the degree to which the near-to-far extrapolation covers variations in the $\nu_{\mu}$ case - or does not cover variations in the $\overline{\nu}_{\mu}$ case. 
+
+%For the rest of the reaction modes, the trend - that $\nu_{\mu}$ ratios appear to be relatively flat for both NEUT and NuWro, while $\overline{\nu}_{\mu}$ NuWro to GENIE double ratio is noticeably greater than 1 - continues. This can be seen in Appendix~\ref{app:q0q3_app}. Of note, however, is the shape of $\nu_\mu$ and $\overline{\nu}_{\mu}$ CCOther events before and after efficiencies are applied in each generator. As shown in Figure~\ref{fig:q0q3_numu_CCOther_events}, the left region of $q_0 \textrm{ - } q_3$ space is empty before efficiencies, but is filled in after efficiencies are applied. This corresponds to a low $Q^2$ region, which is shown to be filled in after efficiencies in the $Q^2$ distribution in Figure~\ref{fig:Q2_numu_CCOther_events}.
+%\begin{figure}[h]
+%\centering
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_GENIE.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_NEUT.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_NuWro.png}
+%\endminipage
+%\newline
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_GENIE.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_NEUT.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_NuWro.png}
+%\endminipage
+%\caption{$q_0 \textrm{ - } q_3$ $\nu_{\mu}$ events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The left $q_0 \textrm{ - } q_3$ region is being filled in after efficiencies are applied.}
+%\label{fig:q0q3_numu_CCOther_events}
+%\end{figure}
+%\begin{figure}[h]
+%\centering
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_GENIE.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_NEUT.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_NuWro.png}
+%\endminipage
+%\newline
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_GENIE.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_NEUT.png}
+%\endminipage
+%\minipage{.3\textwidth}
+%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_NuWro.png}
+%\endminipage
+%\caption{$Q^2$ events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The low $Q^2$ region is being filled in after efficiencies are applied.}
+%\label{fig:Q2_numu_CCOther_events}
+%\end{figure}
+%\FloatBarrier
+
 
 \section{Reconstructed Energy}\label{sec:Reco}
 %\subsection{Final State, Reconstructed Energy}
@@ -206,10 +587,10 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 A framework for investigating variations in reconstructed energy calculations between different generators and ND configurations has been developed. %However, because it is calculated only by summing the final state energy (generator truth information), this is largely incomplete, and it serves only as a starting point for more robust studies. The full studies will include detector efficiencies and kinematic cuts to fully display the differences between models and configurations. 
 Currently, the estimate for the incident neutrino energy is calculated by summing the total energy from final state leptons and pions (all charges) and the kinetic energy of final state protons after passing efficiencies through the data sets. All neutrons are assumed undetectable. 
 This can be summed up in Equation~\ref{eq:ereco}:
-\begin{equation}
-E_{reco} = \Sigma {E_{lep}} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
-\label{eq:ereco}
-\end{equation}
+%\begin{equation}
+%E_{reco} = \Sigma {E_{lep}} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
+%\label{eq:ereco}
+%\end{equation}
 where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of the pion, and $E_{prot}$ and $M_{prot}$ are the energy and mass of the proton.
 %This is achieved by using the NUISANCE software package to reduce the output from various Monte Carlo neutrino event generators (including GENIE, NEUT, NUWRO, as well as the nuclear reaction and transport simulation software, GiBuu) into a common format that can easily be analyzed. 
 %Work has begun to include tracking/PID efficiencies to accept or reject final state particles. So far, only the full information (barring $\pi^0$ efficiencies) for the FGT is available, but the inclusion of the LAr or GAr TPCs will be easily implemented. 
@@ -356,7 +737,7 @@ The other interaction modes and anti-neutrino events can also be found in Append
  Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
 \subsection{Proton/Pion Multiplicity and Momentum}
-\label{sec:Particle_multiplicities_momentum}
+\label{subsec:Particle_multiplicities_momentum}
 
 Similar to the neutron multiplicity and energy studies, proton and pion mutliplicities and energies offer insight into the coupling of the detector configurations with variations in FSI models as well as the energy reconstruction capabilities of the different detector configurations. The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. This was done for the FS particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther, and with all 3 ND configuration efficiencies and the LAr FD efficiencies, as well as with no efficiencies applied. As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. Note that the LAr and GAr are still only naive assumptions.
 
@@ -378,297 +759,6 @@ Similar to the neutron multiplicity and energy studies, proton and pion mutlipli
 %\begin{equation}
 %|\vec{P_{total,i}}| = |\Sigma \vec{P_i}|
 %\end{equation}
-
-\section{Parameterization}
-%The VALOR group\cite{VALOR} has led multiple T2K oscillation analyses and has contributed to most published T2K oscillation papers(I TOOK THIS ALMOST WORD FOR WORD FROM THE VALOR DOC BUT IDK WHAT TO WRITE FOR IT. IF CITING IT IS NOT GOOD ENOUGH I NEED TO CHANGE THIS). It also has contributed to to optimisation studies for DUNE, this being a source of motivation for this work. 
-The VALOR software package that has been used on multiple T2K oscillation analyses, and had recently been used to study the DUNE near detector configurations. The group uses MC templates to map between reconstructed and true information for various reactions. Currently, $Q^2$ parameterizations have been suggested by VALOR for various MC templates and are defined for both neutrinos and antineutrinos as: 
-\begin{itemize}
-\item CCQE with bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
-\item CC1$\pi^{\pm}$ with bins \{0 - 0.30, 0.30 - 0.80, $>$0.80\} $\textrm{GeV}^2$
-\item CC1$\pi^0$ with bins \{0 - 0.35, 0.35 - 0.90, $>$0.90\} $\textrm{GeV}^2$
-\item CCOther with 1 $Q^2$ bin
-\end{itemize}
-The following portion of this work is devoted to investigating the sufficiency of these $Q^2$ parameterizations in treating CCQE and 2p2h model - and excluding FSI  - uncertainties in the various detector configurations. To do this, we look for evidence of $Q^2$ shape differences in CCQE and 2p2h events.
-
-The following procedure describes how this is explored. Ratios of either NEUT or NuWro to GENIE - referred to as 'single ratios' and with NEUT and NuWro both normalized to GENIE - at the ND and FD offer insight into model variations and how these depend on ND configuration. 
-The effect of a near to far extrapolation is approximated by taking a 'double ratio' between the near and far single ratios. To be explicit and to avoid confusion, these are defined in Equations ~\ref{eq:single_ratio} and ~\ref{eq:double_ratio}, where 'Other MC' refers to either NEUT or NuWro and 'Near' can be replaced by 'Far' in the single ratio. We note this is a crude approximation to give intuition about the problem for just a single reaction process; a fit to the ND spectrum will have multiple reactions in a given topology which can complicate the determination of physics effects for a single reaction.
-
-\begin{equation}
-\label{eq:single_ratio}
-\textrm{ND Single Ratio} = \frac{\textrm{(Other MC @ Near Detector)}}{\textrm{(GENIE @ Near Detector)}}
-\end{equation}
-
-\begin{equation}
-\label{eq:double_ratio}
-\textrm{Double Ratio} = \frac{\textrm{(ND Single Ratio)}}{\textrm{(FD Single Ratio)}}
-\end{equation}
-
-
-
-\subsection{$Q^2$ studies}
-\label{subsec:q2}
-%An obvious first step in the investigation of $Q^2$ parameterization sufficiency is to consider the relative change between the models and this change as it is extrapolated between the ND and FD Detector. 
-The single and double ratio procedure described above is conducted using events created by all three models at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu_{\mu}}$, and for true-CCQE and true-2p2h. Note that for distributions without efficiencies, the MC-level $Q^2$ quantity is used, but is a reconstructed quantity in distributions with efficiencies. 
-%, true-2p2h, CC0$\pi^{\pm}$, CC1$\pi^{\pm}$, and CCOther as defined in Section~\ref{subsec:EDiff}
-
-For $\nu_{\mu}$ CCQE events, both NEUT and NuWro differ significantly from GENIE in $Q^2$ distributions, as seen in the NEUT to GENIE and NuWro to GENIE single ratios. Despite this, the double ratio distributions remain relatively flat and close to 1 for distributions without efficiencies, shown in Figure~\ref{fig:Q2_ccqe_no_eff}. For double ratios with efficiencies applied, though variations are greater in the higher end of these distributions, they do appear centered close to or near 1 as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. From this, it appears that the VALOR $Q^2$ binning is suitable to handle variations.
-\begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
-\endminipage
-\caption{$Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, no efficiencies applied. Left: Ratio of NEUT to GENIE output at ND, Right: Double ratio of NEUT to GENIE, Near to Far. Of note is the relative flatness throughout the double ratio compared to the single ratio at the ND. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
-\label{fig:Q2_ccqe_no_eff}
-\end{figure}
-\begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_near_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_Q2.png}
-\endminipage
-\caption{$Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Ratio of NEUT to GENIE output at ND (high $Q^2$ region out of bounds of plot), Right: Double ratio of NEUT to GENIE, Near to Far. More variations do arise in the higher regions of the double ratio, but still appear centered close to or around 1. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
-\label{fig:Q2_ccqe_FGT_eff}
-\end{figure}
-\FloatBarrier
-
-However, for $\overline{\nu_{\mu}}$ CCQE events, we observe distortions in the $Q^2$ distribution even in the double ratios. This is true without efficiencies as well as all three configurations, and for both NEUT to GENIE and NuWro to GENIE ratios. It is particularly worse in NuWro. This is displayed in Figure~\ref{fig:Q2_ccqe_bar}. Note that the last bin is not visible in the last NuWro plot as it has been cropped out, Appendix~\ref{app:Q2_app} has the full plot. The double ratios are no longer centered close to one, and so the VALOR binning seems insufficient for $\overline{\nu_{\mu}}$ CCQE. %This trend of larger variations in $\overline{\nu_{\mu}}$ as opposed to $\nu_{\mu}$ events continues in all reaction types except for 2p2h and can be seen in Appendix~\ref{app:Q2_app} where all plots are stored.
-\begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2.png}
-\endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
-\endminipage
-\caption{$Q^2$ distributed $\overline{\nu_{\mu}}$ CCQE events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations throughout all distributions, particularly in NuWro, showing the double ratios are no longer centered close to or around 1. Note: The last bin in the botom right plot has been cropped out. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
-\label{fig:Q2_ccqe_bar}
-\end{figure}
-\FloatBarrier
-
-For 2p2h $\nu_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 in the low $Q^2$ region, similar to in CCQE, with and without efficiencies applied. The upper $Q^2$ regions do experience some deviation from 1, as seen in Figure~\ref{fig:Q2_2p2h_numu} However, as these are only in the upper $Q^2$ region, there are much fewer events. So, as opposed to the CCQE $\overline{\nu_{\mu}}$ distributions where the distortions arose throughout, it is conluded that the VALOR binning still holds, similar to CCQE $\nu_{\mu}$.
-\begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
-\endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_Q2.png}
-\endminipage
-\caption{$Q^2$ distributed $\overline{\nu_{\mu}}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of variations are present resulting from low statistics in the higher end of all distributions, but the lower end holds close to 1. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
-\label{fig:Q2_2p2h_numu}
-\end{figure}
-\FloatBarrier
-
-For $\overline{\nu_{\mu}}$ 2p2h events, the double ratios are relatively flat and close to 1 again in the low $Q^2$ regio. Adding efficiencies distorts this away from 1 throughout the distributions, even in the lower regions. See Figure~\ref{fig:Q2_2p2h} for this with FGT ND and LAr FD efficiencies applied. Note that bins 6 and 10 have been cropped out of the lower right plot, and the full plots are availabile in Appendix~\ref{app:Q2_app}. Similarly to $\overline{\nu_{\mu}}$ CCQE, this is evident that the VALOR binning is not sufficient for $\overline{\nu_{\mu}}$. 
-\begin{figure}[h]
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2.png}
-\endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_Q2.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2_zoomed.png}
-\endminipage
-\caption{$Q^2$ distributed $\overline{\nu_{\mu}}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of deviations from 1 throughout distributions with efficiencies applied. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
-\label{fig:Q2_2p2h}
-\end{figure}
-\FloatBarrier
-
-
-\subsection{$q_0 \textrm{ vs. } q_3$ studies}
-\label{subsec:q0q3}
-In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ - } q_3$ space were also investigated to explore possibilities that variations are highlighted when changing the parameterization from $Q^2$ to $q_0 \textrm{ - } q_3$. The $Q^2$ parameterization assumes the variations are purely functions of $Q^2$. Under this assumption, the double ratios should be flat in $q_0 \textrm{ - } q_3$. If this is not the case, a pure-$Q^2$ parameterization cannot sufficiently account for CCQE and 2p2h variations. 
-
-These studies were done in the exact same way as those in the previous section, only with the events and ratios distributed in $q_0 \textrm{ - } q_3$ bins. Note: to be symmetric about 1, the scale extends from 0 to 2, but the variations in those bins can actually be greater than 2. Again, the quantities are MC-level truth information in the distributions without efficiencies, but are reconstructed in those with effiencies applied.
-
-For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear pretty flat for both NEUT and NuWro, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}, though there is a bit of bin-to-bin variation in the upper right region, which is expected from the low statistics. When adding efficiencies, the phase space is smeared out and more bin-to-bin variation arises. The case for FGT efficiencies is shown in Figure~\ref{fig:q0q3_numu_CCQE_FGT_eff}. Though the individual bins do deviate from 1, there is no large-scale regional departure from flatness, and so these distributions do not show a need for a $q_0 \textrm{ - } q_0$ parameterization.
-%\newline
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ CCQE events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat distributions, but with bin-to-bin variations arising from low statistics} 
-\label{fig:q0q3_numu_CCQE_no_eff}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Distributions smeared out and variations between bins are higher than without efficiencies. Still appear relatively flat.}
-\label{fig:q0q3_numu_CCQE_FGT_eff}
-\end{figure}
-\FloatBarrier
-
-For $\overline{\nu_{\mu}}$ CCQE, however, there is a difference between NuWro and NEUT when looking at the ratios without efficiencies. Shown in Figure~\ref{fig:q0q3_numubar_CCQE_no_eff}, it can be seen that the double ratio is consistently higher in the upper-right region of the NuWro/GENIE distribution as opposed to NEUT/GENIE, which is more similar to the corresponding $\nu_{\mu}$ ratio. When adding efficiencies, much of the upper right region is cut out in GENIE and NEUT, shown in Figure~\ref{fig:q0q3_numubar_CCQE_events_FGT_eff}, resulting in empty bins in both double ratios. Despite the distorted phase space, the NEUT/GENIE $\overline{\nu_{\mu}}$ CCQE double ratio appears to behave similarly to the corresponding $\nu_{\mu}$ CCQE double ratio, while NuWro has ratios greater than 1 throughout the shared phaes space, which is evident in Figure ~\ref{fig:q0q3_numubar_CCQE_FGT_eff} which contains distributions with FGT ND and LAr FD efficiencies. Despite this deviation from 1 in NuWro, it suggest that an overall normalization rather than a different parameterization would be sufficient for $\overline{\nu_{\mu}}$ CCQE.
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu_{\mu}}$ CCQE events using DUNE flux without efficiencies applied. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Relatively flat for NEUT/GENIE. NuWro/GENIE double ratio has heavy disagreement in upper-right region.}
-\label{fig:q0q3_numubar_CCQE_no_eff}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_GENIE.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NEUT.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCQE_RHC_ND_numubar_q3_q0_NuWro.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu_{\mu}}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. Both GENIE and NEUT cut out the upper right region of phase space as opposed to NuWro.}
-\label{fig:q0q3_numubar_CCQE_events_FGT_eff}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NEUT_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/CCQE_NuWro_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ $\overline{\nu_{\mu}}$ CCQE events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. NEUT to GENIE double ratio appears similar to the $\nu_{\mu}$ double ratio, while NuWro to GENIE appears greater than 1 in shared bins.}
-\label{fig:q0q3_numubar_CCQE_FGT_eff}
-\end{figure}
-\FloatBarrier
-Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and $\overline{\nu_{\mu}}$ events, as can be seen in the upper half of Figure~\ref{fig:q0q3_numu_2p2h_events} which contains 2p2h $\overline{\nu_{\mu}}$ events without efficiencies. This causes very restriced phase space in the double ratios. However, adding efficiencies and using reconstructed variables smears out the phase space, causing more bins to be shared between generators, though there are still variations in the shapes. See the bottom half of Figure~\ref{fig:q0q3_numu_2p2h_events}. The double ratios seem to be mostly flat for both NEUT and NuWro in the FGT for $\nu_{\mu}$, seen in Figure~\ref{fig:q0q3_numu_2p2h_FGT_eff}. However for $\overline{\nu_{\mu}}$ 2p2h in the FGT, both NEUT to GENIE and NuWro to GENIE double ratios are generally greater than 1, seen in Figure~\ref{fig:q0q3_numubar_2p2h_FGT_eff}. Similar to $\overline{\nu_{\mu}}$ CCQE events, an overall normalization correction should be able to sufficiently cover $\overline{\nu_{\mu}}$ 2p2h variations.
-\begin{figure}[h]
-\centering
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{q0_q3/nominal/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
-\endminipage
-\newline
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_GENIE.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NEUT.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/2p2h_FHC_ND_numu_q3_q0_NuWro.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ 2p2h events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The phase spaces are very different without efficiencies, and restrict the coverage of the double ratios. With efficiencies applied, $q_3$ and $q_0$ are now quantities reconstructed from accepted particle kinematics, so more phase space is shared than in the true variables of the distributions without efficiencies.}
-\label{fig:q0q3_numu_2p2h_events}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numu_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\nu_{\mu}$ 2p2h events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Ratios appear mostly flat.}
-\label{fig:q0q3_numu_2p2h_FGT_eff}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NEUT_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{eff_q0_q3/FGT/ratios/2p2h_NuWro_GENIE_numubar_NF_q3_q0.png}
-\endminipage
-\caption{$q_0 \textrm{ - } q_3$ distributed $\overline{\nu_{\mu}}$ 2p2h events using DUNE flux, FGT efficiencies applied to ND and LAr effiencies applied to FD. Left: Double ratio of NEUT to GENIE, Right: Double ratio of NuWro to GENIE. Both double ratios consistently higher than 1.}
-\label{fig:q0q3_numubar_2p2h_FGT_eff}
-\end{figure}
-\FloatBarrier
-
-\subsection{Parameterization - Conclusions}
-It appears as though the pure-$Q^2$ paramterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ CCQE events. The near-to-far extrapolation plots - the double ratios - appear relatively flat in all reaction modes and in both the $Q^2$ and $q_0 \textrm{ - } q_3$ distributions. However, the $\overline{\nu_{\mu}}$ CCQE events show that model variations are not covered in this extrapolation, at least when looking into the NuWro to GENIE double ratios, specifically in $Q^2$. Additionally, though the distribution of ratios is generally flat in $q_0 \textrm{ - } q_3$, a normalization correction appears needed. This is similarly true in 2p2h. With this, it is safe to assume that a pure-$Q^2$ distribution with different binnings and a normalization correction would be sufficient to cover CCQE and 2p2h model variations. 
-
-There is a degree of statistical limitation of the studies at this point, evident in the presence of bin-to-bin variations. To explore this point further, these studies can quickly and easily be extended to larger data sets to deal with statistics limitations. Additionally, the statistical uncertainties in the single and double ratios will also be investigated. With these, we can move on to quantify the degree to which the near-to-far extrapolation covers variations in the $\nu_{\mu}$ case - or does not cover variations in the $\overline{\nu_{\mu}}$ case. 
-
-%For the rest of the reaction modes, the trend - that $\nu_{\mu}$ ratios appear to be relatively flat for both NEUT and NuWro, while $\overline{\nu_{\mu}}$ NuWro to GENIE double ratio is noticeably greater than 1 - continues. This can be seen in Appendix~\ref{app:q0q3_app}. Of note, however, is the shape of $\nu_\mu$ and $\overline{\nu_{\mu}}$ CCOther events before and after efficiencies are applied in each generator. As shown in Figure~\ref{fig:q0q3_numu_CCOther_events}, the left region of $q_0 \textrm{ - } q_3$ space is empty before efficiencies, but is filled in after efficiencies are applied. This corresponds to a low $Q^2$ region, which is shown to be filled in after efficiencies in the $Q^2$ distribution in Figure~\ref{fig:Q2_numu_CCOther_events}.
-%\begin{figure}[h]
-%\centering
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_GENIE.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_NEUT.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{q0_q3/nominal/CCOther_FHC_ND_numu_q3_q0_NuWro.png}
-%\endminipage
-%\newline
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_GENIE.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_NEUT.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_q0_q3/FGT/CCOther_FHC_ND_numu_q3_q0_NuWro.png}
-%\endminipage
-%\caption{$q_0 \textrm{ - } q_3$ $\nu_{\mu}$ events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The left $q_0 \textrm{ - } q_3$ region is being filled in after efficiencies are applied.}
-%\label{fig:q0q3_numu_CCOther_events}
-%\end{figure}
-%\begin{figure}[h]
-%\centering
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_GENIE.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_NEUT.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{Q2/nominal/CCOther_FHC_ND_numu_Q2_NuWro.png}
-%\endminipage
-%\newline
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_GENIE.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_NEUT.png}
-%\endminipage
-%\minipage{.3\textwidth}
-%\includegraphics[width=\linewidth]{eff_Q2/FGT/CCOther_FHC_ND_numu_Q2_NuWro.png}
-%\endminipage
-%\caption{$Q^2$ events using DUNE flux, Top Row: No Efficiencies applied, Bottom Row: FGT efficiencies applied to ND and LAr effiencies applied to FD. Right to Left: GENIE events distribution, NEUT events distribution, NuWro events distribution. The low $Q^2$ region is being filled in after efficiencies are applied.}
-%\label{fig:Q2_numu_CCOther_events}
-%\end{figure}
-%\FloatBarrier
 
 \subsection{Nucleon multiplicity vs. W}
 \label{sec:Nucleon_multi_w}
@@ -816,7 +906,7 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %\subfile{DUNE_appendix_Ereco_plots.tex}
 %\subfile{DUNE_appendix_Q2_plots.tex}
 %\subfile{DUNE_appendix_q0_q3_plots.tex}
-
+\subfile{DUNE_appendix_N_P_plots_protons.tex}
 
 \begin{thebibliography}{7}
 
