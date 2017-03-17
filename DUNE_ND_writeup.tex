@@ -188,14 +188,14 @@ Neutrino interaction modelling is of great interest to current and future oscill
 
 \begin{table}
 \centering
- \begin{tabular}{| c | c | c |} 
+ \begin{tabular}{| l  c  c |} 
  \hline
  Generator & Version & Model\\ [0.5ex] 
  \hline
  GENIE\cite{GENIE} & 2.10 & RFG \\ 
- \hline
+% \hline
  NEUT\cite{NEUT} & 5.3.6 & Nieves et. al RPA+2p2h/MEC ($M_A$ = 1.01) \\
- \hline
+% \hline
  NuWro\cite{NUWRO} & 11 & LFG + RPA + Nieves et. al \\[1ex]
 % \hline
 % 4 & 545 & 18744 \\
@@ -210,7 +210,7 @@ Neutrino interaction modelling is of great interest to current and future oscill
  %These generators are GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al. 
 \subsection{Generating Events}
 \label{subsec:events}
-Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes, shown in Figure~\ref{fig:dune_flux}. (NEED TO FIND THE OSCILLATION PARAMETERS) Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where the $\overline{\nu}_\mu$ flux is that within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
+Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes, shown in Figure~\ref{fig:dune_flux} for $\nu_{\mu}$ at the ND and FD. The oscillation parameters used for the FD fluxes are included in Table~\ref{tab:osc}. Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where the $\overline{\nu}_\mu$ flux is that within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
@@ -222,6 +222,37 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 \caption{$\nu_\mu$ flux at DUNE ND (Left) and FD (Right)}
 \label{fig:dune_flux}
 \end{figure}
+
+\begin{table}
+\centering
+ \begin{tabular}{| l  c  c |} 
+ \hline 
+ Parameter & Central Value & Relative Uncertainty\\ [0.5ex] 
+ \hline
+ $\theta_{12}$ & 0.5843 & 2.3\% \\ 
+% \hline
+ $\theta_{23}$ (NH) & 0.738 & 5.9\% \\
+% \hline
+ $\theta_{23}$ (IH) & 0.864 & 4.9\% \\
+%  \hline
+ $\theta_{13}$ & 0.148 & 2.5\% \\ 
+% \hline
+ $\Delta m^2_{21}$ & $7.5\times10^{-5} \textrm{eV}^2$ & 2.4\% \\
+%  \hline
+ $\Delta m^2_{31}$ (NH) & $2.457\times10^{-3} \textrm{eV}^2$ & 2.0\% \\
+% \hline
+ $\Delta m^2_{31}$ (IH) & $-2.449\times10^{-3} \textrm{eV}^2$ & 1.9\% \\[1ex]
+% \hline
+% 4 & 545 & 18744 \\
+% \hline
+% 5 & 88 & 788 \\ [1ex] 
+ \hline
+\end{tabular}
+\caption{The various Monte Carlo event generators used for this work.}
+\label{tab:osc}
+\end{table}
+
+
 \FloatBarrier
 	%All studies shown look at the effect of differences between the near and the far detector fluxes. However, we also include the different estimated efficiencies of each of the three near detector configurations.
 \subsection{How We Study a Near to Far Extrapolation}
