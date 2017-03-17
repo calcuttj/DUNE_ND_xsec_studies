@@ -605,10 +605,33 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
+\begin{table}
+\centering
+ \begin{tabular}{| l | c  c | c c |} 
+ \hline
+   Generator \& Interaction& $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$\\ 
+    & \multicolumn{2}{|c|}{ND} & \multicolumn{2}{|c|}{FD} \\ \hline
+   GENIE-CCQE & 13 & 2 & 13 & 2\\ 
+   GENIE-2p2h & 28 & 1 & 29 & 2 \\ 
+   GENIE-CC1$\pi$ & 17 & 21 & 18 & 25\\ 
+   GENIE-CCOther & 24 & 17 & 24 & 19\\ \hline
+   NEUT-CCQE & 1 & 0.8 & 1 & 0.7 \\ 
+   NEUT-2p2h & 8 & 4 & 8 & 4\\ 
+   NEUT-CC1$\pi$ & 9 & 21 & 9 & 23\\ 
+   NEUT-CCOther & 9 & 18 & 11 & 21\\ \hline
+   NuWro-CCQE & 4 & 2 & 3 & 2 \\ 
+   NuWro-2p2h & 3 & 0.3 & 3 & 0.2\\ 
+   NuWro-CC1$\pi$ & 30 & 22 & 34 & 27\\ 
+   NuWro-CCOther & 33 & 20 & 38 & 26 \\ \hline
+\end{tabular}
+\caption{Percentage of events $N_{neutron}>3$ and $E_{neutron}>600 MeV/c$, broken down by generator and event type.  These cut offs where chosen to encompass most of the GENIE }
+\label{tab:int_prob}
+\end{table}
+
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
 This was done for CCQE-like, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
-These differences only account for a small fraction of the events.
+These differences account for a small fraction of the events, generally less than 10\%, as can be seen in Table~\ref{tab:int_prob}.
 Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2p2h neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
   
 \begin{figure}
@@ -645,9 +668,9 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \label{fig:Neutron_multi_2p2h_ND_FD}
 \end{figure}
 
-Care should still be taken when calculating the total neutrino of the event if only a calorimetric approach is used, as is the case in this document.
+Care should still be taken when calculating the neutrino energy of the event if only a calorimetric approach is used, as is the case in this document.
 This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
-Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
+Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as high as 30\%.
 The other interaction modes and anti-neutrino events can also be found in Appendix~\ref{app:Neutron_Multiplicities} and have a smaller fraction.
 
 \begin{figure}
@@ -666,7 +689,10 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \end{figure}
 \FloatBarrier
 
- Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
+Missing neutrons can effect the neutrino energy reconstruction, which is especially important for neutrino oscillation studies which require an exact energy.
+However, much of the effect of these missing neutrons can be taken into account with the near to far extrapolation.
+At the moment the difference between the models seem to be OK for these analyses given a near to far ratio.
+Future investigations will include the ability for errors in GENIE to cover the differences between the models. 
 
 \subsection{Proton/Pion Multiplicity and Momentum}
 \label{subsec:Particle_multiplicities_momentum}
@@ -720,7 +746,18 @@ This is something that needs to be investigated further in future works.
 \label{fig:proton_multiplicity_2p2h_NF}
 \end{figure}
 
-Once detector efficiences are added in
+Once detector efficiencies are added in, there is even a greater difference in the near to far ratio.  
+Figure~\ref{fig:proton_multiplicity_2p2h_NF_eff} shows these striking differences.  
+The top row shows the near to far ratio for the FGT to a LAr far detector.  
+In the region of interest the differences are 100\% and greater.
+The middle row shows the high pressure GAr TPC, with differences again ranging from 20-100\%.
+The last row shows the LAr TPC, and unsurprisingly, gives the best agreement. 
+Event then though, differences of up to 20\% exist, arising most likely due to the different flux at each detector. 
+
+These plots show the importance of not just the FSI model in use but also the detector's threshold to measure protons. 
+The FGT, which has the most realistic thresholds and therefore the ones most unlike the LAr far detector, shows just how important this can be.
+It is expected pions will have an even larger impact than the protons due to there re-interactions with the nucleus.  
+This needs to be confirmed and will be shown in updates to this document. 
 
 \begin{figure}[h]
 \centering
@@ -753,7 +790,7 @@ Once detector efficiences are added in
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
 \end{subfigure}
-\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. In the region with the most events, there are variations of up to 20\%}
+\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interactions. The left hand columns show GENIE, and middle column shows NEUT, and the right hand column shows NuWro. The top row has the FGT efficiencies applied for the ND, the middle row has the high pressure GAr TPC efficiencies, while the last row has the LAr TPC efficiencies for the ND.  All of these use LAr efficiencies for the FD.}
 \label{fig:proton_multiplicity_2p2h_NF_eff}
 \end{figure}
 
@@ -1044,14 +1081,12 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
 \appendix
 
-%\subfile{Appendix_Neutron_Multi.tex}
-%
-%\subfile{Appendix_Nucleon_Multi.tex}
-%
-%\subfile{DUNE_appendix_Ereco_plots.tex}
-%\subfile{DUNE_appendix_Q2_plots.tex}
-%\subfile{DUNE_appendix_q0_q3_plots.tex}
+\subfile{DUNE_appendix_Q2_plots.tex}
+\subfile{DUNE_appendix_q0_q3_plots.tex}
+\subfile{Appendix_Neutron_Multi.tex}
 %\subfile{DUNE_appendix_N_P_plots_protons.tex}
+\subfile{DUNE_appendix_Ereco_plots.tex}
+
 
 \begin{thebibliography}{7}
 
