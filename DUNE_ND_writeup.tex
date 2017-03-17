@@ -293,10 +293,10 @@ Efficiency information is included with the following procedure. Each particle i
 %The VALOR group\cite{VALOR} has led multiple T2K oscillation analyses and has contributed to most published T2K oscillation papers(I TOOK THIS ALMOST WORD FOR WORD FROM THE VALOR DOC BUT IDK WHAT TO WRITE FOR IT. IF CITING IT IS NOT GOOD ENOUGH I NEED TO CHANGE THIS). It also has contributed to to optimisation studies for DUNE, this being a source of motivation for this work. 
 The VALOR software package has been used on multiple T2K oscillation analyses, and has recently been used to study the DUNE near detector configurations. (((The group uses MC templates to map between reconstructed and true information for various reactions.))) Uncertainties in interaction models are parameterized by model variations as a function of $Q^2$. Currently, $Q^2$ parameterizations are defined for neutrinos and antineutrinos as: 
 \begin{itemize}
-\item CCQE nm with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
-\item CCQE nmb with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
-\item 2p2h nm with 1 $Q^2$ bin 
-\item 2p2h nmb with 1 $Q^2$ bin
+\item CCQE $\nu_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
+\item CCQE $\overline{\nu}_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
+\item 2p2h $\nu_{\mu}$ with 1 $Q^2$ bin 
+\item 2p2h $\overline{\nu}_{\mu}$ with 1 $Q^2$ bin
 \end{itemize}
 
 This portion of the work seeks to determine if variations in CCQE and 2p2h models are well represented by these parameterizations in $Q^2$. It also serves to highlight the behavior of the models as they couple to FSI and detector effect as we use a reconstructed $Q^2$ when efficiencies are applied.
@@ -798,7 +798,7 @@ For $\nu_\mu$, all 3 generators behave similarly in the perfect ND for CCQE, 2p2
 \end{figure}
 \FloatBarrier
 
-For $\overline{\nu_\mu}$ in the perfect ND, NEUT and GENIE behave similarly while NuWro behaves differently for CCQE, 2p2h, and CC0$\pi$. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect}. This shows that NEUT and GENIE have similar behavior between each other, but each generator's behavior is slightly different between respective $\nu_\mu$ and $\overline{\nu}_\mu$ modes. NuWro, on the other hand, behaves differently from NEUT and GENIE, but its $\overline{\nu_\mu}$ behavior is more similar to $\nu_\mu$. In CC1$\pi$, NuWro deviates slightly from the other 2 generators, but again behaves more similarly to its corresponding $\nu_\mu$ distribution. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect_CC1Pi}. Shown in the same plot, the tail extending toward higher $\Delta E$ seems to drop off more quickly for NEUT and GENIE than in their corresponding $\nu_\mu$ distribution. For CCOther -  Figure~\ref{fig:numu_Etrue_ereco_perfect_CCOther} - all three generators behave differently from each other, but slightly different from their own corresponding $\nu_\mu$ distributions.
+For $\overline{\nu}_\mu$ in the perfect ND, NEUT and GENIE behave similarly while NuWro behaves differently for CCQE, 2p2h, and CC0$\pi$. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect}. This shows that NEUT and GENIE have similar behavior between each other, but each generator's behavior is slightly different between respective $\nu_\mu$ and $\overline{\nu}_\mu$ modes. NuWro, on the other hand, behaves differently from NEUT and GENIE, but its $\overline{\nu}_\mu$ behavior is more similar to $\nu_\mu$. In CC1$\pi$, NuWro deviates slightly from the other 2 generators, but again behaves more similarly to its corresponding $\nu_\mu$ distribution. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect_CC1Pi}. Shown in the same plot, the tail extending toward higher $\Delta E$ seems to drop off more quickly for NEUT and GENIE than in their corresponding $\nu_\mu$ distribution. For CCOther -  Figure~\ref{fig:numu_Etrue_ereco_perfect_CCOther} - all three generators behave differently from each other, but slightly different from their own corresponding $\nu_\mu$ distributions.
 
 \begin{figure}[h]
 \centering
@@ -832,7 +832,67 @@ For $\overline{\nu_\mu}$ in the perfect ND, NEUT and GENIE behave similarly whil
 \end{figure}
 \FloatBarrier
 
-Figures ~\ref{} - ~\ref{} show that applying FGT efficiencies to $\nu_\mu$ events changes the distribution of $E_{true} - E_{reco}$. The peaks near 0 for each generator are lowered, and more events exhibit a higher difference in the energy. CCQE and 2p2h appear to be affected only slightly when compared to the topology-based reactions CC0$\pi$, CC1$\pi$, and CCOther. This behavior is similar for $\overline{\nu}_\mu$, which can be found in Appendix~\ref{}.
+Figures ~\ref{fig:numu_Etrue_ereco_perfect_FGT_CCQE} - ~\ref{fig:numu_Etrue_ereco_perfect_FGT_CCOther} show that applying FGT efficiencies to $\nu_\mu$ events changes the distribution of $E_{true} - E_{reco}$. The peaks near 0 for each generator are smaller, and more events exhibit a higher difference in the energy. CCQE and 2p2h appear to be affected only slightly when compared to the topology-based reactions CC0$\pi$, CC1$\pi$, and CCOther. This behavior is similar for $\overline{\nu}_\mu$, which can be found in Appendix~\ref{}.
+
+
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCQE.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCQE.png}
+\endminipage
+\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CCQE. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
+\label{fig:numu_Etrue_ereco_perfect_FGT_CCQE}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_2p2h.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_2p2h.png}
+\endminipage
+\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ 2p2h. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
+\label{fig:numu_Etrue_ereco_perfect_FGT_2p2h}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC0Pi.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CC0Pi.png}
+\endminipage
+\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CC0$\pi$. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
+\label{fig:numu_Etrue_ereco_perfect_FGT_CC0Pi}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC1Pi.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CC1Pi.png}
+\endminipage
+\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CC1$\pi$. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
+\label{fig:numu_Etrue_ereco_perfect_FGT_CC1Pi}
+\end{figure}
+\begin{figure}[h]
+\centering
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCOther.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCOther.png}
+\endminipage
+\newline
+\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CCOther. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
+\label{fig:numu_Etrue_ereco_perfect_FGT_CCOther}
+\end{figure}
+\FloatBarrier
+
 
 %As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
 
