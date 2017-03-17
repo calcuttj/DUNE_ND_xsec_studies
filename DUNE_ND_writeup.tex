@@ -182,7 +182,7 @@ Below is a list of the studies we have conducted for this work.
 
 \subsection{Monte Carlo Generators}
 \label{subsec:gen}
-Neutrino interaction modelling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, referred to here as "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different 'vertex-level' interaction models (e.g. CCQE, 2p2h, Resonant) and Final State Interaction (FSI) models. These are given in Table~\ref{tab:gens}
+Neutrino interaction modeling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, referred to here as "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different 'vertex-level' interaction models (e.g. CCQE, 2p2h, Resonant) and Final State Interaction (FSI) models. These are given in Table~\ref{tab:gens}
 
 
 
@@ -274,7 +274,7 @@ The effect of a near to far extrapolation is approximated by taking a 'double ra
 \label{subsec:eff}
 These studies highlight the effect of the different efficiencies of the various detectors. We first consider a 'perfect' ND and FD without any efficiencies applied, and then look what changes as we consider the 3 different configurations of the ND and a simple LAr efficiency in the FD. 
 
-Efficiency information is included with the following procedure. Each particle is randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum. No angular efficiencies have yet been taken into account for this work. At time of this writing, only a full description of the FGT efficiency according to NDTF samples is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}, FGT efficiencies for other particles are included in Appendix~\ref{}. We also lack knowledge of the efficienes for $\pi^0$ in the FGT, so we accept all of these in this configuration. Because we do not have the efficiences for the LAr and GAr, simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. We also make no assumptions for the efficiencies of $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the simple  descriptions, and so all of these types of particles are accepted in the LAr and GAr.
+Efficiency information is included with the following procedure. Each particle is randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum. No angular efficiencies have yet been taken into account for this work. At time of this writing, only a full description of the FGT efficiency according to NDTF samples is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}, FGT efficiencies for other particles are included in Appendix~\ref{}. We also lack knowledge of the efficiencies for $\pi^0$ in the FGT, so we accept all of these in this configuration. Because we do not have the efficiency's for the LAr and GAr, simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. We also make no assumptions for the efficiencies of $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the simple  descriptions, and so all of these types of particles are accepted in the LAr and GAr.
 
 \begin{figure}[h]
 \centering
@@ -304,7 +304,7 @@ This portion of the work seeks to determine if variations in CCQE and 2p2h model
 \subsection{$Q^2$ Parameterization}
 \label{subsec:q2}
 %An obvious first step in the investigation of $Q^2$ parameterization sufficiency is to consider the relative change between the models and this change as it is extrapolated between the ND and FD Detector. 
-The single and double ratio procedure described in Section~\ref{subsec:ntf} is conducted using events created by all three generators at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$, and for true-CCQE and true-2p2h. Applying efficiencies allows us to investigate how the interaction model can couple to detector effects. For distributions without efficiencies, the MC-level $Q^2$ quantity is used, giving us insight into the interaction model uncertainties. However, when including efficiencies, $Q^2$ becomes a reconstructed quantity, as it is calculated from the final state particles that are accepted after efficiencies are applied. This is highlighted in Equations~\ref{eq:Q2} - ~\ref{eq:ereco}. Though we call it 'reconstructed', it is calculated using the true energies and momentums without smearing applied, so it is not truely reconstructed in the usual sense of the word. Using this reconstructed quantity reveals how interaction/FSI variations, and detector effects couple together.
+The single and double ratio procedure described in Section~\ref{subsec:ntf} is conducted using events created by all three generators at the ND and FD and distributed according to $Q^2$. This is done separately with and without efficiencies, for both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$, and for true-CCQE and true-2p2h. Applying efficiencies allows us to investigate how the interaction model can couple to detector effects. For distributions without efficiencies, the MC-level $Q^2$ quantity is used, giving us insight into the interaction model uncertainties. However, when including efficiencies, $Q^2$ becomes a reconstructed quantity, as it is calculated from the final state particles that are accepted after efficiencies are applied. This is highlighted in Equations~\ref{eq:Q2} - ~\ref{eq:ereco}. Though we call it 'reconstructed', it is calculated using the true energies and momentums without smearing applied, so it is not truly reconstructed in the usual sense of the word. Using this reconstructed quantity reveals how interaction/FSI variations, and detector effects couple together.
 
 \begin{equation}
 \label{eq:Q2}
@@ -373,7 +373,7 @@ For double ratios with FGT efficiencies applied to the ND and simple LAr efficie
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
 \endminipage
-\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr effiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr efficiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
 \label{fig:Q2_ccqe_FGT_eff}
 \end{figure}
 \FloatBarrier
@@ -408,7 +408,7 @@ We run into trouble extending the $\overline{\nu}_{\mu}$ CCQE study with efficie
 \end{figure}
 \FloatBarrier
 
-For 2p2h $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 below about 1 $\textrm{GeV}^2$ without efficiencies applied, as seen in Figure~\ref{fig:Q2_2p2h_numu_no_eff} and ~\ref{fig:Q2_2p2h_numubar_no_eff}. Above 1 $\textrm{GeV}^2$, the statistics are again low. At this moment, the currently-proposed 1-bin normalization appears sufficient in the region below 1 $\textrm{GeV}^2$. The low statistics prevent us from making conclusions in the high $Q^2$ region as well as drawing conclusions from applying efficiencies. These will be revisted in later iterations of this work.
+For 2p2h $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ events, the double ratios from both NEUT and NuWro remain centered close to or around 1 below about 1 $\textrm{GeV}^2$ without efficiencies applied, as seen in Figure~\ref{fig:Q2_2p2h_numu_no_eff} and ~\ref{fig:Q2_2p2h_numubar_no_eff}. Above 1 $\textrm{GeV}^2$, the statistics are again low. At this moment, the currently-proposed 1-bin normalization appears sufficient in the region below 1 $\textrm{GeV}^2$. The low statistics prevent us from making conclusions in the high $Q^2$ region as well as drawing conclusions from applying efficiencies. These will be revisited in later iterations of this work.
 \begin{figure}[h]
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NEUT_GENIE_numu_near_Q2.png}
@@ -453,18 +453,18 @@ For 2p2h $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ events, the double ratios from b
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/2p2h_NuWro_GENIE_numubar_NF_Q2.png}
 \endminipage
-\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiences, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of deviations from 1 throughout distributions with efficiencies applied. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\caption{$Q^2$ distributed $\overline{\nu}_{\mu}$ 2p2h events using DUNE flux. Top: No efficiencies, Bottom: FGT efficiencies applied to ND, LAr efficiencies applied to FD. Left to right: NEUT to GENIE double ratio, NuWro to GENIE double ratio. Large amounts of deviations from 1 throughout distributions with efficiencies applied. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
 \label{fig:Q2_2p2h_numubar_no_eff}
 \end{figure}
 \FloatBarrier
 
-We currently find an additional bin in the region (.55, ~1.25) will account for uncertainties in both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE. For $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h, the overall normalization currently appears sufficient from these studies. Investigations into the origin of the variation in the high $Q^2$ region of CCQE will be conducted as this work is furthered. Additional statistics and more complete effiency descriptions for the LAr and GAr are required, and will be conducted at a later date.
+We currently find an additional bin in the region (.55, ~1.25) will account for uncertainties in both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE. For $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h, the overall normalization currently appears sufficient from these studies. Investigations into the origin of the variation in the high $Q^2$ region of CCQE will be conducted as this work is furthered. Additional statistics and more complete efficiency descriptions for the LAr and GAr are required, and will be conducted at a later date.
 
 \subsection{$q_0 \textrm{ vs. } q_3$ Variations}
 \label{subsec:q0q3}
-In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ - } q_3$ were also investigated to explore the possibility that variations arrise when changing the parameterization from $Q^2$ to $q_0 \textrm{ - } q_3$. The $Q^2$ parameterization assumes the variations are purely functions of $Q^2$. Under this assumption, the double ratios should be flat in $q_0 \textrm{ - } q_3$ regions corresponding to the $Q^2$-binned parameterization. If this is not the case, a pure-$Q^2$ parameterization cannot sufficiently account for CCQE and 2p2h variations. 
+In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ - } q_3$ were also investigated to explore the possibility that variations arise when changing the parameterization from $Q^2$ to $q_0 \textrm{ - } q_3$. The $Q^2$ parameterization assumes the variations are purely functions of $Q^2$. Under this assumption, the double ratios should be flat in $q_0 \textrm{ - } q_3$ regions corresponding to the $Q^2$-binned parameterization. If this is not the case, a pure-$Q^2$ parameterization cannot sufficiently account for CCQE and 2p2h variations. 
 
-These studies were done in the exact same way as those in the previous section, only with the events and ratios distributed in $q_0 \textrm{ - } q_3$ bins. Note: to be symmetric arround 1, the scale extends from 0 to 2, but the variations in those bins can actually be greater than 2. Again, the quantities are MC-level truth information in the distributions without efficiencies, but are reconstructed in those with effiencies applied, as described in Equations~\ref{eq:Q2} - ~\ref{eq:ereco}.
+These studies were done in the exact same way as those in the previous section, only with the events and ratios distributed in $q_0 \textrm{ - } q_3$ bins. Note: to be symmetric around 1, the scale extends from 0 to 2, but the variations in those bins can actually be greater than 2. Again, the quantities are MC-level truth information in the distributions without efficiencies, but are reconstructed in those with efficiencies applied, as described in Equations~\ref{eq:Q2} - ~\ref{eq:ereco}.
 
 For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear flat for both NEUT to GENIE and NuWro to GENIE double ratios, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}. There is distortion in the upper right region, consistent with the high $Q^2$ regions in Figure~\ref{fig:Q2_ccqe_no_eff}.  This binning proves to be a problem for creating reliable conclusions once efficiencies are applied, as statistics for each individual bin become quite low. These are included in Appendix~\ref{q0q3_app}. Higher statistics will be achieved for future work.
 %\newline
@@ -496,7 +496,7 @@ For $\overline{\nu}_{\mu}$ CCQE, the large variations in the high $Q^2$ region a
 \end{figure}
 \FloatBarrier
 
-Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and $\overline{\nu}_{\mu}$ events with no efficiencies applied, as can be seen in Figure~\ref{fig:q0q3_2p2h_events}. This contains the raw event rate for 2p2h, and is shown to highlight the drastic shape difference. This causes very restriced phase space in the double ratios in $q_0 \textrm{ - } q_3$, and so double ratios are not shown here - however they are included in ~\ref{app:q0q3_app}. The shape differences suggest that an overall binning in $Q^2$ cannot cover uncertainties, and reweighting events according to $q_0 \textrm{ - } q_3$ shape should be used instead.
+Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and $\overline{\nu}_{\mu}$ events with no efficiencies applied, as can be seen in Figure~\ref{fig:q0q3_2p2h_events}. This contains the raw event rate for 2p2h, and is shown to highlight the drastic shape difference. This causes very restricted phase space in the double ratios in $q_0 \textrm{ - } q_3$, and so double ratios are not shown here - however they are included in ~\ref{app:q0q3_app}. The shape differences suggest that an overall binning in $Q^2$ cannot cover uncertainties, and reweighting events according to $q_0 \textrm{ - } q_3$ shape should be used instead.
 \begin{figure}[h]
 \centering
 \minipage{.32\textwidth}
@@ -524,7 +524,7 @@ Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and
 \FloatBarrier
 
 \subsection{Parameterization - Conclusions}
-It appears as though the pure-$Q^2$ paramterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE events, but slight modifications are suggested. The near-to-far extrapolation plots - the double ratios - appear relatively flat in the regions of the individual bins in the low $Q^2$ region. This changes above ~1.25 $\textrm{GeV}^2$, so placing another bin between 0.55 and ~1.25 $\textrm{GeV}^2$ should suffice. The $q_0 \textrm{ - } q_3$ double ratios are consistent with this conclusion. Future work will be focused on improving statistics and implementing full LAr and GAr efficiencies as that information becomes available, as well as investigating the origin of the high-$Q^2$ variations which possibly arise from proton or - more-likely - muon acceptance effects. 
+It appears as though the pure-$Q^2$ parameterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE events, but slight modifications are suggested. The near-to-far extrapolation plots - the double ratios - appear relatively flat in the regions of the individual bins in the low $Q^2$ region. This changes above ~1.25 $\textrm{GeV}^2$, so placing another bin between 0.55 and ~1.25 $\textrm{GeV}^2$ should suffice. The $q_0 \textrm{ - } q_3$ double ratios are consistent with this conclusion. Future work will be focused on improving statistics and implementing full LAr and GAr efficiencies as that information becomes available, as well as investigating the origin of the high-$Q^2$ variations which possibly arise from proton or - more-likely - muon acceptance effects. 
 
 The low-$Q^2$ $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h events appear to be covered by the current 1-bin parameterization when only looking at the $Q^2$ distribution. However, the shape differences in $q_0 \textrm{ - } q_3$ show that a pure-$Q^2$ parameterization should not be used. Future work will continue with improving statistics, as well as implementing all efficiencies.
 
@@ -606,10 +606,10 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
-This was done for CCQE-like, CC1$\pi$, 2P2H, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
+This was done for CCQE-like, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
 These differences only account for a small fraction of the events.
-Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2P2H neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
+Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2p2h neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
   
 \begin{figure}
 \centering
@@ -622,9 +622,10 @@ Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2P2H neutrin
 \begin{subfigure}[b]{0.32\textwidth}
   \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NUWRO_ND_numu.pdf}
 \end{subfigure}
-\caption{The neutron multiplicity vs total neutron energy for 2P2H interactions for GENIE, NEUT, and NUWRO, respectively.  Even though they do show a different phase-space for the neutron multiplicity, they all agree where most of the energy lost to neutrons should be.  This is similar for other interaction types as well.}
+\caption{The neutron multiplicity vs total neutron energy for 2p2h interactions for GENIE, NEUT, and NUWRO, respectively.  Even though they do show a different phase-space for the neutron multiplicity, they all agree where most of the energy lost to neutrons should be.  This is similar for other interaction types as well.}
 \label{fig:Neutron_multi_2p2h_ND}
 \end{figure}
+
 Further more, the difference in the multiplicities between the generators becomes irrelevant after a ND to FD extraction, as can be seen in Figure~\ref{fig:Neutron_multi_2p2h_ND_FD}.
 Here, the region where the most energy is lost agrees very well between the ND and FD for all generators and interaction types.
 The areas with low statistics do show a disagreement, but very few events fall into this area.
@@ -640,12 +641,13 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \begin{subfigure}[b]{0.32\textwidth}
   \includegraphics[width=\textwidth]{nneutrons_v_total_ene/Nneutrons_Total_ENe_2p2h_NUWRO_ND_FD_numu_norm.pdf}
 \end{subfigure}
-\caption{The ratio of the ND to the FD for neutron multiplicity vs total neutron energy for 2P2H interactions for GENIE, NEUT, and NUWRO, respectively.  In the area where the largest amount of energy is lost to neutrons, low multiplicity and low energy, the agreement between the ND and FD is almost perfect.} 
+\caption{The ratio of the ND to the FD for neutron multiplicity vs total neutron energy for 2p2h interactions for GENIE, NEUT, and NUWRO, respectively.  In the area where the largest amount of energy is lost to neutrons, low multiplicity and low energy, the agreement between the ND and FD is almost perfect.} 
 \label{fig:Neutron_multi_2p2h_ND_FD}
 \end{figure}
+
 Care should still be taken when calculating the total neutrino of the event if only a calorimetric approach is used, as is the case in this document.
 This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
-Even for 2P2H events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
+Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
 The other interaction modes and anti-neutrino events can also be found in Appendix~\ref{app:Neutron_Multiplicities} and have a smaller fraction.
 
 \begin{figure}
@@ -659,7 +661,7 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \begin{subfigure}[b]{0.32\textwidth}
   \includegraphics[width=\textwidth]{nneutrons_ene_enu/Nneutrons_Enu_true_2p2h_NUWRO_ND_numu_norm.pdf}
 \end{subfigure}
-\caption{Neutron multiplicity vs total neutron energy divide by the neutrino energy for 2P2H interactions from GENIE, NEUT, and NUWRO, respectively.  For low multiplicity, the neutron carries away a significant fraction of the neutrino energy.} 
+\caption{Neutron multiplicity vs total neutron energy divide by the neutrino energy for 2p2h interactions from GENIE, NEUT, and NUWRO, respectively.  For low multiplicity, the neutron carries away a significant fraction of the neutrino energy.} 
 \label{fig:Neutron_multi_ene_enu_2p2h_ND}
 \end{figure}
 \FloatBarrier
@@ -669,25 +671,93 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \subsection{Proton/Pion Multiplicity and Momentum}
 \label{subsec:Particle_multiplicities_momentum}
 
-Similar to the neutron multiplicity and energy studies, proton and pion mutliplicities and energies offer insight into the coupling of the detector configurations with variations in FSI models as well as the energy reconstruction capabilities of the different detector configurations. The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  For these studies, the 3-momentum of the final state (after efficiencies) protons or charged pions are summed. The magnitude is then plotted against the multiplicity for the specific particle type. This was done for the FS particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther, and with all 3 ND configuration efficiencies and the LAr FD efficiencies, as well as with no efficiencies applied. As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. Note that the LAr and GAr are still only naive assumptions.
+Similar to the neutron multiplicity and energy studies, proton and pion multiplicities offer insight into the coupling of the detector configurations with variations in FSI models as well as the energy reconstruction capabilities of the different detector configurations. 
+The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  
+For these studies, the 3-momentum of the final state protons are summed. 
+The magnitude is then plotted against the multiplicity for the specific particle type. 
+This was done for the FS particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther, with no efficiencies applied so we can look at the effects of the FSI models, as well with all 3 ND configuration efficiencies and the LAr FD efficiencies, so we can investigate the effects of the different ND and how the couple to the FD.. 
+As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. 
 
+To show the difference in the FSI models, Figure~\ref{fig:proton_multiplicity_2p2h} shows the proton multiplicity vs total proton momentum for 2p2h interactions. 
+2p2h models where chosen as they have the smallest phase space in this projection and therefore show the differences the best, but all interaction types have been investigated and can be found in Appendix~\ref{app:proton_meultiplicty}.
+From this, one can see that there is a difference between the FSI models.  
+Particularly, GENIE prefers to have more proton multiplicity compared to NEUT and NuWro.
+It also has lower total momentum for these protons when compared to the other two.
  
 \begin{figure}[h]
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_near_N_P.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_far_N_P.png}
-\endminipage
-\minipage{.3\textwidth}
-\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/CCQE_NEUT_GENIE_numu_NF_N_P.png}
-\endminipage
-\caption{Nprotons vs. P protons distributed events using DUNE flux. Left: Ratio of NEUT to GENIE output at ND with FGT efficiencies, Mid: Ratio of NEUT to GENIE output at FD with LAr efficiencies, Right: Double ratio of NEUT to GENIE, Near to Far}
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/2p2h_FHC_ND_numu_N_P_GENIE.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/2p2h_FHC_ND_numu_N_P_NEUT.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/2p2h_FHC_ND_numu_N_P_NuWro.png}
+\end{subfigure}
+\caption{The proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. There is a clear difference in phase space with GENIE having both higher proton multiplicity and lower total momentum.}
+\label{fig:proton_multiplicity_2p2h}
 \end{figure}
-\FloatBarrier
-%\begin{equation}
-%|\vec{P_{total,i}}| = |\Sigma \vec{P_i}|
-%\end{equation}
+
+Unlike with the neutron multiplicity, the differences between the models is important as the a near to far extrapolation does not hold.  
+Figure~\ref{proton_multiplicity_2p2h_NF} shows this with variations of 20-30\% in the regions where the most events are.  
+The exact reason for this discrepancy is unclear.
+It could be attributed to the plot only includes the total momentum of all protons, with it being possible that one or two protons take away the most energy and the highest momentum protons would agree between the two detectors.
+This is something that needs to be investigated further in future works.  
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/ratios/2p2h_GENIE_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/ratios/2p2h_NEUT_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{N_P/nominal/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
+\end{subfigure}
+\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. In the region with the most events, there are variations of up to 20\%}
+\label{fig:proton_multiplicity_2p2h_NF}
+\end{figure}
+
+Once detector efficiences are added in
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/2p2h_GENIE_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/2p2h_NEUT_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/FGT/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/GAr/protons/ratios/2p2h_GENIE_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/GAr/protons/ratios/2p2h_NEUT_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/GAr/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_GENIE_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_NEUT_numu_NF_N_P.png}
+\end{subfigure}
+\begin{subfigure}[b]{0.32\textwidth}
+\includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
+\end{subfigure}
+\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. In the region with the most events, there are variations of up to 20\%}
+\label{fig:proton_multiplicity_2p2h_NF_eff}
+\end{figure}
+
+
 
 \subsection{Difference from True Neutrino Energy}
 \label{subsec:EDiff}
@@ -770,7 +840,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 % \subsubsection{Neutrons vs W}
 
 % Apart from the difference in neutron multiplicity discussed in Section~\ref{sec:N_multiplicities_Energy}, the exact phase space of these event in the neutron/W plane is slightly different.  
-% This is most pronounced for 2P2H events, as can be seen in Figure~\ref{Neutron_w_2p2h_ND}. 
+% This is most pronounced for 2p2h events, as can be seen in Figure~\ref{Neutron_w_2p2h_ND}. 
 % The width of NEUT's peak is broader then GENIE's or NUWRO's while NUWRO allows for much higher W's.
 
 % \begin{figure}
@@ -784,7 +854,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 % \begin{subfigure}[b]{0.32\textwidth}
 %   \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NUWRO_ND_numu.pdf}
 % \end{subfigure}
-% \caption{The neutron multiplicity vs W for 2P2H interactions from GENIE, NEUT, and NUWRO, respectively.  It can be seen that all three event generators have the peak of the distribution at the same place, but NEUT's peak is much broader while NUWRO allows for much higher W's.}
+% \caption{The neutron multiplicity vs W for 2p2h interactions from GENIE, NEUT, and NUWRO, respectively.  It can be seen that all three event generators have the peak of the distribution at the same place, but NEUT's peak is much broader while NUWRO allows for much higher W's.}
 % \label{fig:Neutron_w_2p2h_ND}
 % \end{figure}
 
@@ -803,7 +873,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 % \begin{subfigure}[b]{0.32\textwidth}
 %   \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_NUWRO_ND_FD_numu_norm.pdf}
 % \end{subfigure}
-% \caption{The ND/FD ratio of neutron multiplicity vs W for 2P2H interactions from GENIE, NEUT, and NUWRO, respectively.  The effects of the different phase space seen in Figure~\ref{fig:Neutron_w_2p2h_ND} is not great if a ND ro FD extropolation is used.  This can be seen by the ratio being very close to one at the peak of Figure~\ref{fig:Neutron_w_2p2h_ND} distribution.}
+% \caption{The ND/FD ratio of neutron multiplicity vs W for 2p2h interactions from GENIE, NEUT, and NUWRO, respectively.  The effects of the different phase space seen in Figure~\ref{fig:Neutron_w_2p2h_ND} is not great if a ND ro FD extropolation is used.  This can be seen by the ratio being very close to one at the peak of Figure~\ref{fig:Neutron_w_2p2h_ND} distribution.}
 % \label{fig:Neutron_w_2p2h_ND_FD}
 % \end{figure}
 
@@ -818,7 +888,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 % \begin{subfigure}[b]{0.32\textwidth}
 %   \includegraphics[width=\textwidth]{nneutrons_w/Nneutrons_W_nuc_rest_2p2h_GENIE_NUWRO_ND_FD_numu_norm.pdf}
 % \end{subfigure}
-% \caption{The double ratio of ND/FD and the event generators to GENIE of the neutron multiplicity vs W for 2P2H interactions.  Despite the differences seen in the W distributions, the double ratio shows suprisingly good agreement between the generators, indicating that the different models should not have a large impact on the final results.}
+% \caption{The double ratio of ND/FD and the event generators to GENIE of the neutron multiplicity vs W for 2p2h interactions.  Despite the differences seen in the W distributions, the double ratio shows suprisingly good agreement between the generators, indicating that the different models should not have a large impact on the final results.}
 % \label{fig:Neutron_w_2p2h_ND_FD_GENIE}
 % \end{figure}
 
@@ -826,7 +896,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 
 % In the last section we saw a differnce in the phase space between the different generators.  
 % Now we will show an instance where the phase space is almost the same but there is a large difference between the ND and FD.  
-% Though here we are only showing the results for CC1$\pi$ via protons, the results are the same for CC-Other (anything not CCQE, CC1$\pi$, or 2P2H), and neutrons along with pions.
+% Though here we are only showing the results for CC1$\pi$ via protons, the results are the same for CC-Other (anything not CCQE, CC1$\pi$, or 2p2h), and neutrons along with pions.
 % Figure~\ref{fig:Proton_w_res_ND} shows that GENIE, NEUT, and NUWRO have very similar distributions.
 
 % \begin{figure}
@@ -860,7 +930,7 @@ Meanwhile, for $\overline{\nu_\mu}$ CCQE, 2p2h, and CC0$\pi$ events NuWro consis
 % \begin{subfigure}[b]{0.32\textwidth}
 %   \includegraphics[width=\textwidth]{nprotons_w/Nprotons_W_nuc_rest_res_NUWRO_ND_FD_numu_norm.pdf}
 % \end{subfigure}
-% \caption{The ND/FD ratio of the proton multiplicity vs W for CC1$\pi$ interactions from GENIE, NEUT, and NUWRO, respectively.  Unlike with 2P2H events shown for neutrons, there are clear differences between the ND and FD.  At the peak of the distribution this is between 20\% and 40\%.  Furthermore, there is a clear difference between W values below 2000 and ones above it.}
+% \caption{The ND/FD ratio of the proton multiplicity vs W for CC1$\pi$ interactions from GENIE, NEUT, and NUWRO, respectively.  Unlike with 2p2h events shown for neutrons, there are clear differences between the ND and FD.  At the peak of the distribution this is between 20\% and 40\%.  Furthermore, there is a clear difference between W values below 2000 and ones above it.}
 % \label{fig:Proton_w_res_ND_FD}
 % \end{figure}
 
