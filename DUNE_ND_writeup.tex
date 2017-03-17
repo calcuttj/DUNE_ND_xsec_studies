@@ -139,7 +139,7 @@
 
 %This document serves as a writeup detailing the current status of the DUNE ND studies and the progress that has been made so far, as well as a plan on how to further the studies in the near future. 
 
-The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the mass hierarchy. It consists of both a Near and Far Detector separated by 1300km and uses a neutrino beam created at Fermilab.\cite{DUNE_CDR1}. While the design of the Liquid Argon Far Detector has been finalized, there is still ongoing effort in deciding the configuration of the Near Detector. The main near detector design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). DUNE's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a near-to-far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect DUNE's goals. This work was done concurrent with the DUNE ND Taskforce (NDTF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also explore how different interaction models - used as proxies for variations in a given model - couple to the different NDs and the FD.
+The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the mass hierarchy. It consists of both a Near and Far Detector (ND and FD) separated by 1300km and uses a neutrino beam created at Fermilab.\cite{DUNE_CDR1}. While the design of the Liquid Argon Far Detector has been finalized, there are still ongoing efforts in deciding the configuration of the Near Detector. The main near detector design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). DUNE's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a near-to-far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect DUNE's goals. This work was done concurrent with the DUNE ND Taskforce (NDTF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also explore how different interaction models - used as proxies for variations in a given model - couple to the different NDs and the FD.
 
 Below is a list of the studies we have conducted for this work.
 \begin{itemize}
@@ -156,9 +156,9 @@ Below is a list of the studies we have conducted for this work.
 \item The different abilities of the 3 ND configurations to reconstruct the neutrino energy.
 	\begin{itemize}
 	\item Variations in neutron multiplicities and energy lost to neutrons.
-	\begin{itemize}
-			\item Do the detectors need to be sensitive to neutrons?
-	\end{itemize} 
+%	\begin{itemize}
+%			\item Do the detectors need to be sensitive to neutrons?
+%	\end{itemize} 
 	\item How do different ND configurations couple to model differences in variations in proton \& pion multiplicity and momentum.
 	\item Difference from true neutrino energy.
 	\begin{itemize}
@@ -182,7 +182,7 @@ Below is a list of the studies we have conducted for this work.
 
 \subsection{Monte Carlo Generators}
 \label{subsec:gen}
-Neutrino interaction modeling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, referred to here as "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different 'vertex-level' interaction models (e.g. CCQE, 2p2h, Resonant) and Final State Interaction (FSI) models. These are given in Table~\ref{tab:gens}
+Neutrino interaction modeling is of great interest to current and future oscillation experiments. Currently, there are a few different neutrino interaction software packages, referred to here as "generators". While it is not guaranteed that the physics of nature corresponds to any of these software packages, the different choices made by the generators can act as a proxy for possible variations in the neutrino interaction model. The models considered span a range of different 'vertex-level' interaction models (e.g. CCQE, 2p2h, Resonant) and Final State Interaction (FSI) models. These are given in Table~\ref{tab:gens}.
 
 
 
@@ -210,7 +210,7 @@ Neutrino interaction modeling is of great interest to current and future oscilla
  %These generators are GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al. 
 \subsection{Generating Events}
 \label{subsec:events}
-Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes, shown in Figure~\ref{fig:dune_flux} for $\nu_{\mu}$ at the ND and FD. The oscillation parameters used for the FD fluxes are included in Table~\ref{tab:osc}. Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where the $\overline{\nu}_\mu$ flux is that within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
+Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes~\cite{DUNE_osc}, shown in Figure~\ref{fig:dune_flux} for $\nu_{\mu}$ at the ND and FD. The oscillation parameters used for the FD fluxes are included in Table~\ref{tab:osc}. Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where there are $\overline{\nu}_\mu$ within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
@@ -248,16 +248,16 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 % 5 & 88 & 788 \\ [1ex] 
  \hline
 \end{tabular}
-\caption{The various Monte Carlo event generators used for this work.}
+\caption{Oscillation parameters used for FD fluxes.}
 \label{tab:osc}
 \end{table}
 
 
 \FloatBarrier
 	%All studies shown look at the effect of differences between the near and the far detector fluxes. However, we also include the different estimated efficiencies of each of the three near detector configurations.
-\subsection{How We Study a Near to Far Extrapolation}
+\subsection{Near to Far Flux Comparisons}
 \label{subsec:ntf}
-The various studies regarding near to far extrapolations are explored using the following procedure. Ratios of either NEUT or NuWro to GENIE - referred to as 'single ratios' - separately at the ND and FD are taken. NEUT and NuWro are both normalized to GENIE to highlight shape differences rather than overall normalization effects. These offer insight into model variations in and how the dependence of ND configuration couple to these variations.
+The various studies regarding near to far extrapolations are explored using the following procedure. Ratios of either NEUT or NuWro to GENIE - referred to as 'single ratios' - separately at the ND and FD are taken. NEUT and NuWro are both normalized to GENIE to highlight shape differences rather than overall normalization effects. These offer insight into model variations and how the dependence of ND configuration couple to these variations.
 The effect of a near to far extrapolation is approximated by taking a 'double ratio' between the near and far single ratios. To be explicit, these are defined in Equations ~\ref{eq:single_ratio} and ~\ref{eq:double_ratio}, where 'Other MC' refers to either NEUT or NuWro and 'Near' can be replaced by 'Far' in the single ratio. We note this is a crude approximation to give intuition about the problem for just a single reaction process; a fit to the ND spectrum will have multiple reactions in a given topology which can complicate the determination of physics effects for a single reaction.
 
 \begin{equation}
@@ -274,7 +274,7 @@ The effect of a near to far extrapolation is approximated by taking a 'double ra
 \label{subsec:eff}
 These studies highlight the effect of the different efficiencies of the various detectors. We first consider a 'perfect' ND and FD without any efficiencies applied, and then look what changes as we consider the 3 different configurations of the ND and a simple LAr efficiency in the FD. 
 
-Efficiency information is included with the following procedure. Each particle is randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum. No angular efficiencies have yet been taken into account for this work. At time of this writing, only a full description of the FGT efficiency according to NDTF samples is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}, FGT efficiencies for other particles are included in Appendix~\ref{}. We also lack knowledge of the efficiencies for $\pi^0$ in the FGT, so we accept all of these in this configuration. Because we do not have the efficiency's for the LAr and GAr, simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. We also make no assumptions for the efficiencies of $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the simple  descriptions, and so all of these types of particles are accepted in the LAr and GAr.
+Efficiency information is included with the following procedure. Each particle is randomly accepted or rejected by throwing a random number and checking against the efficiency according to the particle's momentum. No angular efficiencies have yet been taken into account for this work. At the time of this writing, only a full description of the FGT efficiency according to NDTF samples is available, but other configurations will be added to subsequent versions of this note. An example of the efficiency for protons in the FGT is given in Figure~\ref{fig:FGT_proton_effs}; FGT efficiencies for other particles are included in Appendix~\ref{app:eff_app}. We also lack knowledge of the efficiencies for $\pi^0$ in the FGT, so we accept all of these in this configuration. Because we do not have the efficiency's for the LAr and GAr, simple thresholds for protons are applied for the GAr - 100 MeV/c - and LAr ND and FD - 200 MeV/c. We also make no assumptions for the efficiencies of $\mu$, $\pi^{+,-}$, and $\pi^{0}$ in the simple  descriptions, and so all of these types of particles are accepted in the LAr and GAr.
 
 \begin{figure}[h]
 \centering
@@ -291,7 +291,8 @@ Efficiency information is included with the following procedure. Each particle i
 
 \section{Parameterization}
 %The VALOR group\cite{VALOR} has led multiple T2K oscillation analyses and has contributed to most published T2K oscillation papers(I TOOK THIS ALMOST WORD FOR WORD FROM THE VALOR DOC BUT IDK WHAT TO WRITE FOR IT. IF CITING IT IS NOT GOOD ENOUGH I NEED TO CHANGE THIS). It also has contributed to to optimisation studies for DUNE, this being a source of motivation for this work. 
-The VALOR software package has been used on multiple T2K oscillation analyses, and has recently been used to study the DUNE near detector configurations. (((The group uses MC templates to map between reconstructed and true information for various reactions.))) Uncertainties in interaction models are parameterized by model variations as a function of $Q^2$. Currently, $Q^2$ parameterizations are defined for neutrinos and antineutrinos as: 
+The VALOR software package has been used on multiple T2K oscillation analyses, and has recently been used to study the DUNE near detector configurations. %(((The group uses MC templates to map between reconstructed and true information for various reactions.))) 
+The VALOR group has contributed to optimization studies for DUNE\cite{VALOR}, and has defined a $Q^2$ parameterization  - used to parameterize uncertainties according to model variations - for neutrinos and antineutrinos as: 
 \begin{itemize}
 \item CCQE $\nu_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
 \item CCQE $\overline{\nu}_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
@@ -299,7 +300,7 @@ The VALOR software package has been used on multiple T2K oscillation analyses, a
 \item 2p2h $\overline{\nu}_{\mu}$ with 1 $Q^2$ bin
 \end{itemize}
 
-This portion of the work seeks to determine if variations in CCQE and 2p2h models are well represented by these parameterizations in $Q^2$. It also serves to highlight the behavior of the models as they couple to FSI and detector effect as we use a reconstructed $Q^2$ when efficiencies are applied.
+This portion of the work seeks to determine if variations in CCQE and 2p2h models are well represented by these parameterizations in $Q^2$. It also serves to highlight the behavior of the models as they couple to FSI and detector effect as we use a reconstructed $Q^2$ when efficiencies are applied. The variations are also studied in $q_0 \textrm{ vs. } q_3$ to check if a pure-$Q^2$ parameterization is sufficient.
 
 \subsection{$Q^2$ Parameterization}
 \label{subsec:q2}
@@ -322,6 +323,7 @@ q_3^2 = (\vec{P}_{reco} - \vec{P}_{lep})^2
 E_{reco} =E_{lep} + \Sigma E_{\pi} + \Sigma (E_{prot} - M_{prot})
 \label{eq:ereco}
 \end{equation}
+
 Conclusions are drawn from the double ratios according to the following prescription. We look for if the ratio is flat - i.e. if a horizontal line is within the statistical error bars - in a given bin of the parameterization. Flatness in that bin is a crude estimation for model-dependent shape uncertainties canceling out in a near-to-far extrapolation, and shows that a reweighting of that whole bin is sufficient to cover uncertainties. Again, we stress that this is a crude approximation to the near-to-far extrapolation.
  
 %, true-2p2h, CC0$\pi^{\pm}$, CC1$\pi^{\pm}$, and CCOther as defined in Section~\ref{subsec:EDiff}
@@ -373,7 +375,7 @@ For double ratios with FGT efficiencies applied to the ND and simple LAr efficie
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
 \endminipage
-\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr efficiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above around 1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr efficiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above ~1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
 \label{fig:Q2_ccqe_FGT_eff}
 \end{figure}
 \FloatBarrier
@@ -403,7 +405,7 @@ We run into trouble extending the $\overline{\nu}_{\mu}$ CCQE study with efficie
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{Q2/nominal/ratios/CCQE_NuWro_GENIE_numubar_NF_Q2.png}
 \endminipage
-\caption{MC-level $Q^2$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. Large amounts of variations in the region above 1.5 $\textrm{GeV}^2$ in both double ratios. This differs from $\nu_{\mu}$ CCQE, where this arose in the ratios after efficiencies are added. Here, it exists without any efficiencies, pointing to variations in the CCQE model, rather than FSI or detector effects, not being covered by the parameterization. An additional bin between .55 and 1.25 $\textrm{GeV}^2$ is suggested. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
+\caption{MC-level $Q^2$ distributed $\overline{\nu}_{\mu}$ CCQE events using DUNE flux. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. Large amounts of variations in the region above 1.5 $\textrm{GeV}^2$ in both double ratios. This differs from $\nu_{\mu}$ CCQE, where this arose in the ratios after efficiencies are added. Here, it exists without any efficiencies. This points to variations in the CCQE model, rather than FSI or detector effects, not being covered by the parameterization. An additional bin between .55 and 1.25 $\textrm{GeV}^2$ is suggested. Note that the VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
 \label{fig:Q2_ccqe_bar}
 \end{figure}
 \FloatBarrier
@@ -466,7 +468,7 @@ In addition to studying the $Q^2$ ratios, the ratios in $q_0 \textrm{ - } q_3$ w
 
 These studies were done in the exact same way as those in the previous section, only with the events and ratios distributed in $q_0 \textrm{ - } q_3$ bins. Note: to be symmetric around 1, the scale extends from 0 to 2, but the variations in those bins can actually be greater than 2. Again, the quantities are MC-level truth information in the distributions without efficiencies, but are reconstructed in those with efficiencies applied, as described in Equations~\ref{eq:Q2} - ~\ref{eq:ereco}.
 
-For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear flat for both NEUT to GENIE and NuWro to GENIE double ratios, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}. There is distortion in the upper right region, consistent with the high $Q^2$ regions in Figure~\ref{fig:Q2_ccqe_no_eff}.  This binning proves to be a problem for creating reliable conclusions once efficiencies are applied, as statistics for each individual bin become quite low. These are included in Appendix~\ref{q0q3_app}. Higher statistics will be achieved for future work.
+For $\nu_{\mu}$ CCQE, the double ratios without efficiencies appear flat for both NEUT to GENIE and NuWro to GENIE double ratios, as seen in Figure~\ref{fig:q0q3_numu_CCQE_no_eff}. There is distortion in the upper right region, consistent with the high $Q^2$ regions in Figure~\ref{fig:Q2_ccqe_no_eff}.  This binning proves to be a problem for creating reliable conclusions once efficiencies are applied, as statistics for each individual bin become quite low. These are included in Appendix~\ref{app:q0q3_app}. Higher statistics will be achieved for future work.
 %\newline
 \begin{figure}[h]
 \centering
@@ -605,33 +607,10 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
-\begin{table}
-\centering
- \begin{tabular}{| l | c  c | c c |} 
- \hline
-   Generator \& Interaction& $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$\\ 
-    & \multicolumn{2}{|c|}{ND} & \multicolumn{2}{|c|}{FD} \\ \hline
-   GENIE-CCQE & 13 & 2 & 13 & 2\\ 
-   GENIE-2p2h & 28 & 1 & 29 & 2 \\ 
-   GENIE-CC1$\pi$ & 17 & 21 & 18 & 25\\ 
-   GENIE-CCOther & 24 & 17 & 24 & 19\\ \hline
-   NEUT-CCQE & 1 & 0.8 & 1 & 0.7 \\ 
-   NEUT-2p2h & 8 & 4 & 8 & 4\\ 
-   NEUT-CC1$\pi$ & 9 & 21 & 9 & 23\\ 
-   NEUT-CCOther & 9 & 18 & 11 & 21\\ \hline
-   NuWro-CCQE & 4 & 2 & 3 & 2 \\ 
-   NuWro-2p2h & 3 & 0.3 & 3 & 0.2\\ 
-   NuWro-CC1$\pi$ & 30 & 22 & 34 & 27\\ 
-   NuWro-CCOther & 33 & 20 & 38 & 26 \\ \hline
-\end{tabular}
-\caption{Percentage of events $N_{neutron}>3$ and $E_{neutron}>600 MeV/c$, broken down by generator and event type.  These cut offs where chosen to encompass most of the GENIE }
-\label{tab:int_prob}
-\end{table}
-
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
 This was done for CCQE-like, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
-These differences account for a small fraction of the events, generally less than 10\%, as can be seen in Table~\ref{tab:int_prob}.
+These differences only account for a small fraction of the events.
 Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2p2h neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
   
 \begin{figure}
@@ -668,9 +647,9 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \label{fig:Neutron_multi_2p2h_ND_FD}
 \end{figure}
 
-Care should still be taken when calculating the neutrino energy of the event if only a calorimetric approach is used, as is the case in this document.
+Care should still be taken when calculating the total neutrino of the event if only a calorimetric approach is used, as is the case in this document.
 This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
-Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as high as 30\%.
+Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
 The other interaction modes and anti-neutrino events can also be found in Appendix~\ref{app:Neutron_Multiplicities} and have a smaller fraction.
 
 \begin{figure}
@@ -689,10 +668,7 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \end{figure}
 \FloatBarrier
 
-Missing neutrons can effect the neutrino energy reconstruction, which is especially important for neutrino oscillation studies which require an exact energy.
-However, much of the effect of these missing neutrons can be taken into account with the near to far extrapolation.
-At the moment the difference between the models seem to be OK for these analyses given a near to far ratio.
-Future investigations will include the ability for errors in GENIE to cover the differences between the models. 
+ Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
 
 \subsection{Proton/Pion Multiplicity and Momentum}
 \label{subsec:Particle_multiplicities_momentum}
@@ -746,18 +722,7 @@ This is something that needs to be investigated further in future works.
 \label{fig:proton_multiplicity_2p2h_NF}
 \end{figure}
 
-Once detector efficiencies are added in, there is even a greater difference in the near to far ratio.  
-Figure~\ref{fig:proton_multiplicity_2p2h_NF_eff} shows these striking differences.  
-The top row shows the near to far ratio for the FGT to a LAr far detector.  
-In the region of interest the differences are 100\% and greater.
-The middle row shows the high pressure GAr TPC, with differences again ranging from 20-100\%.
-The last row shows the LAr TPC, and unsurprisingly, gives the best agreement. 
-Event then though, differences of up to 20\% exist, arising most likely due to the different flux at each detector. 
-
-These plots show the importance of not just the FSI model in use but also the detector's threshold to measure protons. 
-The FGT, which has the most realistic thresholds and therefore the ones most unlike the LAr far detector, shows just how important this can be.
-It is expected pions will have an even larger impact than the protons due to there re-interactions with the nucleus.  
-This needs to be confirmed and will be shown in updates to this document. 
+Once detector efficiences are added in
 
 \begin{figure}[h]
 \centering
@@ -790,7 +755,7 @@ This needs to be confirmed and will be shown in updates to this document.
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
 \end{subfigure}
-\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interactions. The left hand columns show GENIE, and middle column shows NEUT, and the right hand column shows NuWro. The top row has the FGT efficiencies applied for the ND, the middle row has the high pressure GAr TPC efficiencies, while the last row has the LAr TPC efficiencies for the ND.  All of these use LAr efficiencies for the FD.}
+\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. In the region with the most events, there are variations of up to 20\%}
 \label{fig:proton_multiplicity_2p2h_NF_eff}
 \end{figure}
 
@@ -1081,12 +1046,16 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %An additional study to be commenced is the mapping from Ereco \& yreco into other kinematic variables (i.e. $Q^2$, $q_0$ vs. $q_3$), and the ability to similarly map model variations.
 \appendix
 
-\subfile{DUNE_appendix_Q2_plots.tex}
-\subfile{DUNE_appendix_q0_q3_plots.tex}
-\subfile{Appendix_Neutron_Multi.tex}
+%\subfile{Appendix_Neutron_Multi.tex}
+%
+%\subfile{Appendix_Nucleon_Multi.tex}
+%
+%\subfile{DUNE_appendix_Ereco_plots.tex}
+%\subfile{DUNE_appendix_Q2_plots.tex}
+%\subfile{DUNE_appendix_q0_q3_plots.tex}
 %\subfile{DUNE_appendix_N_P_plots_protons.tex}
-\subfile{DUNE_appendix_Ereco_plots.tex}
 
+%\subfile{DUNE_appendix_eff_plots.tex}
 
 \begin{thebibliography}{7}
 
@@ -1119,6 +1088,11 @@ Nuclear Physics B - Proceedings Supplements 229 (2012) 499
 P. Stowell, C. Wret, C. Wilkinson, L. Pickering, S. Cartwright, Y. Hayato, K. Mahn, K.S. McFarland, J. Sobczyk, R. Terri, L. Thompson, M.O. Wascko, Y. Uchida
 \textit{NUISANCE: a neutrino cross-section generator tuning and comparison framework}
 arXiv:1612:07393v2
+
+\bibitem{DUNE_osc}
+T. Alion, \textit{et al.}
+\textit{Experiment Simulation Configurations Used in DUNE CDR}
+arXiv:1606.09550
 
 \bibitem{VALOR}
 Andreopoulos, \textit{et al.}
