@@ -727,7 +727,7 @@ Similar to the neutron multiplicity and energy studies, proton and pion multipli
 The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  
 For these studies, the 3-momentum of the final state protons are summed. 
 The magnitude is then plotted against the multiplicity for the specific particle type. 
-This was done for the FS particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther, with no efficiencies applied so we can look at the effects of the FSI models, as well with all 3 ND configuration efficiencies and the LAr FD efficiencies, so we can investigate the effects of the different ND and how the couple to the FD.. 
+This was done for the final state particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. It was first done without efficiencies applied so we can look at the effects of the FSI models. It was also done with all 3 ND configuration efficiencies and the LAr FD efficiencies so we can investigate the effects of the different ND configurations and how the couple to the FD.
 As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. 
 
 To show the difference in the FSI models, Figure~\ref{fig:proton_multiplicity_2p2h} shows the proton multiplicity vs total proton momentum for 2p2h interactions. 
@@ -824,13 +824,17 @@ This needs to be confirmed and will be shown in updates to this document.
 
 \subsection{Difference from True Neutrino Energy}
 \label{subsec:EDiff}
-The studies in Sections~\ref{subsec:N_multiplicities_Energy} and ~\ref{subsec:Particle_multiplicities_momentum} highlight the differences in the generators' FSI behavior as well as the different abilities of the various detector configurations to reconstruct final state energy. This section studies the overall change we see to $E_{reco}$ - defined in Equation~\ref{eq:ereco} - as we apply detector efficiencies. To do this, the difference between true and reconstructed neutrino energy from each generator is plotted. Each distribution is normalized to 1 so the y-axis serves as the relative event rate. This is first done for a 'perfect' near detector - one in which we assume all particles except neutrons are accepted. Next, it is done for each ND configuration - FGT, simple LAr, and simple GAr - and the simpe LAr FD.
+The studies in Sections~\ref{subsec:N_multiplicities_Energy} and ~\ref{subsec:Particle_multiplicities_momentum} highlight the differences in the generators' FSI behavior as well as the different abilities of the various detector configurations to reconstruct final state energy. This section studies the overall change we see to $E_{reco}$ - defined in Equation~\ref{eq:ereco} - as we apply detector efficiencies. To do this, the difference between true and reconstructed neutrino energy from each generator is plotted. This is first done for a 'perfect' near detector - one in which we assume all particles except neutrons are accepted. Next, it is done for each ND configuration - FGT, simple LAr, and simple GAr. % - and the simpe LAr FD. 
+Each distribution is normalized to 1 so the y-axis serves as the relative event rate. 
 %True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction - with 1 reconstructed lepton if efficiencies are applied. CC0$\pi$ is defined as 0 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
 
 %The 'perfect' ND plots give insight into the FSI behavior of the different generators. Differences between true and reconstructed energy arise from 2 effects. The first is the FSI behavior, in which some of the neutrino energy is imparted to protons and pions that are reabsorbed in the nucleus in the generator MC. This results in some of the reconstructed energy being lost, as we only sum up what is in the final state and is visible, and is the focus of Section~\ref{subsec:Particle_multiplicities_momentum}. Further discrepancy arises from neutrons which are either reabsorbed in the nucleus or are present in the final state, but are invisible to the detector. This being the focus of Section~\ref{subsec:N_multiplicities_Energy}. 
 
-For $\nu_\mu$, all 3 generators behave similarly in the perfect ND for CCQE, 2p2h, CC0$\pi$, and CC1$\pi$. This is seen in Figure~\ref{fig:numu_Etrue_ereco_perfect}. CCOther displays different behavior between the generators, as NuWro has more events than the other 2 generators in region between $\Delta E$ = 0.5 GeV to 2 GeV. NEUT and GENIE's behavior in CCOther matches closely to their behavior in CC1$\pi$. 
+For $\nu_\mu$, all 3 generators behave similarly in the perfect ND for CCQE, 2p2h, CC0$\pi$, and CC1$\pi$. This is shown for CCQE in the left plot of Figure~\ref{fig:numu_Etrue_ereco_perfect}. Meanwhile, NuWro CCOther is slightly different to NEUT and GENIE, as seen in the right plot of the same figure. The other reactions can be found in Appendix~\ref{app:Ereco_app}. 
 
+However, for $\overline{\nu}_\mu$ in the perfect ND, NuWro now differs significantly from NEUT and GENIE for CCQE, 2p2h, and CC0$\pi$, while all 3 generators behave similarly for CC1$\pi$ and CCOther. This is shown for 2p2h and CCOther in Figure~\ref{fig:numubar_Etrue_ereco_perfect}.
+
+Future work will be conducted to determine if GENIE FSI errors are able to cover the variations between these generators within the perfect ND.
 %In $\nu_\mu$ mode: for all reaction types except CCOther, all three generators seem to have similar differences in all detector configurations. This is evident in Figure~\ref{fig:numu_Etrue_ereco_FGT_CCQE_and_CCOther} - which includes CCQE and CCOther interactions in the ND with FGT efficiencies - and the figures in Appendix~\ref{app:Ereco_app}. For CCOther, all three generators appear to have a long tail extending to high discrepancy regions - well past that of CCQE for example - though NuWro has a higher amount of events in the $\Delta E$ = 0.5 GeV to 2 GeV region. 
 \begin{figure}[h]
 \centering
@@ -838,129 +842,46 @@ For $\nu_\mu$, all 3 generators behave similarly in the perfect ND for CCQE, 2p2
 \includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCQE.png}
 \endminipage
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_2p2h.png}
-\endminipage
-\newline
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC0Pi.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC1Pi.png}
-\endminipage
-\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. Top Left to Right: $nu_\mu$ CCQE, 2p2h, Bottom Left to Right CC0$\pi$, CC1$\pi$. All 3 generators behave similarly, deviations from true neutrino energy remain mostly below .5 GeV except in CC1$\pi$, where a larger tail is present. Here, most events are still below a 2 GeV discrepancy.}
-\label{fig:numu_Etrue_ereco_perfect}
-\end{figure}
-\FloatBarrier
-
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCOther.png}
 \endminipage
-\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. $nu_\mu$ CCOther. NuWro has more disagreement than NEUT and GENIE in the region between .5 and 2 GeV. }
-\label{fig:numu_Etrue_ereco_perfect_CCOther}
-\end{figure}
-\FloatBarrier
-
-For $\overline{\nu}_\mu$ in the perfect ND, NEUT and GENIE behave similarly while NuWro behaves differently for CCQE, 2p2h, and CC0$\pi$. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect}. This shows that NEUT and GENIE have similar behavior between each other, but each generator's behavior is slightly different between respective $\nu_\mu$ and $\overline{\nu}_\mu$ modes. NuWro, on the other hand, behaves differently from NEUT and GENIE, but its $\overline{\nu}_\mu$ behavior is more similar to $\nu_\mu$. In CC1$\pi$, NuWro deviates slightly from the other 2 generators, but again behaves more similarly to its corresponding $\nu_\mu$ distribution. This is shown in Figure~\ref{fig:numubar_Etrue_ereco_perfect_CC1Pi}. Shown in the same plot, the tail extending toward higher $\Delta E$ seems to drop off more quickly for NEUT and GENIE than in their corresponding $\nu_\mu$ distribution. For CCOther -  Figure~\ref{fig:numu_Etrue_ereco_perfect_CCOther} - all three generators behave differently from each other, but slightly different from their own corresponding $\nu_\mu$ distributions.
-
-\begin{figure}[h]
-\centering
-\minipage{.32\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_CCQE.png}
-\endminipage
-\minipage{.32\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_2p2h.png}
-\endminipage
-\minipage{.32\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_CC0Pi.png}
-\endminipage
-\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. Left to Right: $\overline{\nu}_\mu$ CCQE, 2p2h CC0$\pi$. NEUT and GENIE behave similarly and NuWro differs for all 3 modes. NuWro's behavior matches with its corresponding $\nu_\mu$ behavior, while NEUT and GENIE differ from their own $\nu_\mu$ behavior.}
-\label{fig:numubar_Etrue_ereco_perfect}
+\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. Left: $nu_\mu$ CCQE, Right: CCOther. All 3 generators behave similarly for CCQE. For CCOther, NEUT and GENIE have similar behavior, while NuWro slightly differs.}
+\label{fig:numu_Etrue_ereco_perfect}
 \end{figure}
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_CC1Pi.png}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_2p2h.png}
 \endminipage
-\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. $\overline{\nu}_\mu$ CC1$\pi$. NuWro behaves differently from NEUT, GENIE; closely to corresponding $\nu_\mu$. NEUT \& GENIE's tails fall off faster than in corresponding $\nu_\mu$.}
-\label{fig:numubar_Etrue_ereco_perfect_CC1Pi}
-\end{figure}
-\begin{figure}[h]
-\centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Ereco_Etrue/numubar_perfect_ND_CCOther.png}
 \endminipage
-\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. $\overline{\nu}_\mu$ CCOther. All generators differ between each other, and between own corresponding $\nu_\mu$ behavior.}
-\label{fig:numubar_Etrue_ereco_perfect_CCOther}
+\caption{Difference between true and reconstructed neutrino energy in the 'perfect' ND. Left: 2p2h $\overline{\nu}_\mu$, Right: CCOther. NuWro differs from NEUT and GENIE in 2p2h, while all generators are similar for CCOther.}
+\label{fig:numubar_Etrue_ereco_perfect}
 \end{figure}
 \FloatBarrier
 
-Figures ~\ref{fig:numu_Etrue_ereco_perfect_FGT_CCQE} - ~\ref{fig:numu_Etrue_ereco_perfect_FGT_CCOther} show that applying FGT efficiencies to $\nu_\mu$ events changes the distribution of $E_{true} - E_{reco}$. The peaks near 0 for each generator are smaller, and more events exhibit a higher difference in the energy. CCQE and 2p2h appear to be affected only slightly when compared to the topology-based reactions CC0$\pi$, CC1$\pi$, and CCOther. This behavior is similar for $\overline{\nu}_\mu$, which can be found in Appendix~\ref{}.
+After applying detector efficiencies, the discrepancy between true and reconstructed neutrino energy changes only slightly as seen in Figure~\ref{fig:numu_2p2h_Etrue_ereco_allND}. Here, we show the $\nu_\mu$ 2p2h distributions with the perfect, simple LAr, simple GAr, and FGT ND. The other reaction modes can be found in Appendix~\ref{app:Ereco_app}. Keeping in mind that the simple GAr and LAr only include thresholds (100 and 200 MeV respectively) for protons, comparing these configurations to the perfect ND shows that a simple proton threshold has little effect on the ability to reconstruct the true neutrino energy. This is in contrast to the conclusion of Section~\ref{subsec:Particle_multiplicities_momentum}. Though applying proton thresholds appears to have a drastic effect when looking at the multiplicity and momentum distributions, it is shown here that this has only a small effect on the reconstructed neutrino energy. Future work will include a more reasonable description of the proton efficiencies, as well as efficiency descriptions for the other final state particles, within these two detectors to see if any larger effect arises.
 
-
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCQE.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCQE.png}
-\endminipage
-\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CCQE. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
-\label{fig:numu_Etrue_ereco_perfect_FGT_CCQE}
-\end{figure}
+Applying the FGT efficiencies has a slightly more noticeable effect, as can be seen in the bottom right plot of Figure~\ref{fig:numu_2p2h_Etrue_ereco_allND}. This motivates further investigation into both the relative effect of applying a more complete description of proton efficiencies and including efficiencies for other final state particles. Additional studies include applying the FGT efficiencies for each particle individually in order to see each effect independently. 
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_2p2h.png}
+\endminipage
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_LAr_2p2h.png}
+\endminipage
+\newline
+\minipage{.5\textwidth}
+\includegraphics[width=\linewidth]{Ereco_Etrue/numu_GAr_2p2h.png}
 \endminipage
 \minipage{.5\textwidth}
 \includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_2p2h.png}
 \endminipage
-\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ 2p2h. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
-\label{fig:numu_Etrue_ereco_perfect_FGT_2p2h}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC0Pi.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CC0Pi.png}
-\endminipage
-\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CC0$\pi$. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
-\label{fig:numu_Etrue_ereco_perfect_FGT_CC0Pi}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CC1Pi.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CC1Pi.png}
-\endminipage
-\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CC1$\pi$. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
-\label{fig:numu_Etrue_ereco_perfect_FGT_CC1Pi}
-\end{figure}
-\begin{figure}[h]
-\centering
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_perfect_ND_CCOther.png}
-\endminipage
-\minipage{.5\textwidth}
-\includegraphics[width=\linewidth]{Ereco_Etrue/numu_FGT_CCOther.png}
-\endminipage
-\newline
-\caption{Difference between true and reconstructed neutrino energy $nu_\mu$ CCOther. Left: Perfect ND, Right: FGT ND. Slight variation in all generators when applying efficiencies. Peak near 0 is smaller, more events with higher $\Delta E$.}
-\label{fig:numu_Etrue_ereco_perfect_FGT_CCOther}
+\caption{Difference between true and reconstructed neutrino energy for $\nu_\mu$ 2p2h. Top Left: Perfect ND, Top Right: Simple LAr ND. Bottom Left: Simple GAr ND, Bottom Right: FGT ND. There exists only small differences when applying simple LAr and GAr proton thresholds. There is a slightly more noticeable effect when applying a more complete FGT description.}
+\label{fig:numu_2p2h_Etrue_ereco_allND}
 \end{figure}
 \FloatBarrier
-
-
-%As a first check in the ability to reconstruct neutrino energy, I began investigating the differences between the total final state energy and initial state energy. I've verified with Callum that the NUISANCE framework successfully treats the particle stacks from the various generators, and any differences come from how the different generators handle FSI. 
-
-
 % \subsection{Nucleon multiplicity vs. W}
 % \label{sec:Nucleon_multi_w}
 % Differences in mapping from $E_{reco}$ to true variables can arise from shape differences in nucleon multiplicities vs. W distributions. 
@@ -1098,6 +1019,8 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 	\end{itemize}
 \item Extend studies to include LAr and GAr efficiency and acceptance information when available.
 \item Extend final state studies into proton multiplicity vs. energy, and include pions when efficiencies are available.
+\item Study the ability for GENIE FSI errors to cover differences between generators and final state energy.
+\item Study the effect on the reconstructed neutrino energy of applying efficiencies to each final state particle independently.
 %\item Current uncertainties are invariant of target choice. Need to extend studies to include Calcium-40 target for FGT studies
 %\item Include a mapping of $E_{true}$ to $E_{reco}$ along with $y_{true}$ to $y_{reco}$ and investigate differences between configurations.
 
