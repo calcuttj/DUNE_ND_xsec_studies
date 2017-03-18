@@ -210,7 +210,8 @@ Neutrino interaction modeling is of great interest to current and future oscilla
  %These generators are GENIE\cite{GENIE} version 2.10, using an RFG model, NEUT\cite{NEUT} version 5.3.6, using Nieves et. al RPA+2p2h/MEC $M_A$ = 1.01, and NuWro\cite{NUWRO} version 11, using LFG + RPA + Nieves et. al. 
 \subsection{Generating Events}
 \label{subsec:events}
-Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes~\cite{DUNE_osc}, shown in Figure~\ref{fig:dune_flux} for $\nu_{\mu}$ at the ND and FD. The oscillation parameters used for the FD fluxes are included in Table~\ref{tab:osc}. Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where there are $\overline{\nu}_\mu$ within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. 
+Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced with these generators according to the 2015 DUNE CDR fluxes~\cite{DUNE_osc}, shown in Figure~\ref{fig:dune_flux} for $\nu_{\mu}$ at the ND and FD. The oscillation parameters used for the FD fluxes are included in Table~\ref{tab:osc}. Note that the $\nu_\mu$ and $\overline{\nu}_\mu$ flux correspond to the Forward and Reverse Horn Current (FHC and RHC) modes respectively. No 'wrong-sign' studies, where there are $\overline{\nu}_\mu$ within the primary $\nu_\mu$ beam, are considered in this work. The various data sets are then passed through the NUISANCE\cite{NUISANCE} software to reduce the outputs to a common format, in turn saving all final state particle information for each event. Various event types are studied separately. These event types are true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther and are defined in Table~\ref{tab:events}. \textcolor{red}{Note that for CCQE and 2p2h, though these are based on generator-level reaction modes, they are defined by 1 reconstructed lepton in the final state if  efficiencies are applied.}
+
 \begin{figure}[h]
 \centering
 \minipage{.5\textwidth}
@@ -250,6 +251,27 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 \end{tabular}
 \caption{Oscillation parameters used for FD fluxes.}
 \label{tab:osc}
+\end{table}
+
+\begin{table}
+\centering
+ \begin{tabular}{| l  c  |} 
+ \hline 
+ Event Type & Definiton\\ [0.5ex] 
+ \hline
+ True-CCQE & MC-level CCQE mode \\ 
+% \hline
+ True-2p2h & MC-level 2p2h mode \\
+% \hline
+ CC0$\pi$ & 0 $\pi^{\pm}$, 1 lepton, any number of protons and $\pi^0$ in final state. \\
+%  \hline
+ CC1$\pi$ & 1 $\pi^{\pm}$, 1 lepton, any number of protons and $\pi^0$ in final state. \\
+% \hline
+ CCOther & 1 lepton, any number of $\pi^{\pm}$, protons, and $\pi^0$ in final state. \\ [1ex]
+ \hline
+\end{tabular}
+\caption{Definitions of various event types distinguished within our studies. Note that CCQE and 2p2h are based on MC-level reaction mode, but must also have 1 lepton in the final state if efficiencies are applied.}
+\label{tab:events}
 \end{table}
 
 
@@ -607,10 +629,34 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 
 Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
+\begin{table}
+\centering
+ \begin{tabular}{| l | c  c | c c |} 
+ \hline
+   Generator \& Interaction& $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$\\ 
+    & \multicolumn{2}{|c|}{ND} & \multicolumn{2}{|c|}{FD} \\ \hline
+   GENIE-CCQE & 13 & 2 & 13 & 2\\ 
+   GENIE-2p2h & 28 & 1 & 29 & 2 \\ 
+   GENIE-CC1$\pi$ & 17 & 21 & 18 & 25\\ 
+   GENIE-CCOther & 24 & 17 & 24 & 19\\ \hline
+   NEUT-CCQE & 1 & 0.8 & 1 & 0.7 \\ 
+   NEUT-2p2h & 8 & 4 & 8 & 4\\ 
+   NEUT-CC1$\pi$ & 9 & 21 & 9 & 23\\ 
+   NEUT-CCOther & 9 & 18 & 11 & 21\\ \hline
+   NuWro-CCQE & 4 & 2 & 3 & 2 \\ 
+   NuWro-2p2h & 3 & 0.3 & 3 & 0.2\\ 
+   NuWro-CC1$\pi$ & 30 & 22 & 34 & 27\\ 
+   NuWro-CCOther & 33 & 20 & 38 & 26 \\ \hline
+\end{tabular}
+\caption{Percentage of events $N_{neutron}>3$ and $E_{neutron}>600 MeV/c$, broken down by generator and event type.  These cut offs where chosen to encompass most of the GENIE }
+\label{tab:int_prob}
+\end{table}
+
+
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
 This was done for CCQE-like, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
-These differences only account for a small fraction of the events.
+These differences only account for a small fraction of the events, generally less than 10\%, as can be seen in Table~\ref{tab:int_prob}.
 Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2p2h neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
   
 \begin{figure}
@@ -647,9 +693,9 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \label{fig:Neutron_multi_2p2h_ND_FD}
 \end{figure}
 
-Care should still be taken when calculating the total neutrino of the event if only a calorimetric approach is used, as is the case in this document.
+Care should still be taken when calculating the neutrino energy of the event if only a calorimetric approach is used, as is the case in this document.
 This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
-Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as much as 30\%.
+Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as high as 30\%.
 The other interaction modes and anti-neutrino events can also be found in Appendix~\ref{app:Neutron_Multiplicities} and have a smaller fraction.
 
 \begin{figure}
@@ -668,7 +714,11 @@ The other interaction modes and anti-neutrino events can also be found in Append
 \end{figure}
 \FloatBarrier
 
- Additionally, investigations in the ability for errors in GENIE to cover the differences between models have been started. 
+Missing neutrons can effect the neutrino energy reconstruction, which is especially important for neutrino oscillation studies which require an exact energy.
+However, much of the effect of these missing neutrons can be taken into account with the near to far extrapolation.
+At the moment the difference between the models seem to be OK for these analyses given a near to far ratio.
+Future investigations will include the ability for errors in GENIE to cover the differences between the models. 
+ 
 
 \subsection{Proton/Pion Multiplicity and Momentum}
 \label{subsec:Particle_multiplicities_momentum}
@@ -722,7 +772,18 @@ This is something that needs to be investigated further in future works.
 \label{fig:proton_multiplicity_2p2h_NF}
 \end{figure}
 
-Once detector efficiences are added in
+Once detector efficiencies are added in, there is even a greater difference in the near to far ratio.  
+Figure~\ref{fig:proton_multiplicity_2p2h_NF_eff} shows these striking differences.  
+The top row shows the near to far ratio for the FGT to a LAr far detector.  
+In the region of interest the differences are 100\% and greater.
+The middle row shows the high pressure GAr TPC, with differences again ranging from 20-100\%.
+The last row shows the LAr TPC, and unsurprisingly, gives the best agreement. 
+Event then though, differences of up to 20\% exist, arising most likely due to the different flux at each detector. 
+
+These plots show the importance of not just the FSI model in use but also the detector's threshold to measure protons. 
+The FGT, which has the most realistic thresholds and therefore the ones most unlike the LAr far detector, shows just how important this can be.
+It is expected pions will have an even larger impact than the protons due to there re-interactions with the nucleus.  
+This needs to be confirmed and will be shown in updates to this document. 
 
 \begin{figure}[h]
 \centering
@@ -755,17 +816,18 @@ Once detector efficiences are added in
 \begin{subfigure}[b]{0.32\textwidth}
 \includegraphics[width=\linewidth]{eff_N_P/LAr/protons/ratios/2p2h_NuWro_numu_NF_N_P.png}
 \end{subfigure}
-\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interaction in GENIE, NEUT, and NuWro, respectively. In the region with the most events, there are variations of up to 20\%}
+\caption{The ND/FD of proton multiplicity as a function of total proton momentum for 2p2h interactions. The left hand columns show GENIE, and middle column shows NEUT, and the right hand column shows NuWro. The top row has the FGT efficiencies applied for the ND, the middle row has the high pressure GAr TPC efficiencies, while the last row has the LAr TPC efficiencies for the ND.  All of these use LAr efficiencies for the FD.}
 \label{fig:proton_multiplicity_2p2h_NF_eff}
 \end{figure}
-
+%\FloatBarrier
 
 
 \subsection{Difference from True Neutrino Energy}
 \label{subsec:EDiff}
-The studies in Sections~\ref{subsec:N_multiplicities_Energy} and ~\ref{subsec:Particle_multiplicities_momentum} highlight the differences in the generators' FSI behavior as well as the different abilities of the various detector configurations to reconstruct final state energy. This section studies the overall change we see to $E_{reco}$ - defined in Equation~\ref{eq:ereco} - as we apply detector efficiencies. To do this, the difference between true and reconstructed neutrino energy from each generator is plotted. Each distribution is normalized to 1 so the y-axis serves as the relative event rate. This is done separately for a 'perfect' near detector - one in which we assume all particles except neutrons are accepted - and each near detector configuration and the far detector with simple LAr thresholds for protons, as well for each interaction type: true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction - with 1 reconstructed lepton if efficiencies are applied. CC0$\pi$ is defined as 0 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
+The studies in Sections~\ref{subsec:N_multiplicities_Energy} and ~\ref{subsec:Particle_multiplicities_momentum} highlight the differences in the generators' FSI behavior as well as the different abilities of the various detector configurations to reconstruct final state energy. This section studies the overall change we see to $E_{reco}$ - defined in Equation~\ref{eq:ereco} - as we apply detector efficiencies. To do this, the difference between true and reconstructed neutrino energy from each generator is plotted. Each distribution is normalized to 1 so the y-axis serves as the relative event rate. This is first done for a 'perfect' near detector - one in which we assume all particles except neutrons are accepted. Next, it is done for each ND configuration - FGT, simple LAr, and simple GAr - and the simpe LAr FD.
+%True-CCQE and true-2p2h are both defined as MC-level CCQE/2p2h interaction - with 1 reconstructed lepton if efficiencies are applied. CC0$\pi$ is defined as 0 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. CC1$\pi$ is defined as 1 $\pi^{\pm}$, 1 lepton, and any number of protons and $\pi^0$ after reconstruction. Finally, CCOther is defined as any final state with 1 lepton and any number of hadrons reconstructed.
 
-The 'perfect' ND plots give insight into the FSI behavior of the different generators. Differences between true and reconstructed energy arise from 2 effects. The first is the FSI behavior, in which some of the neutrino energy is imparted to protons and pions that are reabsorbed in the nucleus in the generator MC. This results in some of the reconstructed energy being lost, as we only sum up what is in the final state and is visible, and is the focus of Section~\ref{subsec:Particle_multiplicities_momentum}. Further discrepancy arises from neutrons which are either reabsorbed in the nucleus or are present in the final state, but are invisible to the detector. This being the focus of Section~\ref{subsec:N_multiplicities_Energy}. 
+%The 'perfect' ND plots give insight into the FSI behavior of the different generators. Differences between true and reconstructed energy arise from 2 effects. The first is the FSI behavior, in which some of the neutrino energy is imparted to protons and pions that are reabsorbed in the nucleus in the generator MC. This results in some of the reconstructed energy being lost, as we only sum up what is in the final state and is visible, and is the focus of Section~\ref{subsec:Particle_multiplicities_momentum}. Further discrepancy arises from neutrons which are either reabsorbed in the nucleus or are present in the final state, but are invisible to the detector. This being the focus of Section~\ref{subsec:N_multiplicities_Energy}. 
 
 For $\nu_\mu$, all 3 generators behave similarly in the perfect ND for CCQE, 2p2h, CC0$\pi$, and CC1$\pi$. This is seen in Figure~\ref{fig:numu_Etrue_ereco_perfect}. CCOther displays different behavior between the generators, as NuWro has more events than the other 2 generators in region between $\Delta E$ = 0.5 GeV to 2 GeV. NEUT and GENIE's behavior in CCOther matches closely to their behavior in CC1$\pi$. 
 
@@ -1052,7 +1114,7 @@ The above studies need to be furthered and expanded upon to successfully arrive 
 %
 %\subfile{DUNE_appendix_Ereco_plots.tex}
 %\subfile{DUNE_appendix_Q2_plots.tex}
-\subfile{DUNE_appendix_q0_q3_plots.tex}
+%\subfile{DUNE_appendix_q0_q3_plots.tex}
 %\subfile{DUNE_appendix_N_P_plots_protons.tex}
 
 %\subfile{DUNE_appendix_eff_plots.tex}
