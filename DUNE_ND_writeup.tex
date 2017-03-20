@@ -631,13 +631,13 @@ where $E_{lep}$ is the energy of the outgoing lepton, $E_{\pi}$ is the energy of
 \subsection{Neutron Multiplicities \& Energy}
 \label{subsec:N_multiplicities_Energy}
 
-Differences between models in the number of final state neutrons and the total energy into FS neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
+Differences between models in the number of final state neutrons and the total energy into final state neutrons can largely affect reconstruction of neutrino energy. Large variations in reconstructed energy can arise due to missing energy caused by the inability to detect neutrons in the various models.  
 
 \begin{table}
 \centering
  \begin{tabular}{| l | c  c | c c |} 
  \hline
-   Generator \& Interaction& $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$\\ 
+   Generator \& Interaction & $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$ & $N_{neutron}>3 (\%)$ & $E_{neutron}>600 MeV/c (\%)$\\ 
     & \multicolumn{2}{|c|}{ND} & \multicolumn{2}{|c|}{FD} \\ \hline
    GENIE-CCQE & 13 & 2 & 13 & 2\\ 
    GENIE-2p2h & 28 & 1 & 29 & 2 \\ 
@@ -652,13 +652,13 @@ Differences between models in the number of final state neutrons and the total e
    NuWro-CC1$\pi$ & 30 & 22 & 34 & 27\\ 
    NuWro-CCOther & 33 & 20 & 38 & 26 \\ \hline
 \end{tabular}
-\caption{Percentage of events $N_{neutron}>3$ and $E_{neutron}>600 MeV/c$, broken down by generator and event type.  These cut offs where chosen to encompass most of the GENIE }
+\caption{Percentage of events with $N_{neutron}>3$ and $E_{neutron}>600 MeV/c$, broken down by generator and event type.  These cut offs where chosen to encompass most of the GENIE sample.}
 \label{tab:int_prob}
 \end{table}
 
 
 To investigate this, we have looked at GENIE, NEUT, and NUWRO to see if the different models showed a large difference in the neutron energy and multiplicity.  
-This was done for CCQE-like, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
+This was done for CCQE, CC1$\pi$, 2p2h, and everything else (``Other'') interactions and neutrinos as well as anti-neutrinos.  
 In all cases, the generators agreed rather well with each other even though there were some differences in the neutron multiplicity. 
 These differences only account for a small fraction of the events, generally less than 10\%, as can be seen in Table~\ref{tab:int_prob}.
 Figure~\ref{fig:Neutron_multi_2p2h_ND} shows an example of this for 2p2h neutrino events, while the other interaction modes can be found in Appendix~\ref{app:Neutron_Multiplicities}
@@ -698,7 +698,7 @@ The areas with low statistics do show a disagreement, but very few events fall i
 \end{figure}
 
 Care should still be taken when calculating the neutrino energy of the event if only a calorimetric approach is used, as is the case in this document.
-This is because as much as 50\% of the energy can be taken away by the neutron in CCQE-like events.
+This is because as much as 50\% of the energy can be taken away by the neutron in CCQE events.
 Even for 2p2h events, as shown in Figure~\ref{fig:Neutron_multi_ene_enu_2p2h_ND}, it can be as high as 30\%.
 The other interaction modes and anti-neutrino events can also be found in Appendix~\ref{app:Neutron_Multiplicities} and have a smaller fraction.
 
@@ -720,8 +720,8 @@ The other interaction modes and anti-neutrino events can also be found in Append
 
 Missing neutrons can effect the neutrino energy reconstruction, which is especially important for neutrino oscillation studies which require an exact energy.
 However, much of the effect of these missing neutrons can be taken into account with the Near to Far extrapolation.
-At the moment the difference between the models seem to be OK for these analyses given a Near to Far ratio.
-Future investigations will include the ability for errors in GENIE to cover the differences between the models. 
+At the moment, the difference between the models seem to be OK for these analyses given a Near to Far ratio.
+Future works will investigate to see if the FSI errors in GENIE can cover the differences between the models. 
  
 
 \subsection{Proton/Pion Multiplicity and Momentum}
@@ -731,7 +731,7 @@ Similar to the neutron multiplicity and energy studies, proton and pion multipli
 The total momentum of the particles gives us a proxy for the energy into the FS protons or pions as well as a direct link to detector efficiency effects.  
 For these studies, the 3-momentum of the final state protons are summed. 
 The magnitude is then plotted against the multiplicity for the specific particle type. 
-This was done for the final state particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. It was first done without efficiencies applied so we can look at the effects of the FSI models. It was also done with all 3 ND configuration efficiencies and the LAr FD efficiencies so we can investigate the effects of the different ND configurations and how the couple to the FD.
+This was done for the final state particles in true-CCQE, true-2p2h, CC0$\pi$, CC1$\pi$, and CCOther. It was first done without efficiencies applied so we can look at the effects of the FSI models. It was also done with all 3 ND configuration efficiencies and the LAr FD efficiencies so we can investigate the effects of the different ND configurations and how they couple to the FD.
 As the efficiencies for pions are currently unknown for the LAr and GAr, we will only consider the protons in the current iteration of this note. 
 
 To show the difference in the FSI models, Figure~\ref{fig:proton_multiplicity_2p2h} shows the proton multiplicity vs total proton momentum for 2p2h interactions. 
@@ -756,10 +756,10 @@ It also has lower total momentum for these protons when compared to the other tw
 \end{figure}
 
 Unlike with the neutron multiplicity, the differences between the models is important as the a Near to Far extrapolation does not hold.  
-Figure~\ref{proton_multiplicity_2p2h_NF} shows this with variations of 20-30\% in the regions where the most events are.  
+Figure~\ref{fig:proton_multiplicity_2p2h_NF} shows this with variations of 20-30\% in the regions where the most events are.  
 The exact reason for this discrepancy is unclear.
 It could be attributed to the plot only includes the total momentum of all protons, with it being possible that one or two protons take away the most energy and the highest momentum protons would agree between the two detectors.
-This is something that needs to be investigated further in future works.  
+This is something that will be looked at in the next section.  
 
 \begin{figure}[h]
 \centering
@@ -776,13 +776,13 @@ This is something that needs to be investigated further in future works.
 \label{fig:proton_multiplicity_2p2h_NF}
 \end{figure}
 
-Once detector efficiencies are added in, there is even a greater difference in the Near to Far ratio.  
+Once detector efficiencies are added in, there is an even greater difference in the Near to Far ratio.  
 Figure~\ref{fig:proton_multiplicity_2p2h_NF_eff} shows these striking differences.  
 The top row shows the Near to Far ratio for the FGT to a LAr far detector.  
 In the region of interest the differences are 100\% and greater.
 The middle row shows the high pressure GAr TPC, with differences again ranging from 20-100\%.
 The last row shows the LAr TPC, and unsurprisingly, gives the best agreement. 
-Event then though, differences of up to 20\% exist, arising most likely due to the different flux at each detector. 
+Even then though, differences of up to 20\% exist, arising most likely due to the different flux at each detector. 
 
 These plots show the importance of not just the FSI model in use but also the detector's threshold to measure protons. 
 The FGT, which has the most realistic thresholds and therefore the ones most unlike the LAr far detector, shows just how important this can be.
