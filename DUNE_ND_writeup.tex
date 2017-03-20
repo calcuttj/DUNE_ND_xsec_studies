@@ -37,6 +37,9 @@
 \usepackage{slashed}
 \usepackage{subfiles}
 
+\usepackage{textcomp}
+\newcommand{\textapprox}{\raisebox{0.5ex}{\texttildelow}}
+
 \newcommand{\todo}[1]{{\color{red} TODO: #1}}
 \newcommand\red[1]{{\color{red}#1}}
 \newcommand{\ccpi}{CC1$\pi^0$\xspace}
@@ -353,7 +356,7 @@ Conclusions are drawn from the double ratios according to the following prescrip
 
 For $\nu_{\mu}$ CCQE events, both NEUT's and NuWro's models differ significantly from GENIE's model in $Q^2$ distributions, as seen in the single ratios in Figure~\ref{fig:Q2_ccqe_no_eff}. Despite this, the double ratios for both NEUT to GENIE and NuWro to GENIE remain relatively flat and close to 1, with small amounts of variation in the higher $Q^2$ region.
 
-For double ratios with FGT efficiencies applied to the ND and simple LAr efficiencies applied to the FD, shape variations are greater above ~1.25 $\textrm{GeV}^2$ as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. This suggests an additional bin in the region .55 to 1.25 $\textrm{GeV}^2$ should be included. These studies will be expanded in the future to increase statistics and determine the origin of the variation in this region, one possible source being the rejection of low-momentum muons after we apply efficiencies.
+For double ratios with FGT efficiencies applied to the ND and simple LAr efficiencies applied to the FD, shape variations are greater above \textapprox{1.25} $\textrm{GeV}^2$ as seen in Figure~\ref{fig:Q2_ccqe_FGT_eff}. This suggests an additional bin in the region .55 to 1.25 $\textrm{GeV}^2$ should be included. These studies will be expanded in the future to increase statistics and determine the origin of the variation in this region, one possible source being the rejection of low-momentum muons after we apply efficiencies.
 
 \begin{figure}[h]
 \minipage{.32\textwidth}
@@ -398,7 +401,7 @@ For double ratios with FGT efficiencies applied to the ND and simple LAr efficie
 \minipage{.32\textwidth}
 \includegraphics[width=\linewidth]{eff_Q2/FGT/ratios/CCQE_NuWro_GENIE_numu_NF_Q2.png}
 \endminipage
-\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr efficiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above ~1.25 $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$}
+\caption{Reconstructed $Q^2$ distributed $\nu_{\mu}$ events using DUNE flux, FGT efficiencies applied to ND and simple LAr efficiencies applied to FD. Top: Ratios of NEUT to GENIE. Bottom: Ratios of NuWro to GENIE. Left to Right: Single ratio at ND, single ratio at FD, double ratio Near/Far. More shape variations do arise above \protect\textapprox{1.25} $\textrm{GeV}^2$ in the double ratios. This suggests another bin should encompass the region between .55 and 1.25 $\textrm{GeV}^2$. Note that the current VALOR binning is separated by lower bin edges of (0, 0.20, and 0.55) $\textrm{GeV}^2$.}
 \label{fig:Q2_ccqe_FGT_eff}
 \end{figure}
 \FloatBarrier
@@ -483,7 +486,7 @@ For 2p2h $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ events, the double ratios from b
 \end{figure}
 \FloatBarrier
 
-We currently find an additional bin in the region (.55, ~1.25) will account for uncertainties in both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE. For $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h, the overall normalization currently appears sufficient from these studies. Investigations into the origin of the variation in the high $Q^2$ region of CCQE will be conducted as this work is furthered. Additional statistics and more complete efficiency descriptions for the LAr and GAr are required, and will be conducted at a later date.
+We currently find an additional bin in the region (.55, \textapprox{1.25}) will account for uncertainties in both $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE. For $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h, the overall normalization currently appears sufficient from these studies. Investigations into the origin of the variation in the high $Q^2$ region of CCQE will be conducted as this work is furthered. Additional statistics and more complete efficiency descriptions for the LAr and GAr are required, and will be conducted at a later date.
 
 \subsection{$q_0 \textrm{ vs. } q_3$ Variations}
 \label{subsec:q0q3}
@@ -549,7 +552,7 @@ Each of the three generators have very different behavior for 2p2h $\nu_\mu$ and
 \FloatBarrier
 
 \subsection{Parameterization - Conclusions}
-It appears as though the pure-$Q^2$ parameterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE events, but slight modifications are suggested. The Near to Far extrapolation plots - the double ratios - appear relatively flat in the regions of the individual bins in the low $Q^2$ region. This changes above ~1.25 $\textrm{GeV}^2$, so placing another bin between 0.55 and ~1.25 $\textrm{GeV}^2$ should suffice. The $q_0 \textrm{ - } q_3$ double ratios are consistent with this conclusion. Future work will be focused on improving statistics and implementing full LAr and GAr efficiencies as that information becomes available, as well as investigating the origin of the high-$Q^2$ variations which possibly arise from proton or - more-likely - muon acceptance effects. 
+It appears as though the pure-$Q^2$ parameterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE events, but slight modifications are suggested. The Near to Far extrapolation plots - the double ratios - appear relatively flat in the regions of the individual bins in the low $Q^2$ region. This changes above \textapprox{1.25} $\textrm{GeV}^2$, so placing another bin between 0.55 and \textapprox{1.25} $\textrm{GeV}^2$ should suffice. The $q_0 \textrm{ - } q_3$ double ratios are consistent with this conclusion. Future work will be focused on improving statistics and implementing full LAr and GAr efficiencies as that information becomes available, as well as investigating the origin of the high-$Q^2$ variations which possibly arise from proton or - more-likely - muon acceptance effects. 
 
 The low-$Q^2$ $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h events appear to be covered by the current 1-bin parameterization when only looking at the $Q^2$ distribution. However, the shape differences in $q_0 \textrm{ - } q_3$ show that a pure-$Q^2$ parameterization should not be used. Future work will continue with improving statistics, as well as implementing all efficiencies.
 
