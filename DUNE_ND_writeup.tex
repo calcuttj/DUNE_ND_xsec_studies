@@ -134,15 +134,42 @@
 \thispagestyle{fancy}
 %\linenumbers
 %\begin{abstract}
-%This report is a review of the current implementation of cross section related sources of systematic uncertainty for the DUNE Near Detector Taskforce (ND TF), charged with evaluating three possible near detector configurations. It identifies critical sources of systematic uncertainty, some of which are already covered, suggests studies to further improve the current uncertainty implementation, and summarizes future improvements to the systematic uncertainty outside the scope of the ND TF. 
+%This report is a review of the current implementation of cross section related sources of systematic uncertainty for the DUNE Near Detector Taskforce (ND TF), charged with evaluating three possible near detector configurations. It identifies critical sources of systematic uncertainty, some of which are already covered, suggests studies to further improve the current uncertainty implementation, and summarizes future improvements to the seffectystematic uncertainty outside the scope of the ND TF. 
 %\end{abstract}
 %A clear statement of what the committee deems to be an ideal (practical) scenario would be an excellent start. We can bring that to VALOR to determine what they can implement, and then ask the committee for some feedback on the limitations of the final VALOR parameterization to put in the report along with their full recommendations. The full simulation and analysis chain should not die with the task force, and the final report should include recommendations for what should be studied beyond the TF timeline.
+
+\section{Executive Summary}
+As part of the DUNE ND Taskforce, we have studied if the neutrino interaction model could affect any of DUNE's goals.
+To do this, we have looked at how different interaction models, used here as proxies for variations in a given model, couple to different NDs and the FD.  
+This was done by using three different event generators, GENIE, NEUT, and NuWro, which all have different FSI and 2p2h models.  
+Using these three event generators, we have studied their impact on a number of different physics parameters which could effect DUNE's results. 
+Currently we have looked at the sufficiency of a $Q^2$ parameterization in a Near to Far extrapolation and does this $Q^2$ parameterization ignore additional physics as represented as variations in $q_0 \textrm{ - } q_3$.
+We have also investigated the different abilities of the three ND configurations to reconstruct the neutrino energy by looking at nucleon multiplicity as a function of energy and momentum and does these cause a difference in the true neutrino energy.
+
+We have done these studies not only looking at three different generators but also the effect of applying efficiencies of the various detectors. 
+We first consider a 'perfect' ND and FD without any efficiencies applied, and then look what changes as we consider the 3 different configurations of the ND and a simple LAr efficiency in the FD. 
+Currently on full efficiency information is know for the Fine-Grained Tracker so it is the only detector with full efficiencies applied.  
+For the High Pressure Gaseous Argon TPC and Liquid Argon TPC only simple efficiencies with a proton threshold of 100 MeV/c and 200 MeV/c, respectively, have been applied.
+
+From these studies we have concluded that even though the pure-$Q^2$ parameterization and the binning developed by VALOR would cover model variations for $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ CCQE events, slight modifications are suggested.
+We suggest placing another $Q^2$ bin between 0.55 and \textapprox{1.25} $\textrm{GeV}^2$ to account for differences in the ND and FD at higher $Q^2$. The low-$Q^2$ $\nu_{\mu}$ and $\overline{\nu}_{\mu}$ 2p2h events appear to be covered by the current 1-bin parameterization when only looking at the $Q^2$ distribution. However, shape differences in $q_0 \textrm{ - } q_3$ show that a pure-$Q^2$ parameterization should probably not be used.
+
+Looking at the neutron multiplicity vs energy, there are large difference in the phase-space between the different generators.
+After a near to far extrapolation, though, these differences become irrelevant and we feel our current uncertainty on this is sufficient.  
+The proton multiplicity vs momentum does show differences in the near to far extrapolation.
+Despite this, the difference in $E_{reco}$ from $E_{true}$ does not seem to be effected and the overall proton threshold does not seem to be of concern.  
+
+This is only a first pass of our investigations in to how neutrino interaction models could affect DUNE.
+For future works we would like to further investigate: the origins of high-$Q^2$ variations in CCQE, extend all studies to include LAr and GAr efficiency and acceptance information when available, extend final state studies into proton multiplicity vs. energy, and include pions when efficiencies are available, study the ability for GENIE FSI errors to cover differences between generators and final state energy, and study the effect on the reconstructed neutrino energy of applying efficiencies to each final state particle independently.  
+For full details on this study was done and how we came to the conclusion please see \cite{this paper} for the details.
+
+
 
 \section{Overview}\label{sec:view}
 
 %This document serves as a writeup detailing the current status of the DUNE ND studies and the progress that has been made so far, as well as a plan on how to further the studies in the near future. 
 
-The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the neutrino mass hierarchy. It consists of both a Near and Far Detector (ND and FD) separated by 1300km and uses a neutrino beam created at Fermilab.\cite{DUNE_CDR1}. While the design of the Liquid Argon Far Detector has been finalized, there are still ongoing efforts in deciding the configuration of the Near Detector. The main ND design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration for these additional detectors are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). DUNE's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a Near to Far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect DUNE's goals. This work was done concurrent with the DUNE ND Taskforce (NDTF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also explore how different interaction models - used as proxies for variations in a given model - couple to the different NDs and the FD.
+The Deep Underground Neutrino Experiment (DUNE) is a next-generation Long Baseline neutrino experiment designed to search for CP violation and establish the neutrino mass hierarchy. It consists of both a Near and Far Detector (ND and FD) separated by 1300km and uses a neutrino beam created at Fermi lab.\cite{DUNE_CDReffect1}. While the design of the Liquid Argon Far Detector has been finalized, there are still ongoing efforts in deciding the configuration of the Near Detector. The main ND design includes a Fine-Grained Tracker (FGT) with possible inclusion of additional detectors. Under consideration for these additional detectors are a Liquid (LArTPC) or High Pressure Gaseous Argon TPC (GArTPC). Dune's physics goals require systematic uncertainties in the interaction model to be below the 2\% limit after a Near to Far extrapolation\cite{DUNE_review}. The focus of this document is to quantify how the neutrino interaction model could affect Dune's goals. This work was done concurrent with the DUNE ND Taskforce (NDTF), and so the studies investigate possible weaknesses and limitations of the current parameterization of neutrino interaction uncertainties. The studies also explore how different interaction models - used as proxies for variations in a given model - couple to the different NDs and the FD.
 
 Below is a list of the studies we have conducted for this work.
 \begin{itemize}
@@ -260,7 +287,7 @@ Sets of $\nu$ and $\overline{\nu}$ events with an Argon-40 target are produced w
 \centering
  \begin{tabular}{| l  c  |} 
  \hline 
- Event Type & Definiton\\ [0.5ex] 
+ Event Type & Definition\\ [0.5ex] 
  \hline
  True-CCQE & MC-level CCQE mode \\ 
 % \hline
@@ -318,7 +345,7 @@ Efficiency information is included with the following procedure. Each particle i
 \section{Parameterization}
 %The VALOR group\cite{VALOR} has led multiple T2K oscillation analyses and has contributed to most published T2K oscillation papers(I TOOK THIS ALMOST WORD FOR WORD FROM THE VALOR DOC BUT IDK WHAT TO WRITE FOR IT. IF CITING IT IS NOT GOOD ENOUGH I NEED TO CHANGE THIS). It also has contributed to to optimisation studies for DUNE, this being a source of motivation for this work. 
 The VALOR software package has been used on multiple T2K oscillation analyses, and has recently been used to study the DUNE near detector configurations. %(((The group uses MC templates to map between reconstructed and true information for various reactions.))) 
-The VALOR group has contributed to optimization studies for DUNE\cite{VALOR}, and has defined a $Q^2$ parameterization  - used to parameterize uncertainties according to model variations - for neutrinos and anti-neutrinos as: 
+The VALOR group has contributed to optimization studies for DUNE\cite{VALOR}, and has defined a $Q^2$ parameterization  - used to parametrize uncertainties according to model variations - for neutrinos and anti-neutrinos as: 
 \begin{itemize}
 \item CCQE $\nu_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
 \item CCQE $\overline{\nu}_{\mu}$ with $Q^2$ bins \{0 - 0.20, 0.20 - 0.55, $>$0.55\} $\textrm{GeV}^2$
@@ -864,7 +891,7 @@ Future work will be conducted to determine if GENIE FSI errors are able to cover
 \end{figure}
 \FloatBarrier
 
-After applying detector efficiencies, the discrepancy between true and reconstructed neutrino energy changes only slightly as seen in Figure~\ref{fig:numu_2p2h_Etrue_ereco_allND}. Here, we show the $\nu_\mu$ 2p2h distributions with the perfect, simple LAr, simple GAr, and FGT ND. The other reaction modes can be found in Appendix~\ref{app:Ereco_app}. Keeping in mind that the simple GAr and LAr only include thresholds (100 and 200 MeV respectively) for protons, comparing these configurations to the perfect ND shows that a simple proton threshold has little effect on the ability to reconstruct the true neutrino energy. This is in contrast to the conclusion of Section~\ref{subsec:Particle_multiplicities_momentum}. Though applying proton thresholds appears to have a drastic effect when looking at the multiplicity and momentum distributions, it is shown here that this has only a small effect on the reconstructed neutrino energy. Future work will include a more reasonable description of the proton efficiencies, as well as efficiency descriptions for the other final state particles, within these two detectors to see if any larger effect arises.
+After applying detector efficiencies, the discrepancy between true and reconstructed neutrino energy changes only slightly as seen in Figure~\ref{fig:numu_2p2h_Etrue_ereco_allND}. Here, we show the $\nu_\mu$ 2p2h distributions with the perfect, simple LAr, simple GAr, and FGT ND. The other reaction modes can be found in Appendix~\ref{app:Ereco_app}. Keeping in mind that the simple GAr and LAr only include thresholds (100 and 200 MeV respectively) for protons, comparing these configurations to the perfect ND shows that a simple proton threshold has little effect on the ability to reconstruct the true neutrino energy. Though applying proton thresholds appears to have a drastic effect when looking at the multiplicity and momentum distributions, it is shown here that this has only a small effect on the reconstructed neutrino energy. Future work will include a more reasonable description of the proton efficiencies, as well as efficiency descriptions for the other final state particles, within these two detectors to see if any larger effect arises.
 
 Applying the FGT efficiencies has a slightly more noticeable effect, as can be seen in the bottom right plot of Figure~\ref{fig:numu_2p2h_Etrue_ereco_allND}. This motivates further investigation into both the relative effect of applying a more complete description of proton efficiencies and including efficiencies for other final state particles. Additional studies include applying the FGT efficiencies for each particle individually in order to see each effect independently. 
 \begin{figure}[h]
