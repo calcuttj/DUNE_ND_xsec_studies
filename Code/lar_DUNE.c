@@ -46,6 +46,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
       out_tree->Branch("ELep_reco",&ELep_reco,"ELep_reco/F");
       out_tree->Branch("Nprotons_reco",&Nprotons_reco,"Nprotons_reco/I");
       out_tree->Branch("EPr_reco",&EPr_reco,"EPr_reco/F");
+//      out_tree->Branch("TPr_reco",&TPr_reco,"TPr_reco/F");
       out_tree->Branch("Npiplus_reco",&Npiplus_reco,"Npiplus_reco/I");
       out_tree->Branch("EPiP_reco",&EPiP_reco,"EPiP_reco/F");
       out_tree->Branch("Npineg_reco",&Npineg_reco,"Npineg_reco/I");
@@ -60,6 +61,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
       out_tree->Branch("P_protons_reco",&P_protons_reco,"P_protons_reco/F"); 
       out_tree->Branch("P_pions_reco",&P_pions_reco,"P_pions_reco/F"); 
 
+      int nskipped = 0;
 
       for(int j = 0; j < in_tree->GetEntries(); j++){
 //        cout<<j<<endl;
@@ -87,6 +89,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
         ELep_reco = 0;
         Nprotons_reco = 0;
         EPr_reco = 0;
+//        TPr_reco = 0;
         Npiplus_reco = 0;
         EPiP_reco = 0;
         Npineg_reco = 0;
@@ -148,6 +151,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            Ereco += pmu_4mom->E();
            
         }
+        if(Nleptons_reco ==0){nskipped++;continue;}
 
         //Protons
         for(int k = 0; k < array_pprot->GetEntries(); k++){
@@ -175,6 +179,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
            Pz_total_reco += Pz;       
            Nprotons_reco++;
            EPr_reco += pprot_4mom->E();
+//           TPr_reco += pprot_4mom->E() - pprot_4mom->Mag();
            Ereco += pprot_4mom->E() - pprot_4mom->Mag();
            
         }
@@ -275,6 +280,7 @@ void lar_efficiencies(char * fInFileName, /*char * fEffFileName*, */char * fOutF
 
         out_tree->Fill();
      }      
+     cout<<nskipped<<endl;
      out_tree->Write();
    } 
 

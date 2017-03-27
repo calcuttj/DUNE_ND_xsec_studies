@@ -38,6 +38,12 @@ tree_names[1] = "GenericFlux_RHC_FD_numub_osc_VARS";
 tree_names[2] = "GenericFlux_FHC_ND_numu_VARS";
 tree_names[3] = "GenericFlux_RHC_ND_numub_VARS";
 
+char* hist_names[4];
+hist_names[0] = "FHC_FD_numu";
+hist_names[1] = "RHC_FD_numub";
+hist_names[2] = "FHC_ND_numu";
+hist_names[3] = "RHC_ND_numub";
+
 TObjArray *array_pmu;
 TObjArray *array_pprot;
 TObjArray *array_pneut;
@@ -88,3 +94,4 @@ float delta_Pz;
 float P_protons_reco;
 float P_pions_reco;
 
+float TPr_reco;
